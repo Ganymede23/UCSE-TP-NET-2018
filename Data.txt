@@ -1,0 +1,63 @@
+***CLASES
+
+(PRINCIPAL) FlatMinor
+	ListaPrestamos
+	
+
+(ABSTRACTA) Locales
+	ID
+	Ciudad
+	Direccion
+	CP
+	
+Sucursal : Locales
+	TasaInteres
+
+Comercio : Locales
+	RazonSocial
+
+LugarDePago : Comercios
+	EsSucursal
+
+Cliente
+	TipoDocumento
+	NroDocumento
+	ApellidoNombre
+	Email
+	Celular
+	FNac
+	Sexo
+	Domicilio
+	CP
+	Ciudad
+	TipoCliente
+	MontoMaximo
+
+Prestamo (Cliente por parametro)
+	NroCredito (Autoincrementa por la lista donde se guarde)
+	FCredito (Actual)
+	ComercioAdherido
+	Sucursal
+	MontoDelCredito
+	Tasa (Se toma de la sucursal)
+	MontoCuota
+	CantidadCuotas
+
+Pago
+	NroCredito
+	FCredito
+	CuotasPagadas
+	CuotasFaltantes
+
+***METODOS
+	FlatMinor
+		ABM Sucursales
+		ABM Comercios Adheridos
+		ABM Lugares de pago
+		ABM Clientes
+		Alta Prestamos
+		
+Registro de pagos?
+Reporte de creditos?
+Reporte de pagos?
+
