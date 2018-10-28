@@ -42,22 +42,36 @@ Prestamo (Cliente por parametro)
 	Tasa (Se toma de la sucursal)
 	MontoCuota
 	CantidadCuotas
+	CuotasPendientes
+	CuotasPagadas
 
 Pago
-	NroCredito
-	FCredito
-	CuotasPagadas
-	CuotasFaltantes
+	FechaPago
+	Pagada (bool)
 
 ***METODOS
 	FlatMinor
-		ABM Sucursales
-		ABM Comercios Adheridos
-		ABM Lugares de pago
-		ABM Clientes
-		Alta Prestamos
-		
-Registro de pagos?
+		ABM Sucursales -DONE- // FALTA VERIFICAR BAJAS
+		ABM Comercios Adheridos -DONE- // FALTA VERIFICAR BAJAS
+		ABM Lugares de pago -DONE- // FALTA VERIFICAR BAJAS
+		ABM Clientes -DONE- // FALTA BAJAS
+		Alta Prestamos -DONE-
+		Reporte de pagos -DONE-
+	
+	Prestamos
+		Armado de la Lista de Pagos -DONE-
+		Registro de pagos -DONE-
+
+
 Reporte de creditos?
-Reporte de pagos?
+
+
+CONSULTAR 
+COMO VALIDAR LOS OBLIGATORIOS
+Altas en clase general
+	¿Modificacion y bajas en general o en la clase de cada objeto?
+Control de pagos. ¿Se van pagando secuencialmente sin verificar fecha? ¿Hay que poner control por fecha? 
+
+
+
 

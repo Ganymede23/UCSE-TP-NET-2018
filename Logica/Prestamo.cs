@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Logica
 {
     public class Prestamo
@@ -19,7 +20,7 @@ namespace Logica
         public int CantidadCuotas { get; set; }
         public int CuotasPagadas { get; set; }
         public int CuotasFaltantes { get; set; }
-        public Pago ListaPagos { get; set; }
+        public List<Pago> ListaPagos { get; set; }
 
         public Prestamo(Cliente cliente, int iD, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
         {
@@ -34,6 +35,23 @@ namespace Logica
             CantidadCuotas = cantidadCuotas;
             CuotasPagadas = 0;
             CuotasFaltantes = CantidadCuotas;
+            ListaPagos = this.ArmadoListaPagos();
+        }
+
+        public List<Pago> ArmadoListaPagos()
+        {
+            DateTime fecha_pago = FCredito.AddDays(60); //Suma 60 dias a la fecha del credito para la fecha del pago inicial
+            for (int i = 0; i < CantidadCuotas; i++)
+            {
+                var nuevo_pago = new Pago();
+                if (i == 0) //Si es el primer pago, se le coloca la fecha a 60 dias.
+                    nuevo_pago.FechaPago = fecha_pago;
+                else
+                    nuevo_pago.FechaPago= fecha_pago.AddDays(30); //los demas pagos ocurren 30 dias luego del primero
+
+                this.ListaPagos.Add(nuevo_pago);
+            }
+            return ListaPagos;
         }
 
         public void RegistroPagos(LugarDePago lugar_de_pago)
@@ -41,7 +59,12 @@ namespace Logica
             if (CuotasFaltantes==0)
                 Console.WriteLine("El crédito no tiene cuotas impagas.");
             else
-
+                foreach (Pago item in ListaPagos) //CONSULTA - Paga de manera secuencial un pago a la vez. ¿Debe verificar fecha?
+                {
+                    if (item.Pagado == false)
+                        item.Pagado = true;
+                    break;
+                }
         }
     }
 }

@@ -109,23 +109,6 @@ namespace Logica
             }
         }
 
-        public void ModificarPrestamo(Prestamo prestamoamodificar, Cliente cliente, int iD, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
-        {
-            foreach (var item in ListaPrestamos)
-            {
-                if (item == prestamoamodificar)
-                {
-                    item.Cliente = cliente;
-                    item.ComercioAdherido = comercioAdherido;
-                    item.Sucursal = sucursal;
-                    item.MontoCredito = montoCredito;
-                    item.MontoCuota = montoCuota;
-                    item.CantidadCuotas = cantidadCuotas;
-                    break;
-                }
-            }
-        }
-
         public void ModificacionSucursal(Sucursal sucursal_a_modificar, string ciudad, string direccion, int cP, double tasaInteres)
         {
             foreach (Sucursal item in ListaSucursales)
@@ -179,6 +162,7 @@ namespace Logica
         /////////
         //BAJAS//
         /////////
+
         public void EliminarCliente(Cliente clienteaeliminar)
         {
             foreach (var item in ListaClientes)
@@ -191,32 +175,33 @@ namespace Logica
             }
         }
 
-        public void EliminarPrestamos(Prestamo prestamoaeliminar)
-        {
-            foreach (var item in ListaPrestamos)
-            {
-                if (item == prestamoaeliminar)
-                {
-                    ListaPrestamos.Remove(item);
-                }
-            }
-        }
-
-        public void BajaSucursal(Sucursal sucursal_a_eliminar, string ciudad, string direccion, int cP, double tasaInteres)
+        public void BajaSucursal(Sucursal sucursal_a_eliminar)
         {
             ListaSucursales.Remove(sucursal_a_eliminar);
         }
 
-        public void BajaComercio(Comercio comercio_a_eliminar, string ciudad, string direccion, int cP, string razonSocial)
+        public void BajaComercio(Comercio comercio_a_eliminar)
         {
             ListaComercios.Remove(comercio_a_eliminar);
         }
 
-        public void BajaLugaresDePago(LugarDePago lugar_a_eliminar, string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
+        public void BajaLugaresDePago(LugarDePago lugar_a_eliminar)
         {
             ListaLugaresDePago.Remove(lugar_a_eliminar);
         }
 
+        /////////
+        //OTROS//
+        /////////
 
+        public void ReporteDePagos()
+        {
+            int MontoTotalPrestado = ListaPrestamos.Sum(x => x.MontoCredito);
+            double PromedioTasas = ListaPrestamos.Average(x => x.Tasa);
+            foreach (Prestamo item in ListaPrestamos)
+            {
+                double TotalCuotasPagadas = item.CuotasPagadas * item.MontoCuota;
+            }
+        }
     }
 }
