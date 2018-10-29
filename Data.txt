@@ -66,14 +66,13 @@ Pago
 Reporte de creditos?
 
 
-CONSULTAR 
-COMO VALIDAR LOS OBLIGATORIOS
-Altas en clase general
-	¿Modificacion y bajas en general o en la clase de cada objeto?
-Control de pagos. ¿Se van pagando secuencialmente sin verificar fecha? ¿Hay que poner control por fecha? 
-¿El monto de pago en el metodo "Reporte de créditos" implica que se puede pagar cierto monto de una cuota? ¿O es la acumulación de las cuotas ya pagadas?
+CONSULTAR
 
-En el metodo reporte de creditos, ¿se colocan todas las propiedades necesarias de todas las clases en la clase DetallePrestamo? ¿O directamente se hace una propiedad para cada objeto y se accede a sus propiedades internas?
+Validacion en logica: crear el objeto como sea que venga. Luego cada clase tiene su propio metodo de validación que se va a ocupar de dar un booleano, que escala hacia los formularios y permite guardar o no.
+Control de pagos: no se verifica la fecha. El monto de pago es el mismo que el monto de cuota. Se va pagando todo de manera secuencial.
+
+En el metodo reporte de creditos pasar los objetos enteros como propiedades.
+
 
 
 
