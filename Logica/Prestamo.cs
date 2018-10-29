@@ -56,15 +56,25 @@ namespace Logica
 
         public void RegistroPagos(LugarDePago lugar_de_pago)
         {
-            if (CuotasFaltantes==0)
+            if (CuotasFaltantes == 0)
                 Console.WriteLine("El crédito no tiene cuotas impagas.");
             else
                 foreach (Pago item in ListaPagos) //CONSULTA - Paga de manera secuencial un pago a la vez. ¿Debe verificar fecha?
                 {
                     if (item.Pagado == false)
                         item.Pagado = true;
+                    CuotasPagadas++;
+                    CuotasFaltantes--;
                     break;
                 }
+        }
+
+        public DetallePrestamo MostrarDetalles() //ACTUALIZAR DEPENDIENDO DE COMO SE COMPONE LA CLASE DETALLE PRESTAMO
+        {
+            Pago pago = ListaPagos.Last();
+            double montopago = CantidadCuotas * MontoCuota; //¿El monto de pago implica que se puede pagar cierto monto de una cuota? ¿O es la acumulación de las cuotas ya pagadas?
+            var DetallePrestamo = new DetallePrestamo(CuotasPagadas, MontoCuota, pago.FechaPago, montopago, pago.LugarPago);
+            return DetallePrestamo;
         }
     }
 }

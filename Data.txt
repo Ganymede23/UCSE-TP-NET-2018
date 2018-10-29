@@ -71,7 +71,9 @@ COMO VALIDAR LOS OBLIGATORIOS
 Altas en clase general
 	¿Modificacion y bajas en general o en la clase de cada objeto?
 Control de pagos. ¿Se van pagando secuencialmente sin verificar fecha? ¿Hay que poner control por fecha? 
+¿El monto de pago en el metodo "Reporte de créditos" implica que se puede pagar cierto monto de una cuota? ¿O es la acumulación de las cuotas ya pagadas?
 
+En el metodo reporte de creditos, ¿se colocan todas las propiedades necesarias de todas las clases en la clase DetallePrestamo? ¿O directamente se hace una propiedad para cada objeto y se accede a sus propiedades internas?
 
 
 

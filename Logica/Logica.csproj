@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Comercio.cs" />
+    <Compile Include="DetallePrestamo.cs" />
     <Compile Include="FlatMinor.cs" />
     <Compile Include="Locales.cs" />
     <Compile Include="LugarDePago.cs" />

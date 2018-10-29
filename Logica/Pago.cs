@@ -10,5 +10,6 @@ namespace Logica
     {
         public DateTime FechaPago { get; set; }
         public bool Pagado { get; set; }
+        public LugarDePago LugarPago { get; set; }
     }
 }

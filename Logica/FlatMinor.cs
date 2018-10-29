@@ -203,5 +203,14 @@ namespace Logica
                 double TotalCuotasPagadas = item.CuotasPagadas * item.MontoCuota;
             }
         }
+
+        public List<Prestamo> FiltrarPrestamosxFecha(DateTime desde, DateTime hasta)
+        {
+            List<Prestamo> PrestamosFiltrados = ListaPrestamos.Where(x => x.FCredito >= desde && x.FCredito <= hasta).ToList();
+
+            return PrestamosFiltrados;
+        }
+
+        //FALTA FILTRAR POR NOMBRE DE CLIENTE
     }
 }
