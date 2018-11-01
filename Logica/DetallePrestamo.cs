@@ -8,18 +8,30 @@ namespace Logica
 {
     public class DetallePrestamo
     {
-        public DetallePrestamo(Cliente cliente, Sucursal sucursal, Comercio comercio, Prestamo prestamo)
+        public DetallePrestamo(Cliente cliente, Sucursal sucursal, Comercio comercio, int iD, double montoCredito, double tasa, double montoTotal, int cantidadCuotas, List<Pago> listaPagos)
         {
             Cliente = cliente;
             Sucursal = sucursal;
             Comercio = comercio;
-            Prestamo = prestamo;
+            ID = iD;
+            MontoCredito = montoCredito;
+            Tasa = tasa;
+            MontoTotal = montoTotal;
+            CantidadCuotas = cantidadCuotas;
+            ListaPagos = listaPagos;
         }
 
         public Cliente Cliente { get; set; }
         public Sucursal Sucursal { get; set; }
         public Comercio Comercio { get; set; }
-        public Prestamo Prestamo { get; set; } //¿OTRA FORMA DE HACERLO?
+        public int ID { get; set; }
+        public double MontoCredito { get; set; }
+        public double Tasa { get; set; }
+        public double MontoTotal { get; set; }
+        public int CantidadCuotas { get; set; }
+        public List<Pago> ListaPagos { get; set; }
+
+        //public Prestamo Prestamo { get; set; }
 
         ////CLIENTE
         //public string Nombre { get; set; }

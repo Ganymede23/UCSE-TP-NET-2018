@@ -12,7 +12,7 @@ namespace Logica
 
         public Comercio()
         {
-
+            Activo = true;
         }
 
         public Comercio(int iD, string ciudad, string direccion, int cP, string razonSocial)
@@ -22,6 +22,7 @@ namespace Logica
             Direccion = direccion;
             CP = cP;
             RazonSocial = razonSocial;
+            Activo = true;
         }
 
         public override bool ValidarObligatorios()

@@ -12,7 +12,7 @@ namespace Logica
 
         public Sucursal()
         {
-
+            Activo = true;
         }
 
         public Sucursal(int iD, string ciudad, string direccion, int cP, double tasaInteres)
@@ -22,6 +22,7 @@ namespace Logica
             Direccion = direccion;
             CP = cP;
             TasaInteres = tasaInteres;
+            Activo = true;
         }
 
         public override bool ValidarObligatorios()

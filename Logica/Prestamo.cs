@@ -42,7 +42,7 @@ namespace Logica
 
         public bool ValidarObligatorios()
         {
-            if (ComercioAdherido!=null && Sucursal!=null && MontoCredito>0 && CantidadCuotas > 0 && MontoTotal <= Cliente.MontoMaximo)
+            if (ComercioAdherido!=null && Sucursal!=null && MontoCredito>0 && CantidadCuotas > 0)
             {
                 return true;
             }
@@ -68,26 +68,27 @@ namespace Logica
             return ListaPagos;
         }
 
-        public void RegistroPagos(LugarDePago lugar_de_pago)
+        public ResultadoAlta RegistroPagos(LugarDePago lugar_de_pago)
         {
             if (CuotasFaltantes == 0)
-                Console.WriteLine("El crédito no tiene cuotas impagas.");
+                return new ResultadoAlta(false, "El crédito no tiene cuotas impagas.");
             else
-                foreach (Pago item in ListaPagos) //CONSULTA - Paga de manera secuencial un pago a la vez. ¿Debe verificar fecha?
+            { 
+                foreach (Pago item in ListaPagos) 
                 {
-                    if (item.Pagado == false)
-                        item.Pagado = true;
+                    if (item.MontoPago == 0)
+                        item.MontoPago = item.MontoCuota;
                     CuotasPagadas++;
                     CuotasFaltantes--;
                     break;
                 }
+                return new ResultadoAlta(true);
+            }
         }
 
-        public DetallePrestamo MostrarDetalles() //ACTUALIZAR DEPENDIENDO DE COMO SE COMPONE LA CLASE DETALLE PRESTAMO
+        public DetallePrestamo MostrarDetalles()
         {
-            Pago pago = ListaPagos.Last();
-            double montopago = CantidadCuotas * MontoCuota; //¿El monto de pago implica que se puede pagar cierto monto de una cuota? ¿O es la acumulación de las cuotas ya pagadas?
-            var DetallePrestamo = new DetallePrestamo(CuotasPagadas, MontoCuota, pago.FechaPago, montopago, pago.LugarPago);
+            var DetallePrestamo = new DetallePrestamo(this.Cliente, this.Sucursal, this.ComercioAdherido, ID, MontoCredito, Tasa, MontoTotal, CantidadCuotas, this.ListaPagos);
             return DetallePrestamo;
         }
     }

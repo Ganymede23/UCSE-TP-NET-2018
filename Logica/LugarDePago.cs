@@ -18,17 +18,7 @@ namespace Logica
             CP = cP;
             RazonSocial = razonSocial;
             EsSucursal = esSucursal;
+            Activo = true;
         }
-
-        //public override bool ValidarObligatorios()
-        //{
-        //    if (ID != 0 && Ciudad != "" && Direccion != "" && CP != 0 && RazonSocial != "")
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
     }
 }
