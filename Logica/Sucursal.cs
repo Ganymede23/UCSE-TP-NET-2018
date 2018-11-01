@@ -23,5 +23,17 @@ namespace Logica
             CP = cP;
             TasaInteres = tasaInteres;
         }
+
+        public override bool ValidarObligatorios()
+        {
+            if (ID!=0 && Ciudad!="" && Direccion!="" && CP!=0 && TasaInteres!=0.0D)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

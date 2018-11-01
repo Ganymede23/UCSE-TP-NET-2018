@@ -1,0 +1,8 @@
+        public void ObtenerPrestamos(string path,int? propiedad)
+        {
+            using (StreamReader reader = new StreamReader(@path))
+            {
+                string contenido = reader.ReadToEnd();
+                propiedad = JsonConvert.DeserializeObject <List<propiedad.GetType()>>(contenido);
+            }
+        }

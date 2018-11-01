@@ -12,5 +12,7 @@ namespace Logica
         public string Ciudad { get; set; }
         public string Direccion { get; set; }
         public int CP { get; set; }
+
+        public abstract bool ValidarObligatorios();
     }
 }

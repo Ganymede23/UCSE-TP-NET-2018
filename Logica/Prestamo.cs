@@ -16,13 +16,14 @@ namespace Logica
         public Sucursal Sucursal { get; set; }
         public int MontoCredito { get; set; }
         public double Tasa { get; set; }
+        public double MontoTotal { get; set; }
         public double MontoCuota { get; set; }
         public int CantidadCuotas { get; set; }
         public int CuotasPagadas { get; set; }
         public int CuotasFaltantes { get; set; }
         public List<Pago> ListaPagos { get; set; }
 
-        public Prestamo(Cliente cliente, int iD, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
+        public Prestamo(Cliente cliente, int iD, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, int cantidadCuotas)
         {
             Cliente = cliente;
             ID = iD;
@@ -31,11 +32,24 @@ namespace Logica
             Sucursal = sucursal;
             MontoCredito = montoCredito;
             Tasa = this.Sucursal.TasaInteres;
-            MontoCuota = montoCuota;
+            MontoTotal = MontoCredito+(Tasa*MontoCredito/100);
+            MontoCuota = MontoTotal/CantidadCuotas;
             CantidadCuotas = cantidadCuotas;
             CuotasPagadas = 0;
             CuotasFaltantes = CantidadCuotas;
             ListaPagos = this.ArmadoListaPagos();
+        }
+
+        public bool ValidarObligatorios()
+        {
+            if (ComercioAdherido!=null && Sucursal!=null && MontoCredito>0 && CantidadCuotas > 0 && MontoTotal <= Cliente.MontoMaximo)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<Pago> ArmadoListaPagos()

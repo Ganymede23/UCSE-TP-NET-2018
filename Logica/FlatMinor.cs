@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,111 @@ namespace Logica
         public List<Comercio> ListaComercios { get; set; }
         public List<LugarDePago> ListaLugaresDePago { get; set; }
         public List<Cliente> ListaClientes { get; set; }
+
+        public void CrearArchivos()
+        {
+            if (!File.Exists(@"C:\Datos\Prestamos.txt"))
+                File.Create(@"C:\Datos\Prestamos.txt");
+            if (!File.Exists(@"C:\Datos\Sucursales.txt"))
+                File.Create(@"C:\Datos\Sucursales.txt");
+            if (!File.Exists(@"C:\Datos\Comercios.txt"))
+                File.Create(@"C:\Datos\Comercios.txt");
+            if (!File.Exists(@"C:\Datos\LugaresDePago.txt"))
+                File.Create(@"C:\Datos\LugaresDePago.txt");
+            if (!File.Exists(@"C:\Datos\Clientes.txt"))
+                File.Create(@"C:\Datos\Clientes.txt");
+        }
+
+        public void LeerClientes()
+        {
+            using (StreamReader reader = new StreamReader(@"C:\Datos\Clientes.txt"))
+            {
+                string contenido = reader.ReadToEnd();
+                ListaClientes = JsonConvert.DeserializeObject<List<Cliente>>(contenido);
+            }
+        }
+        public bool GuardarClientes(List<Cliente> listaclientes)
+        {
+            using (StreamWriter writer = new StreamWriter(@"C:\Datos\Clientes.txt", false))
+            {
+                string jsonClientes = JsonConvert.SerializeObject(listaclientes);
+                writer.Write(jsonClientes);
+                return true;
+            }
+        }
+
+        public void LeerPrestamos()
+        {
+            using (StreamReader reader = new StreamReader(@"C:\Datos\Prestamos.txt"))
+            {
+                string contenido = reader.ReadToEnd();
+                ListaPrestamos = JsonConvert.DeserializeObject<List<Prestamo>>(contenido);
+            }
+        }
+        public bool GuardarPrestamos(List<Prestamo> listaprestamos)
+        {
+            using (StreamWriter writer = new StreamWriter(@"C:\Datos\Prestamos.txt", false))
+            {
+                string jsonPrestamos = JsonConvert.SerializeObject(listaprestamos);
+                writer.Write(jsonPrestamos);
+                return true;
+            }
+        }
+
+        public void LeerSucursales()
+        {
+            using (StreamReader reader = new StreamReader(@"C:\Datos\Sucursales.txt"))
+            {
+                string contenido = reader.ReadToEnd();
+                ListaSucursales = JsonConvert.DeserializeObject<List<Sucursal>>(contenido);
+            }
+        }
+        public bool GuardarSucursales(List<Prestamo> listasucursales)
+        {
+            using (StreamWriter writer = new StreamWriter(@"C:\Datos\Sucursales.txt", false))
+            {
+                string jsonSucursales = JsonConvert.SerializeObject(listasucursales);
+                writer.Write(jsonSucursales);
+                return true;
+            }
+        }
+
+        public void LeerComercios()
+        {
+            using (StreamReader reader = new StreamReader(@"C:\Datos\Comercios.txt"))
+            {
+                string contenido = reader.ReadToEnd();
+                ListaComercios = JsonConvert.DeserializeObject<List<Comercio>>(contenido);
+            }
+        }
+        public bool GuardarComercios(List<Prestamo> listacomercios)
+        {
+            using (StreamWriter writer = new StreamWriter(@"C:\Datos\Comercios.txt", false))
+            {
+                string jsonComercios = JsonConvert.SerializeObject(listacomercios);
+                writer.Write(jsonComercios);
+                return true;
+            }
+        }
+
+        public void LeerLugaresDePago()
+        {
+            using (StreamReader reader = new StreamReader(@"C:\Datos\LugaresDePago.txt"))
+            {
+                string contenido = reader.ReadToEnd();
+                ListaLugaresDePago = JsonConvert.DeserializeObject<List<LugarDePago>>(contenido);
+            }
+        }
+        public bool GuardarLugaresDePago(List<Prestamo> listalugaresdepago)
+        {
+            using (StreamWriter writer = new StreamWriter(@"C:\Datos\LugaresDePago.txt", false))
+            {
+                string jsonLugaresDePago = JsonConvert.SerializeObject(listalugaresdepago);
+                writer.Write(jsonLugaresDePago);
+                return true;
+            }
+        }
+
 
         /////////
         //ALTAS//
@@ -32,55 +139,69 @@ namespace Logica
             {
                 ListaClientes.Add(NuevoCliente);
                 return ("Se ha registrado correctamente el Cliente");
-            }
 
+
+            }
         }
 
-        public string AltaPrestamos(Cliente cliente, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
+        public ResultadoAlta AltaPrestamos(Cliente cliente, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
         {
-            double montototal = (montoCredito + ((montoCredito * sucursal.TasaInteres) / 100));
-            montoCuota = montototal / cantidadCuotas;
+            var NuevoPrestamo = new Prestamo(cliente, ListaPrestamos.Count+1, comercioAdherido, sucursal, montoCredito, cantidadCuotas);
 
-            var NuevoPrestamo = new Prestamo(cliente, ListaPrestamos.Count+1, comercioAdherido, sucursal, montoCredito, montoCuota, cantidadCuotas);
-
-            //FALTAN VALIDADCIONES
-
-            if (NuevoPrestamo.MontoCredito < montototal && cantidadCuotas == 0)
+            if (NuevoPrestamo.ValidarObligatorios())
             {
-                return ("El monto regristrado es mayor al monto de credito que dispone o la cantidad de cuotas fue mal ingresada");
+                ListaPrestamos.Add(NuevoPrestamo);
+                return new ResultadoAlta(true);
             }
             else
             {
-                ListaPrestamos.Add(NuevoPrestamo);
-                return ("Se ha registrado su prestamo");
+                return new ResultadoAlta(false, "Campos incompletos.");
             }
         }
 
-        public void AltaSucursal(string ciudad, string direccion, int cP, double tasaInteres)
+        public ResultadoAlta AltaSucursal(string ciudad, string direccion, int cP, double tasaInteres)
         {
             var nueva_sucursal = new Sucursal(ListaSucursales.Count+1, ciudad, direccion, cP, tasaInteres);
 
-            //VALIDAR OBLIGATORIOS 
-
-            ListaSucursales.Add(nueva_sucursal);
+            if (nueva_sucursal.ValidarObligatorios())
+            {
+                ListaSucursales.Add(nueva_sucursal);
+                return new ResultadoAlta(true);
+            }
+            else
+            {
+                return new ResultadoAlta(false, "Campos incompletos.");
+            }
         }
 
-        public void AltaComercio(string ciudad, string direccion, int cP, string razonSocial)
+        public ResultadoAlta AltaComercio(string ciudad, string direccion, int cP, string razonSocial)
         {
             var nuevo_comercio = new Comercio(ListaComercios.Count + 1, ciudad, direccion, cP, razonSocial);
 
-            //VALIDAR OBLIGATORIOS 
-
-            ListaComercios.Add(nuevo_comercio);
+            if (nuevo_comercio.ValidarObligatorios())
+            {
+                ListaComercios.Add(nuevo_comercio);
+                return new ResultadoAlta(true);
+            }
+            else
+            {
+                return new ResultadoAlta(false, "Campos incompletos.");
+            }
         }
 
-        public void AltaLugaresDePago(string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
+        public ResultadoAlta AltaLugaresDePago(string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
         {
             var nuevo_lugardepago = new LugarDePago(ListaLugaresDePago.Count + 1, ciudad, direccion, cP, razonSocial, esSucursal);
 
-            //VALIDAR OBLIGATORIOS
-
-            ListaLugaresDePago.Add(nuevo_lugardepago);
+            if (nuevo_lugardepago.ValidarObligatorios())
+            {
+                ListaLugaresDePago.Add(nuevo_lugardepago);
+                return new ResultadoAlta(true);
+            }
+            else
+            {
+                return new ResultadoAlta(false, "Campos incompletos.");
+            }
         }
 
         //////////////////
