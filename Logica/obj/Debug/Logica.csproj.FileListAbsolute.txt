@@ -1,0 +1,2 @@
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
