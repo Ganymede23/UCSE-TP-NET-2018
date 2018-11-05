@@ -7,25 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace WinForm
 {
     public partial class F_MenuPrincipal : Form, I_MenuPrincipal
     {
+        public FlatMinor FlatMinor { get; set; }
+
         public F_MenuPrincipal()
         {
-            InitializeComponent();
+            var flatminor = new FlatMinor();
+
+            InitializeComponent(); 
         }
 
-        private void F_MenuPrincipal_Load(object sender, EventArgs e)
+        public ResultadoAlta AgregarClientes(Cliente cliente)
         {
-
+            return FlatMinor.AltaClientes(cliente);
         }
 
-        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AgregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Crear_F_AltasClientes = new F_AltasClientes() { Owner = this };
+            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
             Crear_F_AltasClientes.ShowDialog();
+        }
+
+        public ResultadoAlta AgregarCliente(Cliente cliente)
+        {
+            return FlatMinor.AltaClientes(cliente);
         }
     }
 }

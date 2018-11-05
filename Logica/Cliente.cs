@@ -10,6 +10,10 @@ namespace Logica
     {
         LE=1,LC=2,DNI=3
     }
+    public enum Sexo
+    {
+        Hombre=1,Mujer=2
+    }
     public enum TipoCliente
     {
         Regular=1,VIP=2
@@ -22,14 +26,14 @@ namespace Logica
         public string Correo { get; set; }
         public int Celular { get; set; }
         public DateTime FNac { get; set; }
-        public char Sexo { get; set; }
+        public Sexo Sexo { get; set; }
         public string Domicilio { get; set; }
         public int CP { get; set; }
         public TipoCliente TipoCliente { get; set; }
         public int MontoMaximo { get; set; }
         public bool Activo { get; set; }
 
-        public Cliente(TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, char sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        public Cliente(TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
         {
             TipoDocumento = tipoDocumento;
             NroDocumento = nroDocumento;
@@ -43,6 +47,10 @@ namespace Logica
             TipoCliente = tipoCliente;
             MontoMaximo = montoMaximo;
             Activo = true;
+        }
+
+        public Cliente()
+        {
         }
 
         public bool ValidarObligatorios()

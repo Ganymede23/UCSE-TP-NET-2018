@@ -11,9 +11,9 @@ namespace Logica
         public bool Resultado { get; set; }
         public string Mensaje { get; set; }
 
-        public ResultadoAlta(bool resultado)
+        public ResultadoAlta()
         {
-            Resultado = resultado;
+            Resultado=true;
         }
 
         public ResultadoAlta(bool resultado, string mensaje)

@@ -120,22 +120,23 @@ namespace Logica
         //ALTAS//
         /////////
 
-        public ResultadoAlta AltaClientes(TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, char sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        public ResultadoAlta AltaClientes(Cliente nuevocliente)
         {
             LeerClientes();
-            var NuevoCliente = new Cliente(tipoDocumento, nroDocumento, nombre, correo, celular, fNac, sexo, domicilio, cP, tipoCliente, montoMaximo);
 
-            if (NuevoCliente.ValidarObligatorios())
+            ResultadoAlta resultado = new ResultadoAlta();
+
+            if (nuevocliente.ValidarObligatorios())
             {
-                if (ListaClientes.Where(x => x.NroDocumento == nroDocumento & x.TipoDocumento == tipoDocumento).FirstOrDefault() != null) //Verifica la combinacion de tipo y nro de documento.
+                if (ListaClientes.Where(x => x.NroDocumento == nuevocliente.NroDocumento & x.TipoDocumento == nuevocliente.TipoDocumento).FirstOrDefault() != null) //Verifica la combinacion de tipo y nro de documento.
                 {
                     return new ResultadoAlta(false,"El tipo y numero de documento ingresado ya está registrado.");
                 }
                 else
                 {
-                    ListaClientes.Add(NuevoCliente);
+                    ListaClientes.Add(nuevocliente);
                     GuardarClientes(ListaClientes);
-                    return new ResultadoAlta(true);
+                    return new ResultadoAlta();
                 }
             }
             else
@@ -159,7 +160,7 @@ namespace Logica
                 {
                     ListaPrestamos.Add(NuevoPrestamo);
                     GuardarPrestamos(ListaPrestamos);
-                    return new ResultadoAlta(true);
+                    return new ResultadoAlta();
                 }
             }
             else
@@ -177,7 +178,7 @@ namespace Logica
             {
                 ListaSucursales.Add(nueva_sucursal);
                 GuardarSucursales(ListaSucursales);
-                return new ResultadoAlta(true);
+                return new ResultadoAlta();
             }
             else
             {
@@ -194,7 +195,7 @@ namespace Logica
             {
                 ListaComercios.Add(nuevo_comercio);
                 GuardarComercios(ListaComercios);
-                return new ResultadoAlta(true);
+                return new ResultadoAlta();
             }
             else
             {
@@ -211,7 +212,7 @@ namespace Logica
             {
                 ListaLugaresDePago.Add(nuevo_lugardepago);
                 GuardarLugaresDePago(ListaLugaresDePago);
-                return new ResultadoAlta(true);
+                return new ResultadoAlta();
             }
             else
             {
@@ -223,7 +224,7 @@ namespace Logica
         //MODIFICACIONES//
         //////////////////
 
-        public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, char sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
         {
             foreach (var item in ListaClientes)
             {

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_TipoCliente = new System.Windows.Forms.ComboBox();
+            this.CB_TipoDoc = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -41,44 +41,44 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TB_MontoMax = new System.Windows.Forms.TextBox();
+            this.TB_localidad = new System.Windows.Forms.TextBox();
+            this.TB_cp = new System.Windows.Forms.TextBox();
+            this.TB_domicilio = new System.Windows.Forms.TextBox();
+            this.TB_FechaNac = new System.Windows.Forms.TextBox();
+            this.TB_celular = new System.Windows.Forms.TextBox();
+            this.TB_email = new System.Windows.Forms.TextBox();
+            this.TB_Nombre = new System.Windows.Forms.TextBox();
+            this.TB_NroDocumento = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Bt_GuardarCliente = new System.Windows.Forms.Button();
+            this.CB_Sexo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // CB_TipoCliente
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CB_TipoCliente.FormattingEnabled = true;
+            this.CB_TipoCliente.Items.AddRange(new object[] {
             "Regular",
             "VIP"});
-            this.comboBox2.Location = new System.Drawing.Point(182, 306);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 21);
-            this.comboBox2.TabIndex = 53;
+            this.CB_TipoCliente.Location = new System.Drawing.Point(182, 306);
+            this.CB_TipoCliente.Name = "CB_TipoCliente";
+            this.CB_TipoCliente.Size = new System.Drawing.Size(148, 21);
+            this.CB_TipoCliente.TabIndex = 53;
             // 
-            // comboBox1
+            // CB_TipoDoc
             // 
-            this.comboBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CB_TipoDoc.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
+            this.CB_TipoDoc.FormattingEnabled = true;
+            this.CB_TipoDoc.Items.AddRange(new object[] {
             "LE",
             "LC",
             "DNI"});
-            this.comboBox1.Location = new System.Drawing.Point(182, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 21);
-            this.comboBox1.TabIndex = 52;
+            this.CB_TipoDoc.Location = new System.Drawing.Point(182, 41);
+            this.CB_TipoDoc.Name = "CB_TipoDoc";
+            this.CB_TipoDoc.Size = new System.Drawing.Size(148, 21);
+            this.CB_TipoDoc.TabIndex = 52;
             // 
             // label13
             // 
@@ -178,75 +178,68 @@
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 41;
             // 
-            // textBox12
+            // TB_MontoMax
             // 
-            this.textBox12.Location = new System.Drawing.Point(182, 333);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(148, 20);
-            this.textBox12.TabIndex = 40;
+            this.TB_MontoMax.Location = new System.Drawing.Point(182, 333);
+            this.TB_MontoMax.Name = "TB_MontoMax";
+            this.TB_MontoMax.Size = new System.Drawing.Size(148, 20);
+            this.TB_MontoMax.TabIndex = 40;
             // 
-            // textBox10
+            // TB_localidad
             // 
-            this.textBox10.Location = new System.Drawing.Point(182, 280);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(148, 20);
-            this.textBox10.TabIndex = 39;
+            this.TB_localidad.Location = new System.Drawing.Point(182, 280);
+            this.TB_localidad.Name = "TB_localidad";
+            this.TB_localidad.Size = new System.Drawing.Size(148, 20);
+            this.TB_localidad.TabIndex = 39;
             // 
-            // textBox9
+            // TB_cp
             // 
-            this.textBox9.Location = new System.Drawing.Point(182, 254);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(148, 20);
-            this.textBox9.TabIndex = 38;
+            this.TB_cp.Location = new System.Drawing.Point(182, 254);
+            this.TB_cp.Name = "TB_cp";
+            this.TB_cp.Size = new System.Drawing.Size(148, 20);
+            this.TB_cp.TabIndex = 38;
             // 
-            // textBox8
+            // TB_domicilio
             // 
-            this.textBox8.Location = new System.Drawing.Point(182, 228);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(148, 20);
-            this.textBox8.TabIndex = 37;
+            this.TB_domicilio.Location = new System.Drawing.Point(182, 228);
+            this.TB_domicilio.Name = "TB_domicilio";
+            this.TB_domicilio.Size = new System.Drawing.Size(148, 20);
+            this.TB_domicilio.TabIndex = 37;
             // 
-            // textBox7
+            // TB_FechaNac
             // 
-            this.textBox7.Location = new System.Drawing.Point(182, 202);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(148, 20);
-            this.textBox7.TabIndex = 36;
+            this.TB_FechaNac.Location = new System.Drawing.Point(182, 176);
+            this.TB_FechaNac.Name = "TB_FechaNac";
+            this.TB_FechaNac.Size = new System.Drawing.Size(148, 20);
+            this.TB_FechaNac.TabIndex = 35;
             // 
-            // textBox6
+            // TB_celular
             // 
-            this.textBox6.Location = new System.Drawing.Point(182, 176);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 20);
-            this.textBox6.TabIndex = 35;
+            this.TB_celular.Location = new System.Drawing.Point(182, 150);
+            this.TB_celular.Name = "TB_celular";
+            this.TB_celular.Size = new System.Drawing.Size(148, 20);
+            this.TB_celular.TabIndex = 34;
             // 
-            // textBox5
+            // TB_email
             // 
-            this.textBox5.Location = new System.Drawing.Point(182, 150);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 20);
-            this.textBox5.TabIndex = 34;
+            this.TB_email.Location = new System.Drawing.Point(182, 124);
+            this.TB_email.Name = "TB_email";
+            this.TB_email.Size = new System.Drawing.Size(148, 20);
+            this.TB_email.TabIndex = 33;
             // 
-            // textBox4
+            // TB_Nombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 124);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 20);
-            this.textBox4.TabIndex = 33;
+            this.TB_Nombre.Location = new System.Drawing.Point(182, 98);
+            this.TB_Nombre.Name = "TB_Nombre";
+            this.TB_Nombre.Size = new System.Drawing.Size(148, 20);
+            this.TB_Nombre.TabIndex = 32;
             // 
-            // textBox3
+            // TB_NroDocumento
             // 
-            this.textBox3.Location = new System.Drawing.Point(182, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 20);
-            this.textBox3.TabIndex = 32;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(182, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 20);
-            this.textBox2.TabIndex = 31;
+            this.TB_NroDocumento.Location = new System.Drawing.Point(182, 72);
+            this.TB_NroDocumento.Name = "TB_NroDocumento";
+            this.TB_NroDocumento.Size = new System.Drawing.Size(148, 20);
+            this.TB_NroDocumento.TabIndex = 31;
             // 
             // label2
             // 
@@ -266,23 +259,36 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "*Tipo de Documento";
             // 
-            // button1
+            // Bt_GuardarCliente
             // 
-            this.button1.Location = new System.Drawing.Point(40, 374);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 41);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Bt_GuardarCliente.Location = new System.Drawing.Point(40, 374);
+            this.Bt_GuardarCliente.Name = "Bt_GuardarCliente";
+            this.Bt_GuardarCliente.Size = new System.Drawing.Size(108, 41);
+            this.Bt_GuardarCliente.TabIndex = 28;
+            this.Bt_GuardarCliente.Text = "Guardar";
+            this.Bt_GuardarCliente.UseVisualStyleBackColor = true;
+            this.Bt_GuardarCliente.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CB_Sexo
+            // 
+            this.CB_Sexo.AccessibleRole = System.Windows.Forms.AccessibleRole.Caret;
+            this.CB_Sexo.FormattingEnabled = true;
+            this.CB_Sexo.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
+            this.CB_Sexo.Location = new System.Drawing.Point(182, 202);
+            this.CB_Sexo.Name = "CB_Sexo";
+            this.CB_Sexo.Size = new System.Drawing.Size(148, 21);
+            this.CB_Sexo.TabIndex = 54;
             // 
             // F_AltasClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 456);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.CB_Sexo);
+            this.Controls.Add(this.CB_TipoCliente);
+            this.Controls.Add(this.CB_TipoDoc);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -294,19 +300,18 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TB_MontoMax);
+            this.Controls.Add(this.TB_localidad);
+            this.Controls.Add(this.TB_cp);
+            this.Controls.Add(this.TB_domicilio);
+            this.Controls.Add(this.TB_FechaNac);
+            this.Controls.Add(this.TB_celular);
+            this.Controls.Add(this.TB_email);
+            this.Controls.Add(this.TB_Nombre);
+            this.Controls.Add(this.TB_NroDocumento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Bt_GuardarCliente);
             this.Name = "F_AltasClientes";
             this.Text = "F_AltasClientes";
             this.ResumeLayout(false);
@@ -316,8 +321,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CB_TipoCliente;
+        private System.Windows.Forms.ComboBox CB_TipoDoc;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -329,18 +334,18 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TB_MontoMax;
+        private System.Windows.Forms.TextBox TB_localidad;
+        private System.Windows.Forms.TextBox TB_cp;
+        private System.Windows.Forms.TextBox TB_domicilio;
+        private System.Windows.Forms.TextBox TB_FechaNac;
+        private System.Windows.Forms.TextBox TB_celular;
+        private System.Windows.Forms.TextBox TB_email;
+        private System.Windows.Forms.TextBox TB_Nombre;
+        private System.Windows.Forms.TextBox TB_NroDocumento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Bt_GuardarCliente;
+        private System.Windows.Forms.ComboBox CB_Sexo;
     }
 }
