@@ -68,10 +68,10 @@ namespace Logica
             return ListaPagos;
         }
 
-        public ResultadoAlta RegistroPagos(LugarDePago lugar_de_pago)
+        public ResultadoOp RegistroPagos(LugarDePago lugar_de_pago)
         {
             if (CuotasFaltantes == 0)
-                return new ResultadoAlta(false, "El crédito no tiene cuotas impagas.");
+                return new ResultadoOp(false, "El crédito no tiene cuotas impagas.");
             else
             { 
                 foreach (Pago item in ListaPagos) 
@@ -82,7 +82,7 @@ namespace Logica
                     CuotasFaltantes--;
                     break;
                 }
-                return new ResultadoAlta();
+                return new ResultadoOp();
             }
         }
 

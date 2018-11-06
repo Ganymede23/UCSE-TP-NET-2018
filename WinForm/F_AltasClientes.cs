@@ -28,10 +28,10 @@ namespace WinForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var resultadoalta = new ResultadoAlta();
+            var resultadoalta = new ResultadoOp();
             var cliente = new Cliente();
 
-            switch (this.CB_TipoDoc.SelectedText)
+            switch (this.CB_TipoDoc.Text)
             {
                 case "LE":
                     cliente.TipoDocumento = TipoDocumento.LE;
@@ -49,7 +49,7 @@ namespace WinForm
             cliente.Celular = int.Parse(this.TB_celular.Text);
             cliente.FNac = DateTime.Parse(this.TB_FechaNac.Text);
 
-            switch (this.CB_Sexo.SelectedText)
+            switch (this.CB_Sexo.Text)
             {
                 case "Hombre":
                     cliente.Sexo = Sexo.Hombre;
@@ -60,7 +60,7 @@ namespace WinForm
             }
             cliente.Domicilio = this.TB_domicilio.Text;
             cliente.CP = int.Parse(this.TB_cp.Text);
-            switch (this.CB_TipoCliente.SelectedText)
+            switch (this.CB_TipoCliente.Text)
             {
                 case "Regular":
                     cliente.TipoCliente = TipoCliente.Regular;
@@ -73,7 +73,11 @@ namespace WinForm
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 
-            resultadoalta = F_MenuPrincipal.AltaClientes(cliente);
+            if (F_MenuPrincipal != null)
+            {
+                resultadoalta = F_MenuPrincipal.AltaClientes(cliente);
+            }
+            
 
             //if (F_MenuPrincipal != null)
             //{

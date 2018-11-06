@@ -9,6 +9,7 @@ namespace WinForm
 {
     interface I_MenuPrincipal
     {
-        ResultadoAlta AltaClientes(Cliente cliente);
+        ResultadoOp CrearArchivos();
+        ResultadoOp AltaClientes(Cliente cliente);
     }
 }

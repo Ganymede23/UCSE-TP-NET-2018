@@ -16,18 +16,27 @@ namespace Logica
         public List<LugarDePago> ListaLugaresDePago { get; set; }
         public List<Cliente> ListaClientes { get; set; }
 
-        public void CrearArchivos()
+        public ResultadoOp CrearArchivos()
         {
             if (!File.Exists(@"C:\Datos\Prestamos.txt"))
-                File.Create(@"C:\Datos\Prestamos.txt");
+                File.Create(@"C:\Datos\Prestamos.txt").Close();
             if (!File.Exists(@"C:\Datos\Sucursales.txt"))
-                File.Create(@"C:\Datos\Sucursales.txt");
+                File.Create(@"C:\Datos\Sucursales.txt").Close();
             if (!File.Exists(@"C:\Datos\Comercios.txt"))
-                File.Create(@"C:\Datos\Comercios.txt");
+                File.Create(@"C:\Datos\Comercios.txt").Close();
             if (!File.Exists(@"C:\Datos\LugaresDePago.txt"))
-                File.Create(@"C:\Datos\LugaresDePago.txt");
+                File.Create(@"C:\Datos\LugaresDePago.txt").Close();
             if (!File.Exists(@"C:\Datos\Clientes.txt"))
-                File.Create(@"C:\Datos\Clientes.txt");
+                File.Create(@"C:\Datos\Clientes.txt").Close();
+
+            ListaPrestamos = new List<Prestamo>();
+            ListaSucursales = new List<Sucursal>();
+            ListaComercios = new List<Comercio>();
+            ListaLugaresDePago = new List<LugarDePago>();
+            ListaClientes = new List<Cliente>();
+
+            var resultado = new ResultadoOp(true,"");
+            return resultado;
         }
 
         public void LeerClientes()
@@ -36,6 +45,11 @@ namespace Logica
             {
                 string contenido = reader.ReadToEnd();
                 ListaClientes = JsonConvert.DeserializeObject<List<Cliente>>(contenido);
+
+                if (ListaClientes==null)
+                {
+                    ListaClientes = new List<Cliente>();
+                }
             }
         }
         public void GuardarClientes(List<Cliente> listaclientes)
@@ -53,6 +67,11 @@ namespace Logica
             {
                 string contenido = reader.ReadToEnd();
                 ListaPrestamos = JsonConvert.DeserializeObject<List<Prestamo>>(contenido);
+
+                if (ListaPrestamos == null)
+                {
+                    ListaPrestamos = new List<Prestamo>();
+                }
             }
         }
         public void GuardarPrestamos(List<Prestamo> listaprestamos)
@@ -70,6 +89,11 @@ namespace Logica
             {
                 string contenido = reader.ReadToEnd();
                 ListaSucursales = JsonConvert.DeserializeObject<List<Sucursal>>(contenido);
+
+                if (ListaSucursales==null)
+                {
+                    ListaSucursales = new List<Sucursal>();
+                }
             }
         }
         public void GuardarSucursales(List<Sucursal> listasucursales)
@@ -87,6 +111,11 @@ namespace Logica
             {
                 string contenido = reader.ReadToEnd();
                 ListaComercios = JsonConvert.DeserializeObject<List<Comercio>>(contenido);
+
+                if (ListaComercios==null)
+                {
+                    ListaComercios = new List<Comercio>();
+                }
             }
         }
         public void GuardarComercios(List<Comercio> listacomercios)
@@ -105,6 +134,11 @@ namespace Logica
                 string contenido = reader.ReadToEnd();
                 ListaLugaresDePago = JsonConvert.DeserializeObject<List<LugarDePago>>(contenido);
             }
+
+            if (ListaLugaresDePago==null)
+            {
+                ListaLugaresDePago = new List<LugarDePago>();
+            }
         }
         public void GuardarLugaresDePago(List<LugarDePago> listalugaresdepago)
         {
@@ -120,32 +154,46 @@ namespace Logica
         //ALTAS//
         /////////
 
-        public ResultadoAlta AltaClientes(Cliente nuevocliente)
+        public ResultadoOp AltaClientes(Cliente nuevocliente)
         {
             LeerClientes();
 
-            ResultadoAlta resultado = new ResultadoAlta();
+            ResultadoOp resultado = new ResultadoOp();
+            bool condicion = false;
 
             if (nuevocliente.ValidarObligatorios())
             {
-                if (ListaClientes.Where(x => x.NroDocumento == nuevocliente.NroDocumento & x.TipoDocumento == nuevocliente.TipoDocumento).FirstOrDefault() != null) //Verifica la combinacion de tipo y nro de documento.
+                foreach (Cliente item in ListaClientes) //Verifica la combinacion de tipo y nro de documento.
                 {
-                    return new ResultadoAlta(false,"El tipo y numero de documento ingresado ya está registrado.");
+                    if (item.TipoDocumento==nuevocliente.TipoDocumento && item.NroDocumento==nuevocliente.NroDocumento)
+                    {
+                        condicion = true;
+                        break;
+                    }
+                }
+                if (condicion==true) 
+                {
+                    resultado.Mensaje = "El tipo y numero de documento ingresado ya está registrado.";
+                    resultado.Resultado = false;
+                    return resultado;
                 }
                 else
                 {
                     ListaClientes.Add(nuevocliente);
                     GuardarClientes(ListaClientes);
-                    return new ResultadoAlta();
+                    resultado.Resultado = true;
+                    return resultado;
                 }
             }
             else
             {
-                return new ResultadoAlta(false, "Campos incompletos.");
+                resultado.Mensaje = "Campos incompletos.";
+                resultado.Resultado = false;
+                return resultado;
             }
         }
 
-        public ResultadoAlta AltaPrestamos(Cliente cliente, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
+        public ResultadoOp AltaPrestamos(Cliente cliente, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
         {
             LeerPrestamos();
             var NuevoPrestamo = new Prestamo(cliente, ListaPrestamos.Count+1, comercioAdherido, sucursal, montoCredito, cantidadCuotas);
@@ -154,22 +202,22 @@ namespace Logica
             {
                 if (NuevoPrestamo.MontoTotal > NuevoPrestamo.Cliente.MontoMaximo)
                 {
-                    return new ResultadoAlta(false, "El monto total del crédito excede el monto máximo autorizado del cliente.");
+                    return new ResultadoOp(false, "El monto total del crédito excede el monto máximo autorizado del cliente.");
                 }
                 else
                 {
                     ListaPrestamos.Add(NuevoPrestamo);
                     GuardarPrestamos(ListaPrestamos);
-                    return new ResultadoAlta();
+                    return new ResultadoOp();
                 }
             }
             else
             {
-                return new ResultadoAlta(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos incompletos.");
             }
         }
 
-        public ResultadoAlta AltaSucursal(string ciudad, string direccion, int cP, double tasaInteres)
+        public ResultadoOp AltaSucursal(string ciudad, string direccion, int cP, double tasaInteres)
         {
             LeerSucursales();
             var nueva_sucursal = new Sucursal(ListaSucursales.Count+1, ciudad, direccion, cP, tasaInteres);
@@ -178,15 +226,15 @@ namespace Logica
             {
                 ListaSucursales.Add(nueva_sucursal);
                 GuardarSucursales(ListaSucursales);
-                return new ResultadoAlta();
+                return new ResultadoOp();
             }
             else
             {
-                return new ResultadoAlta(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos incompletos.");
             }
         }
 
-        public ResultadoAlta AltaComercio(string ciudad, string direccion, int cP, string razonSocial)
+        public ResultadoOp AltaComercio(string ciudad, string direccion, int cP, string razonSocial)
         {
             LeerComercios();
             var nuevo_comercio = new Comercio(ListaComercios.Count + 1, ciudad, direccion, cP, razonSocial);
@@ -195,15 +243,15 @@ namespace Logica
             {
                 ListaComercios.Add(nuevo_comercio);
                 GuardarComercios(ListaComercios);
-                return new ResultadoAlta();
+                return new ResultadoOp();
             }
             else
             {
-                return new ResultadoAlta(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos incompletos.");
             }
         }
 
-        public ResultadoAlta AltaLugaresDePago(string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
+        public ResultadoOp AltaLugaresDePago(string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
         {
             LeerLugaresDePago();
             var nuevo_lugardepago = new LugarDePago(ListaLugaresDePago.Count + 1, ciudad, direccion, cP, razonSocial, esSucursal);
@@ -212,11 +260,11 @@ namespace Logica
             {
                 ListaLugaresDePago.Add(nuevo_lugardepago);
                 GuardarLugaresDePago(ListaLugaresDePago);
-                return new ResultadoAlta();
+                return new ResultadoOp();
             }
             else
             {
-                return new ResultadoAlta(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos incompletos.");
             }
         }
 

@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Logica
 {
-    public class ResultadoAlta
+    public class ResultadoOp
     {
         public bool Resultado { get; set; }
         public string Mensaje { get; set; }
 
-        public ResultadoAlta()
+        public ResultadoOp()
         {
             Resultado=true;
         }
 
-        public ResultadoAlta(bool resultado, string mensaje)
+        public ResultadoOp(bool resultado, string mensaje)
         {
             Resultado = resultado;
             Mensaje = mensaje;
