@@ -82,7 +82,7 @@ namespace Logica
                     CuotasFaltantes--;
                     break;
                 }
-                return new ResultadoAlta(true);
+                return new ResultadoAlta();
             }
         }
 

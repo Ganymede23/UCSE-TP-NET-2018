@@ -9,6 +9,6 @@ namespace WinForm
 {
     interface I_MenuPrincipal
     {
-        ResultadoAlta AltasClientes(Cliente cliente);
+        ResultadoAlta AltaClientes(Cliente cliente);
     }
 }

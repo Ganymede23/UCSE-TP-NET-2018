@@ -73,7 +73,7 @@ namespace WinForm
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 
-            resultadoalta = F_MenuPrincipal.AltasClientes(cliente);
+            resultadoalta = F_MenuPrincipal.AltaClientes(cliente);
 
             //if (F_MenuPrincipal != null)
             //{

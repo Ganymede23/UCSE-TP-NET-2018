@@ -22,20 +22,21 @@ namespace WinForm
             InitializeComponent(); 
         }
 
-        public ResultadoAlta AgregarClientes(Cliente cliente)
+        public ResultadoAlta AltaClientes(Cliente cliente)
         {
-            return FlatMinor.AltaClientes(cliente);
+            return FlatMinor.AltaClientes(cliente); 
         }
 
-        private void AgregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarClienteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
             Crear_F_AltasClientes.ShowDialog();
         }
 
-        public ResultadoAlta AgregarCliente(Cliente cliente)
+        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            return FlatMinor.AltaClientes(cliente);
+            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
+            Crear_F_AltasClientes.ShowDialog();
         }
     }
 }

@@ -75,11 +75,12 @@
             this.agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
             this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
+            this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
             // 
             // modifcacionToolStripMenuItem
             // 
             this.modifcacionToolStripMenuItem.Name = "modifcacionToolStripMenuItem";
-            this.modifcacionToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.modifcacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifcacionToolStripMenuItem.Text = "Modifcacion";
             // 
             // prestamosToolStripMenuItem
