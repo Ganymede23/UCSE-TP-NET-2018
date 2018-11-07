@@ -297,7 +297,6 @@
             this.TB_NroDocumento.Name = "TB_NroDocumento";
             this.TB_NroDocumento.Size = new System.Drawing.Size(148, 20);
             this.TB_NroDocumento.TabIndex = 31;
-            this.TB_NroDocumento.ValidatingType = typeof(int);
             // 
             // TB_Email
             // 
@@ -321,7 +320,6 @@
             this.TB_FechaNac.Name = "TB_FechaNac";
             this.TB_FechaNac.Size = new System.Drawing.Size(148, 20);
             this.TB_FechaNac.TabIndex = 35;
-            this.TB_FechaNac.ValidatingType = typeof(System.DateTime);
             // 
             // TB_cp
             // 
@@ -431,6 +429,7 @@
             this.Controls.Add(this.Bt_GuardarCliente);
             this.Name = "F_AltasClientes";
             this.Text = "Alta de Clientes";
+            this.Load += new System.EventHandler(this.F_AltasClientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

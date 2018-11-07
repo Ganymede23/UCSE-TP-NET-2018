@@ -12,6 +12,6 @@ namespace WinForm
         ResultadoOp CrearArchivos();
         ResultadoOp AltaClientes(Cliente cliente);
         ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar);
-        List<Cliente> ObtenerClientes(int? documento);
+        List<Cliente> ObtenerClientes(int? id);
     }
 }

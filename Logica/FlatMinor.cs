@@ -149,10 +149,10 @@ namespace Logica
             }
         }
 
-        public List<Cliente> ObtenerClientes(int? documento)
+        public List<Cliente> ObtenerClientes(int? id)
         {
             LeerClientes();
-            return ListaClientes.Where(x => documento.HasValue ? x.NroDocumento == documento : true).ToList();
+            return ListaClientes.Where(x => id.HasValue ? x.ID == id : true).ToList();
         }
         /////////
         //ALTAS//
@@ -277,27 +277,27 @@ namespace Logica
         //MODIFICACIONES//
         //////////////////
 
-        public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, string celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
-        {
-            foreach (var item in ListaClientes)
-            {
-                if (item == clienteamodificar)
-                {
-                    item.TipoDocumento = tipoDocumento;
-                    item.NroDocumento = nroDocumento;
-                    item.Nombre = nombre;
-                    item.Correo = correo;
-                    item.Celular = celular;
-                    item.FNac = fNac;
-                    item.Sexo = sexo;
-                    item.Domicilio = domicilio;
-                    item.CP = cP;
-                    item.TipoCliente = tipoCliente;
-                    item.MontoMaximo = montoMaximo;
-                    break;
-                }
-            }
-        }
+        //public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, string celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        //{
+        //    foreach (var item in ListaClientes)
+        //    {
+        //        if (item == clienteamodificar)
+        //        {
+        //            item.TipoDocumento = tipoDocumento;
+        //            item.NroDocumento = nroDocumento;
+        //            item.Nombre = nombre;
+        //            item.Correo = correo;
+        //            item.Celular = celular;
+        //            item.FNac = fNac;
+        //            item.Sexo = sexo;
+        //            item.Domicilio = domicilio;
+        //            item.CP = cP;
+        //            item.TipoCliente = tipoCliente;
+        //            item.MontoMaximo = montoMaximo;
+        //            break;
+        //        }
+        //    }
+        //}
 
         public ResultadoOp ModificacionCliente(Cliente nuevoCliente, bool eliminar)
         {
@@ -320,7 +320,13 @@ namespace Logica
             }
             else //Eliminación de paciente
             {
-                ListaClientes.RemoveAll(x => x.ID == nuevoCliente.ID);
+                foreach (Cliente item in ListaClientes)
+                {
+                    if (item.ID==nuevoCliente.ID)
+                    {
+                        item.Activo = false;
+                    }
+                }
             }
 
             return resultado;

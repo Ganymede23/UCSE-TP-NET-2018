@@ -126,11 +126,11 @@ namespace WinForm
                     Cliente cliente = row.DataBoundItem as Cliente;
                     I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;
 
-                    //if (formPrincipal != null)
-                    //{
-                    //    formPrincipal.ModificacionPaciente(cliente, true);
-                    //    ActualizarGrillaClientes();
-                    //}
+                    if (formPrincipal != null)
+                    {
+                        formPrincipal.ModificacionCliente(cliente, true);
+                        ActualizarGrillaClientes();
+                    }
                 }
             }
             else
@@ -138,7 +138,7 @@ namespace WinForm
                 if (column.HeaderText == "Edicion")
                 {
                     Cliente cliente = row.DataBoundItem as Cliente;
-                    var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
+                    var Crear_F_AltasClientes = new F_AltasClientes(cliente) { Owner = this };
                     Crear_F_AltasClientes.ShowDialog();
                 }
             }

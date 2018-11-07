@@ -117,5 +117,10 @@ namespace WinForm
             MessageBox.Show(resultadoalta.Resultado == true ? "La operación se realizó con exito" : resultadoalta.Mensaje);
             this.Close();
         }
+
+        private void F_AltasClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
