@@ -52,6 +52,12 @@
     <Compile Include="F_AltasClientes.Designer.cs">
       <DependentUpon>F_AltasClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GrillaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GrillaClientes.Designer.cs">
+      <DependentUpon>F_GrillaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +65,15 @@
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="I_AltasClientes.cs" />
+    <Compile Include="I_GrillaClientes.cs" />
     <Compile Include="I_MenuPrincipal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F_AltasClientes.resx">
       <DependentUpon>F_AltasClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GrillaClientes.resx">
+      <DependentUpon>F_GrillaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MenuPrincipal.resx">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>

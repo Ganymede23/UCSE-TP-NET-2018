@@ -48,5 +48,22 @@ namespace WinForm
         {
             FlatMinor.CrearArchivos();
         }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GrillaClientes form = new F_GrillaClientes();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
+        public List<Cliente> ObtenerClientes(int? documento)
+        {
+            return FlatMinor.ObtenerClientes(documento);
+        }
+
+        public ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar)
+        {
+            return FlatMinor.ModificacionCliente(cliente, eliminar);
+        }
     }
 }

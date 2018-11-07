@@ -149,7 +149,11 @@ namespace Logica
             }
         }
 
-
+        public List<Cliente> ObtenerClientes(int? documento)
+        {
+            LeerClientes();
+            return ListaClientes.Where(x => documento.HasValue ? x.NroDocumento == documento : true).ToList();
+        }
         /////////
         //ALTAS//
         /////////
@@ -179,6 +183,7 @@ namespace Logica
                 }
                 else
                 {
+                    nuevocliente.ID = ListaClientes.Count + 1;
                     ListaClientes.Add(nuevocliente);
                     GuardarClientes(ListaClientes);
                     resultado.Resultado = true;
@@ -272,7 +277,7 @@ namespace Logica
         //MODIFICACIONES//
         //////////////////
 
-        public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, string celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
         {
             foreach (var item in ListaClientes)
             {
@@ -292,6 +297,33 @@ namespace Logica
                     break;
                 }
             }
+        }
+
+        public ResultadoOp ModificacionCliente(Cliente nuevoCliente, bool eliminar)
+        {
+            ResultadoOp resultado = new ResultadoOp();
+
+            if (!eliminar) //Modificación de paciente
+            {
+                Cliente cliente = ListaClientes.FirstOrDefault(x => x.ID == nuevoCliente.ID);
+                cliente.TipoDocumento = nuevoCliente.TipoDocumento;
+                cliente.NroDocumento = nuevoCliente.NroDocumento;
+                cliente.Nombre = nuevoCliente.Nombre;
+                cliente.Correo = nuevoCliente.Correo;
+                cliente.Celular = nuevoCliente.Celular;
+                cliente.FNac = nuevoCliente.FNac;
+                cliente.Sexo = nuevoCliente.Sexo;
+                cliente.Domicilio = nuevoCliente.Domicilio;
+                cliente.CP = nuevoCliente.CP;
+                cliente.TipoCliente = nuevoCliente.TipoCliente;
+                cliente.MontoMaximo = nuevoCliente.MontoMaximo;
+            }
+            else //Eliminación de paciente
+            {
+                ListaClientes.RemoveAll(x => x.ID == nuevoCliente.ID);
+            }
+
+            return resultado;
         }
 
         public void ModificacionSucursal(Sucursal sucursal_a_modificar, string ciudad, string direccion, int cP, double tasaInteres)

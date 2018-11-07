@@ -20,21 +20,24 @@ namespace Logica
     }
     public class Cliente
     {
+        public int ID { get; set; }
         public TipoDocumento TipoDocumento { get; set; }
         public int NroDocumento { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }
-        public int Celular { get; set; }
+        public string Celular { get; set; }
         public DateTime FNac { get; set; }
         public Sexo Sexo { get; set; }
         public string Domicilio { get; set; }
         public int CP { get; set; }
+        public string Localidad { get; set; }
         public TipoCliente TipoCliente { get; set; }
         public int MontoMaximo { get; set; }
         public bool Activo { get; set; }
 
-        public Cliente(TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, int celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
+        public Cliente(TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, string celular, DateTime fNac, Sexo sexo, string domicilio, int cP, string localidad, TipoCliente tipoCliente, int montoMaximo)
         {
+            ID = ID;
             TipoDocumento = tipoDocumento;
             NroDocumento = nroDocumento;
             Nombre = nombre;
@@ -44,6 +47,7 @@ namespace Logica
             Sexo = sexo;
             Domicilio = domicilio;
             CP = cP;
+            Localidad = Localidad;
             TipoCliente = tipoCliente;
             MontoMaximo = montoMaximo;
             Activo = true;

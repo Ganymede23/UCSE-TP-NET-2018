@@ -7,11 +7,10 @@ using Logica;
 
 namespace WinForm
 {
-    interface I_MenuPrincipal
+    interface I_GrillaClientes
     {
         ResultadoOp CrearArchivos();
         ResultadoOp AltaClientes(Cliente cliente);
         ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar);
-        List<Cliente> ObtenerClientes(int? documento);
     }
 }

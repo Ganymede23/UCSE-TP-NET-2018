@@ -16,21 +16,43 @@ namespace WinForm
         public F_AltasClientes(Cliente cliente)
         {
             InitializeComponent();
+            if (cliente.ID != 0)
+            {
+                LBL_Titulo.Text = "Editar cliente";
+                LBL_ID_Titulo.Visible = true;
+                LBL_ID.Visible = true;
+                CompletarDatosCliente(cliente);
+            }
+            else
+            {
+                LBL_Titulo.Text = "Nuevo cliente";
+                LBL_ID.Text = "";
+                LBL_ID.Visible = false;
+                LBL_ID_Titulo.Visible = false;
+            }
         }
 
-        //private void CompletarDatosPaciente(Cliente paciente)
-        //{
-        //    this.LblId.Text = Convert.ToString(paciente.Id);
-        //    this.TxtDni.Text = Convert.ToString(paciente.Dni);
-        //    this.TxtNombre.Text = paciente.Nombre;
-        //    this.TxtApellido.Text = paciente.Apellido;
-        //}
+        private void CompletarDatosCliente(Cliente cliente)
+        {
+            this.LBL_ID.Text = Convert.ToString(cliente.ID);
+            this.CB_TipoDoc.Text = Convert.ToString(cliente.TipoDocumento);
+            this.TB_NroDocumento.Text = Convert.ToString(cliente.NroDocumento);
+            this.TB_Nombre.Text = Convert.ToString(cliente.Nombre);
+            this.TB_Email.Text = Convert.ToString(cliente.Correo);
+            this.TB_Celular.Text = Convert.ToString(cliente.Celular);
+            this.TB_FechaNac.Text = Convert.ToString(cliente.FNac);
+            this.CB_Sexo.Text = Convert.ToString(cliente.Sexo);
+            this.TB_Domicilio.Text = Convert.ToString(cliente.Domicilio);
+            this.TB_cp.Text = Convert.ToString(cliente.CP);
+            this.TB_Localidad.Text = Convert.ToString(cliente.Localidad);
+            this.CB_TipoCliente.Text = Convert.ToString(cliente.TipoCliente);
+            this.TB_MontoMax.Text = Convert.ToString(cliente.MontoMaximo);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var resultadoalta = new ResultadoOp();
             var cliente = new Cliente();
-
             switch (this.CB_TipoDoc.Text)
             {
                 case "LE":
@@ -45,10 +67,9 @@ namespace WinForm
             }
             cliente.NroDocumento = int.Parse(this.TB_NroDocumento.Text);
             cliente.Nombre = this.TB_Nombre.Text;
-            cliente.Correo = this.TB_email.Text;
-            cliente.Celular = int.Parse(this.TB_celular.Text);
+            cliente.Correo = this.TB_Email.Text;
+            cliente.Celular = this.TB_Celular.Text;
             cliente.FNac = DateTime.Parse(this.TB_FechaNac.Text);
-
             switch (this.CB_Sexo.Text)
             {
                 case "Hombre":
@@ -58,7 +79,7 @@ namespace WinForm
                     cliente.Sexo = Sexo.Mujer;
                     break;
             }
-            cliente.Domicilio = this.TB_domicilio.Text;
+            cliente.Domicilio = this.TB_Domicilio.Text;
             cliente.CP = int.Parse(this.TB_cp.Text);
             switch (this.CB_TipoCliente.Text)
             {
@@ -77,27 +98,24 @@ namespace WinForm
             {
                 resultadoalta = F_MenuPrincipal.AltaClientes(cliente);
             }
-            
-
-            //if (F_MenuPrincipal != null)
-            //{
-            //    resultadoalta = F_MenuPrincipal.AgregarCliente(cliente);
-            //}
-            //else
-            //{
-            //    IFormGrilla formGrilla = this.Owner as IFormGrilla;
-            //    if (formGrilla != null)
-            //    {
-            //        if (LblId.Text != "")
-            //        {
-            //            paciente.Id = Convert.ToInt32(LblId.Text);
-            //            resultadoOperacion = formGrilla.ModificacionPaciente(paciente, false);
-            //        }
-            //        else
-            //        {
-            //            resultadoOperacion = formGrilla.NuevoPaciente(paciente);
-            //        }
-            //    }
+            else
+            {
+                I_GrillaClientes F_GrillaClientes = this.Owner as I_GrillaClientes; //En caso de que se edite el Cliente (desde grilla)
+                if (F_GrillaClientes != null)
+                {
+                    if (LBL_ID.Text != "")
+                    {
+                        cliente.ID = Convert.ToInt32(LBL_ID.Text);
+                        resultadoalta = F_GrillaClientes.ModificacionCliente(cliente, false);
+                    }
+                    else
+                    {
+                        resultadoalta = F_GrillaClientes.AltaClientes(cliente);
+                    }
+                }
             }
+            MessageBox.Show(resultadoalta.Resultado == true ? "La operación se realizó con exito" : resultadoalta.Mensaje);
+            this.Close();
         }
+    }
 }
