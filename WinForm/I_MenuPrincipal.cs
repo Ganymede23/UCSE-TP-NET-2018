@@ -17,5 +17,9 @@ namespace WinForm
         ResultadoOp AltaComercios(Comercio cliente);
         ResultadoOp ModificacionComercio(Comercio cliente, bool eliminar);
         List<Comercio> ObtenerComercios();
+
+        ResultadoOp AltaLugares(LugarDePago lugar);
+        ResultadoOp ModificacionLugar(LugarDePago lugar, bool eliminar);
+        List<LugarDePago> ObtenerLugares();
     }
 }

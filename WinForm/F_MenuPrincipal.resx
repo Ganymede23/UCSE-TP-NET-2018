@@ -121,96 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="listadoDeClientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="listadoDeClientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Listado de Clientes</value>
-  </data>
-  <data name="agregarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="agregarClienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar Cliente</value>
-  </data>
-  <data name="cLienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
-  </data>
-  <data name="cLienteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clientes</value>
-  </data>
-  <data name="agregarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
-  </data>
-  <data name="agregarPrestamoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar prestamo</value>
-  </data>
-  <data name="reportesDeCreditosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
-  </data>
-  <data name="reportesDeCreditosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reportes de creditos</value>
-  </data>
-  <data name="prestamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
-  </data>
-  <data name="prestamosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Prestamos</value>
-  </data>
-  <data name="agregarSucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="agregarSucursalesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar sucursales</value>
-  </data>
-  <data name="modificacionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
-  </data>
-  <data name="modificacionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Modificacion</value>
-  </data>
-  <data name="sucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
-  </data>
-  <data name="sucursalesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sucursales</value>
-  </data>
-  <data name="modificacionToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="modificacionToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Listado de Comercios</value>
-  </data>
-  <data name="agregarComercioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="agregarComercioToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar Comercio</value>
-  </data>
-  <data name="comerciosAhderidosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
-  </data>
-  <data name="comerciosAhderidosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Comercios ahderidos</value>
-  </data>
-  <data name="agregarLugarDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="agregarLugarDePagoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Agregar lugar de pago</value>
-  </data>
-  <data name="modificacionToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 22</value>
-  </data>
-  <data name="modificacionToolStripMenuItem2.Text" xml:space="preserve">
-    <value>Modificacion</value>
-  </data>
-  <data name="lugaresDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
-  </data>
-  <data name="lugaresDePagoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lugares de pago</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -236,6 +146,96 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cLienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="cLienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="listadoDeClientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="listadoDeClientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Listado de Clientes</value>
+  </data>
+  <data name="agregarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="agregarClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar Cliente</value>
+  </data>
+  <data name="prestamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="prestamosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prestamos</value>
+  </data>
+  <data name="agregarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="agregarPrestamoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar prestamo</value>
+  </data>
+  <data name="reportesDeCreditosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="reportesDeCreditosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reportes de creditos</value>
+  </data>
+  <data name="sucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="sucursalesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sucursales</value>
+  </data>
+  <data name="agregarSucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="agregarSucursalesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar sucursales</value>
+  </data>
+  <data name="modificacionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modificacion</value>
+  </data>
+  <data name="comerciosAhderidosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="comerciosAhderidosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Comercios ahderidos</value>
+  </data>
+  <data name="modificacionToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Listado de Comercios</value>
+  </data>
+  <data name="agregarComercioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="agregarComercioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar Comercio</value>
+  </data>
+  <data name="lugaresDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="lugaresDePagoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lugares de pago</value>
+  </data>
+  <data name="modificacionToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Listado de Lugares de Pago</value>
+  </data>
+  <data name="agregarLugarDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 22</value>
+  </data>
+  <data name="agregarLugarDePagoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar Lugar de Pago</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -246,7 +246,7 @@
     <value>800, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
+    <value>FlatMinor Ltd.</value>
   </data>
   <data name="&gt;&gt;cLienteToolStripMenuItem.Name" xml:space="preserve">
     <value>cLienteToolStripMenuItem</value>
@@ -326,16 +326,16 @@
   <data name="&gt;&gt;lugaresDePagoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Name" xml:space="preserve">
-    <value>agregarLugarDePagoToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;modificacionToolStripMenuItem2.Name" xml:space="preserve">
     <value>modificacionToolStripMenuItem2</value>
   </data>
   <data name="&gt;&gt;modificacionToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarLugarDePagoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -27,38 +27,57 @@ namespace WinForm
             return FlatMinor.CrearArchivos();
         }
 
-        public ResultadoOp AltaClientes(Cliente cliente)
-        {
-            return FlatMinor.AltaClientes(cliente);
-        }
-
-        private void agregarClienteToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
-            Crear_F_AltasClientes.ShowDialog();
-        }
-
-        private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
-            Crear_F_AltasClientes.ShowDialog();
-        }
-
         private void F_MenuPrincipal_Load(object sender, EventArgs e)
         {
             FlatMinor.CrearArchivos();
         }
 
-        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AltaClienteStripMenu_Click(object sender, EventArgs e) //ALTA CLIENTES
         {
-            F_GrillaClientes form = new F_GrillaClientes();
+            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
+            Crear_F_AltasClientes.ShowDialog();
+        }
+        
+        private void GrillaClientesStripMenu_Click(object sender, EventArgs e) //GRILLA CLIENTES
+        {
+            var Crear_F_GrillaClientes = new F_GrillaClientes { Owner = this };
+            Crear_F_GrillaClientes.ShowDialog();
+        }
+
+        private void AltaComercioStripMenu_Click(object sender, EventArgs e) //ALTA COMERCIOS
+        {
+            var Crear_F_AltasComercios = new F_AltasComercios(new Comercio()) { Owner = this };
+            Crear_F_AltasComercios.ShowDialog();
+        }
+
+        private void GrillaComerciosStripMenu_Click(object sender, EventArgs e) //GRILLA COMERCIOS
+        {
+            var Crear_F_GrillaComercios = new F_GrillaComercios { Owner = this };
+            Crear_F_GrillaComercios.ShowDialog();
+        }
+
+        private void AltaLugarDePagoStripMenu_Click(object sender, EventArgs e) //ALTA LUGARES DE PAGO
+        {
+            var Crear_F_AltasLugares = new F_AltasLugares(new LugarDePago()) { Owner = this };
+            Crear_F_AltasLugares.ShowDialog();
+        }
+
+        private void GrillaLugaresDePagoStripMenu_Click(object sender, EventArgs e) //GRILLA LUGARES DE PAGO
+        {
+            F_GrillaLugares form = new F_GrillaLugares();
             form.Owner = this;
             form.ShowDialog();
         }
 
-        public List<Cliente> ObtenerClientes()
+        /// <summary>
+        /// CLIENTES
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
+
+        public ResultadoOp AltaClientes(Cliente cliente)
         {
-            return FlatMinor.ObtenerClientes();
+            return FlatMinor.AltaClientes(cliente);
         }
 
         public ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar)
@@ -66,18 +85,16 @@ namespace WinForm
             return FlatMinor.ModificacionCliente(cliente, eliminar);
         }
 
-        private void agregarComercioToolStripMenuItem_Click(object sender, EventArgs e)
+        public List<Cliente> ObtenerClientes()
         {
-            var Crear_F_AltasComercios = new F_AltasComercios(new Comercio()) { Owner = this };
-            Crear_F_AltasComercios.ShowDialog();
+            return FlatMinor.ObtenerClientes();
         }
 
-        private void modificacionToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            F_GrillaComercios form = new F_GrillaComercios();
-            form.Owner = this;
-            form.ShowDialog();
-        }
+        /// <summary>
+        /// COMERCIOS
+        /// </summary>
+        /// <param name="comercio"></param>
+        /// <returns></returns>
 
         public ResultadoOp AltaComercios(Comercio comercio)
         {
@@ -92,6 +109,27 @@ namespace WinForm
         public List<Comercio> ObtenerComercios()
         {
             return FlatMinor.ObtenerComercios();
+        }
+
+        /// <summary>
+        /// LUGARES DE PAGO
+        /// </summary>
+        /// <param name="lugar"></param>
+        /// <returns></returns>
+
+        public ResultadoOp AltaLugares(LugarDePago lugar)
+        {
+            return FlatMinor.AltaLugaresDePago(lugar);
+        }
+
+        public ResultadoOp ModificacionLugar(LugarDePago lugar, bool eliminar)
+        {
+            return FlatMinor.ModificacionLugaresDePago(lugar, eliminar);
+        }
+
+        public List<LugarDePago> ObtenerLugares()
+        {
+            return FlatMinor.ObtenerLugares();
         }
     }
 }

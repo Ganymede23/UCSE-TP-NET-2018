@@ -58,6 +58,12 @@
     <Compile Include="F_AltasClientes.Designer.cs">
       <DependentUpon>F_AltasClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_AltasLugares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AltasLugares.Designer.cs">
+      <DependentUpon>F_AltasLugares.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_GrillaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="F_GrillaComercios.Designer.cs">
       <DependentUpon>F_GrillaComercios.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GrillaLugares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GrillaLugares.Designer.cs">
+      <DependentUpon>F_GrillaLugares.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +90,10 @@
     </Compile>
     <Compile Include="I_AltasClientes.cs" />
     <Compile Include="I_AltasComercios.cs" />
+    <Compile Include="I_AltasLugares.cs" />
     <Compile Include="I_GrillaClientes.cs" />
     <Compile Include="I_GrillaComercios.cs" />
+    <Compile Include="I_GrillaLugares.cs" />
     <Compile Include="I_MenuPrincipal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,14 +103,17 @@
     <EmbeddedResource Include="F_AltasClientes.resx">
       <DependentUpon>F_AltasClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_AltasLugares.resx">
+      <DependentUpon>F_AltasLugares.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_GrillaClientes.resx">
       <DependentUpon>F_GrillaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_GrillaComercios.resx">
       <DependentUpon>F_GrillaComercios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_MenuPrincipal.aa-DJ.resx">
-      <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="F_GrillaLugares.resx">
+      <DependentUpon>F_GrillaLugares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MenuPrincipal.resx">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>

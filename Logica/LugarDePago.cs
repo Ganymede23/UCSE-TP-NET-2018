@@ -20,5 +20,10 @@ namespace Logica
             EsSucursal = esSucursal;
             Activo = true;
         }
+
+        public LugarDePago()
+        {
+            Activo = true;
+        }
     }
 }

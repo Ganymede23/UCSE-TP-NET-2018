@@ -94,13 +94,13 @@ namespace WinForm
             GrillaClientes.Columns.Add(eliminar);
         }
 
-        public ResultadoOp ModificacionCliente(Cliente cliente, bool Eliminar)
+        public ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar)
         {
             ResultadoOp resultadoOperacion = new ResultadoOp(false, "Error interno en el servidor");
             I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;
             if (formPrincipal != null)
             {
-                resultadoOperacion = formPrincipal.ModificacionCliente(cliente, Eliminar);
+                resultadoOperacion = formPrincipal.ModificacionCliente(cliente, eliminar);
 
                 if (resultadoOperacion.Resultado)
                 {

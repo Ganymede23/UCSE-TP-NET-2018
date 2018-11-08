@@ -43,8 +43,8 @@
             this.modificacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lugaresDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarLugarDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarLugarDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,13 +71,13 @@
             // 
             this.listadoDeClientesToolStripMenuItem.Name = "listadoDeClientesToolStripMenuItem";
             resources.ApplyResources(this.listadoDeClientesToolStripMenuItem, "listadoDeClientesToolStripMenuItem");
-            this.listadoDeClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesToolStripMenuItem_Click);
+            this.listadoDeClientesToolStripMenuItem.Click += new System.EventHandler(this.GrillaClientesStripMenu_Click);
             // 
             // agregarClienteToolStripMenuItem
             // 
             this.agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
             resources.ApplyResources(this.agregarClienteToolStripMenuItem, "agregarClienteToolStripMenuItem");
-            this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
+            this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.AltaClienteStripMenu_Click);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -127,31 +127,33 @@
             // 
             this.modificacionToolStripMenuItem1.Name = "modificacionToolStripMenuItem1";
             resources.ApplyResources(this.modificacionToolStripMenuItem1, "modificacionToolStripMenuItem1");
-            this.modificacionToolStripMenuItem1.Click += new System.EventHandler(this.modificacionToolStripMenuItem1_Click);
+            this.modificacionToolStripMenuItem1.Click += new System.EventHandler(this.GrillaComerciosStripMenu_Click);
             // 
             // agregarComercioToolStripMenuItem
             // 
             this.agregarComercioToolStripMenuItem.Name = "agregarComercioToolStripMenuItem";
             resources.ApplyResources(this.agregarComercioToolStripMenuItem, "agregarComercioToolStripMenuItem");
-            this.agregarComercioToolStripMenuItem.Click += new System.EventHandler(this.agregarComercioToolStripMenuItem_Click);
+            this.agregarComercioToolStripMenuItem.Click += new System.EventHandler(this.AltaComercioStripMenu_Click);
             // 
             // lugaresDePagoToolStripMenuItem
             // 
             this.lugaresDePagoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarLugarDePagoToolStripMenuItem,
-            this.modificacionToolStripMenuItem2});
+            this.modificacionToolStripMenuItem2,
+            this.agregarLugarDePagoToolStripMenuItem});
             this.lugaresDePagoToolStripMenuItem.Name = "lugaresDePagoToolStripMenuItem";
             resources.ApplyResources(this.lugaresDePagoToolStripMenuItem, "lugaresDePagoToolStripMenuItem");
-            // 
-            // agregarLugarDePagoToolStripMenuItem
-            // 
-            this.agregarLugarDePagoToolStripMenuItem.Name = "agregarLugarDePagoToolStripMenuItem";
-            resources.ApplyResources(this.agregarLugarDePagoToolStripMenuItem, "agregarLugarDePagoToolStripMenuItem");
             // 
             // modificacionToolStripMenuItem2
             // 
             this.modificacionToolStripMenuItem2.Name = "modificacionToolStripMenuItem2";
             resources.ApplyResources(this.modificacionToolStripMenuItem2, "modificacionToolStripMenuItem2");
+            this.modificacionToolStripMenuItem2.Click += new System.EventHandler(this.GrillaLugaresDePagoStripMenu_Click);
+            // 
+            // agregarLugarDePagoToolStripMenuItem
+            // 
+            this.agregarLugarDePagoToolStripMenuItem.Name = "agregarLugarDePagoToolStripMenuItem";
+            resources.ApplyResources(this.agregarLugarDePagoToolStripMenuItem, "agregarLugarDePagoToolStripMenuItem");
+            this.agregarLugarDePagoToolStripMenuItem.Click += new System.EventHandler(this.AltaLugarDePagoStripMenu_Click);
             // 
             // F_MenuPrincipal
             // 

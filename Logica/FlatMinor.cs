@@ -159,6 +159,11 @@ namespace Logica
             LeerComercios();
             return ListaComercios.Where(x => x.Activo == true).ToList();
         }
+        public List<LugarDePago> ObtenerLugares()
+        {
+            LeerLugaresDePago();
+            return ListaLugaresDePago.Where(x => x.Activo == true).ToList();
+        }
         /////////
         //ALTAS//
         /////////
@@ -198,7 +203,7 @@ namespace Logica
             }
             else
             {
-                resultado.Mensaje = "Campos incompletos.";
+                resultado.Mensaje = "Campos obligatorios (*) incompletos.";
                 resultado.Resultado = false;
                 return resultado;
             }
@@ -261,28 +266,35 @@ namespace Logica
             }
             else
             {
-                resultado.Mensaje = "Campos obligatorios(*) incompletos.";
+                resultado.Mensaje = "Campos obligatorios (*) incompletos.";
                 resultado.Resultado = false;
                 return resultado;
             }
         }
 
-        public ResultadoOp AltaLugaresDePago(string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
+        public ResultadoOp AltaLugaresDePago(LugarDePago nuevoLugar)
         {
             LeerLugaresDePago();
-            var nuevo_lugardepago = new LugarDePago(ListaLugaresDePago.Count + 1, ciudad, direccion, cP, razonSocial, esSucursal);
 
-            if (nuevo_lugardepago.ValidarObligatorios())
+            ResultadoOp resultado = new ResultadoOp();
+
+            if (nuevoLugar.ValidarObligatorios())
             {
-                ListaLugaresDePago.Add(nuevo_lugardepago);
+                nuevoLugar.ID = ListaComercios.Count + 1;
+                ListaLugaresDePago.Add(nuevoLugar);
                 GuardarLugaresDePago(ListaLugaresDePago);
-                return new ResultadoOp();
+                resultado.Resultado = true;
+                return resultado;
             }
             else
             {
-                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
+                resultado.Mensaje = "Campos obligatorios (*) incompletos.";
+                resultado.Resultado = false;
+                return resultado;
             }
         }
+
+
 
         //////////////////
         //MODIFICACIONES//
@@ -332,22 +344,6 @@ namespace Logica
             //VALIDAR OBLIGATORIOS
         }
 
-        //public void ModificacionComercio(Comercio comercio_a_modificar, string ciudad, string direccion, int cP, string razonSocial)
-        //{
-        //    foreach (Comercio item in ListaComercios)
-        //    {
-        //        if (item==comercio_a_modificar)
-        //        {
-        //            //item.ID = item.ID;
-        //            item.Ciudad = ciudad;
-        //            item.Direccion = direccion;
-        //            item.CP = cP;
-        //            item.RazonSocial = razonSocial;
-        //        }
-        //    }
-        //    //VALIDAR OBLIGATORIOS 
-        //}
-
         public ResultadoOp ModificacionComercio(Comercio nuevoComercio, bool eliminar)
         {
             ResultadoOp resultado = new ResultadoOp();
@@ -367,21 +363,24 @@ namespace Logica
             return resultado;
         }
 
-        public void ModificacionLugaresDePago(LugarDePago lugar_a_modificar, string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)
+        public ResultadoOp ModificacionLugaresDePago(LugarDePago nuevoLugar, bool eliminar)
         {
-            foreach (LugarDePago item in ListaComercios)
+            ResultadoOp resultado = new ResultadoOp();
+            LugarDePago lugar = ListaLugaresDePago.FirstOrDefault(x => x.ID == nuevoLugar.ID);
+            if (!eliminar) //Modificación 
             {
-                if (item == lugar_a_modificar)
-                {
-                    //item.ID = item.ID;
-                    item.Ciudad = ciudad;
-                    item.Direccion = direccion;
-                    item.CP = cP;
-                    item.RazonSocial = razonSocial;
-                    item.EsSucursal = esSucursal;
-                }
+                lugar.Ciudad = nuevoLugar.Ciudad;
+                lugar.Direccion = nuevoLugar.Direccion;
+                lugar.CP = nuevoLugar.CP;
+                lugar.RazonSocial = nuevoLugar.RazonSocial;
+                lugar.EsSucursal = nuevoLugar.EsSucursal;
             }
-            //VALIDAR OBLIGATORIOS 
+            else //Eliminación
+            {
+                lugar.Activo = nuevoLugar.Activo;
+            }
+            GuardarLugaresDePago(ListaLugaresDePago);
+            return resultado;
         }
 
         /////////
