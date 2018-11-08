@@ -45,18 +45,21 @@
             this.lugaresDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarLugarDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LabelSalir = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cLienteToolStripMenuItem,
             this.prestamosToolStripMenuItem,
             this.sucursalesToolStripMenuItem,
             this.comerciosAhderidosToolStripMenuItem,
             this.lugaresDePagoToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
             // cLienteToolStripMenuItem
@@ -140,8 +143,8 @@
             this.lugaresDePagoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificacionToolStripMenuItem2,
             this.agregarLugarDePagoToolStripMenuItem});
-            this.lugaresDePagoToolStripMenuItem.Name = "lugaresDePagoToolStripMenuItem";
             resources.ApplyResources(this.lugaresDePagoToolStripMenuItem, "lugaresDePagoToolStripMenuItem");
+            this.lugaresDePagoToolStripMenuItem.Name = "lugaresDePagoToolStripMenuItem";
             // 
             // modificacionToolStripMenuItem2
             // 
@@ -155,15 +158,32 @@
             resources.ApplyResources(this.agregarLugarDePagoToolStripMenuItem, "agregarLugarDePagoToolStripMenuItem");
             this.agregarLugarDePagoToolStripMenuItem.Click += new System.EventHandler(this.AltaLugarDePagoStripMenu_Click);
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // LabelSalir
+            // 
+            resources.ApplyResources(this.LabelSalir, "LabelSalir");
+            this.LabelSalir.Name = "LabelSalir";
+            this.LabelSalir.TabStop = true;
+            this.LabelSalir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelSalir_LinkClicked);
+            // 
             // F_MenuPrincipal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.LabelSalir);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "F_MenuPrincipal";
             this.Load += new System.EventHandler(this.F_MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +207,8 @@
         private System.Windows.Forms.ToolStripMenuItem agregarLugarDePagoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificacionToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel LabelSalir;
     }
 }
 

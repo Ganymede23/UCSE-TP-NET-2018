@@ -52,139 +52,154 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(377, 99);
+            this.label1.Location = new System.Drawing.Point(375, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.Size = new System.Drawing.Size(13, 16);
             this.label1.TabIndex = 115;
             this.label1.Text = "*";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(377, 75);
+            this.label2.Location = new System.Drawing.Point(375, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.Size = new System.Drawing.Size(13, 16);
             this.label2.TabIndex = 114;
             this.label2.Text = "*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(340, 75);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(327, 75);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(51, 16);
             this.label5.TabIndex = 113;
             this.label5.Text = "Ciudad";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(308, 101);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(286, 101);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.Size = new System.Drawing.Size(93, 16);
             this.label9.TabIndex = 112;
             this.label9.Text = "Codigo Postal";
             // 
             // LBL_ID
             // 
             this.LBL_ID.AutoSize = true;
-            this.LBL_ID.Location = new System.Drawing.Point(145, 53);
+            this.LBL_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ID.Location = new System.Drawing.Point(112, 51);
             this.LBL_ID.Name = "LBL_ID";
-            this.LBL_ID.Size = new System.Drawing.Size(77, 13);
+            this.LBL_ID.Size = new System.Drawing.Size(99, 16);
             this.LBL_ID.TabIndex = 111;
             this.LBL_ID.Text = "IDlugardepago";
             // 
             // LBL_ID_Titulo
             // 
             this.LBL_ID_Titulo.AutoSize = true;
-            this.LBL_ID_Titulo.Location = new System.Drawing.Point(121, 53);
+            this.LBL_ID_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_ID_Titulo.Location = new System.Drawing.Point(91, 51);
             this.LBL_ID_Titulo.Name = "LBL_ID_Titulo";
-            this.LBL_ID_Titulo.Size = new System.Drawing.Size(18, 13);
+            this.LBL_ID_Titulo.Size = new System.Drawing.Size(21, 16);
             this.LBL_ID_Titulo.TabIndex = 110;
             this.LBL_ID_Titulo.Text = "ID";
             // 
             // LBL_Titulo
             // 
             this.LBL_Titulo.AutoSize = true;
-            this.LBL_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_Titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBL_Titulo.Location = new System.Drawing.Point(12, 9);
             this.LBL_Titulo.Name = "LBL_Titulo";
-            this.LBL_Titulo.Size = new System.Drawing.Size(333, 33);
+            this.LBL_Titulo.Size = new System.Drawing.Size(333, 31);
             this.LBL_Titulo.TabIndex = 109;
             this.LBL_Titulo.Text = "Alta de Lugares de Pago";
             // 
             // TB_Ciudad
             // 
+            this.TB_Ciudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_Ciudad.Location = new System.Drawing.Point(394, 72);
             this.TB_Ciudad.Name = "TB_Ciudad";
-            this.TB_Ciudad.Size = new System.Drawing.Size(148, 20);
+            this.TB_Ciudad.Size = new System.Drawing.Size(148, 22);
             this.TB_Ciudad.TabIndex = 103;
             // 
             // TB_Direccion
             // 
-            this.TB_Direccion.Location = new System.Drawing.Point(145, 99);
+            this.TB_Direccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_Direccion.Location = new System.Drawing.Point(115, 99);
             this.TB_Direccion.Name = "TB_Direccion";
-            this.TB_Direccion.Size = new System.Drawing.Size(148, 20);
+            this.TB_Direccion.Size = new System.Drawing.Size(148, 22);
             this.TB_Direccion.TabIndex = 101;
             // 
             // TB_RazonSocial
             // 
-            this.TB_RazonSocial.Location = new System.Drawing.Point(145, 72);
+            this.TB_RazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_RazonSocial.Location = new System.Drawing.Point(115, 72);
             this.TB_RazonSocial.Name = "TB_RazonSocial";
-            this.TB_RazonSocial.Size = new System.Drawing.Size(148, 20);
+            this.TB_RazonSocial.Size = new System.Drawing.Size(148, 22);
             this.TB_RazonSocial.TabIndex = 100;
             // 
             // TB_cp
             // 
+            this.TB_cp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_cp.Location = new System.Drawing.Point(394, 98);
             this.TB_cp.Mask = "0000";
             this.TB_cp.Name = "TB_cp";
-            this.TB_cp.Size = new System.Drawing.Size(148, 20);
+            this.TB_cp.Size = new System.Drawing.Size(148, 22);
             this.TB_cp.TabIndex = 104;
             this.TB_cp.ValidatingType = typeof(int);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(128, 99);
+            this.label17.Location = new System.Drawing.Point(99, 102);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(11, 13);
+            this.label17.Size = new System.Drawing.Size(13, 16);
             this.label17.TabIndex = 108;
             this.label17.Text = "*";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(128, 75);
+            this.label16.Location = new System.Drawing.Point(99, 75);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
+            this.label16.Size = new System.Drawing.Size(13, 16);
             this.label16.TabIndex = 107;
             this.label16.Text = "*";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(61, 75);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 75);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.Size = new System.Drawing.Size(88, 16);
             this.label13.TabIndex = 106;
             this.label13.Text = "Razon Social";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 101);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(35, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 105;
             this.label4.Text = "Dirección";
             // 
             // Bt_GuardarLugar
             // 
+            this.Bt_GuardarLugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Bt_GuardarLugar.Location = new System.Drawing.Point(394, 133);
             this.Bt_GuardarLugar.Name = "Bt_GuardarLugar";
             this.Bt_GuardarLugar.Size = new System.Drawing.Size(148, 41);
@@ -195,31 +210,36 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.CheckOnClick = true;
+            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.checkedListBox1.Location = new System.Drawing.Point(145, 133);
+            this.checkedListBox1.Location = new System.Drawing.Point(115, 127);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(41, 34);
+            this.checkedListBox1.Size = new System.Drawing.Size(45, 38);
             this.checkedListBox1.TabIndex = 102;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox1_ItemCheck);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(128, 131);
+            this.label3.Location = new System.Drawing.Point(99, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 13);
+            this.label3.Size = new System.Drawing.Size(13, 16);
             this.label3.TabIndex = 118;
             this.label3.Text = "*";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 133);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 127);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 117;
             this.label6.Text = "¿Es sucursal?";
             // 

@@ -131,5 +131,10 @@ namespace WinForm
         {
             return FlatMinor.ObtenerLugares();
         }
+
+        private void LabelSalir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

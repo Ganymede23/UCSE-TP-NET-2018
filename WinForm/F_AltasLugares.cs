@@ -42,11 +42,13 @@ namespace WinForm
             this.TB_Ciudad.Text = Convert.ToString(lugar.Ciudad);
             if (lugar.EsSucursal==true)
             {
-                this.checkedListBox1.Text = "Si";
+                this.checkedListBox1.SetItemChecked(0, true);
+                this.checkedListBox1.SetItemChecked(1, false);
             }
             else
             {
-                this.checkedListBox1.Text = "No";
+                this.checkedListBox1.SetItemChecked(0, false);
+                this.checkedListBox1.SetItemChecked(1, true);
             }
         }
         
@@ -62,6 +64,15 @@ namespace WinForm
             else
                 lugar.CP = Convert.ToInt32(this.TB_cp.Text);
             lugar.Ciudad = this.TB_Ciudad.Text;
+            if (this.checkedListBox1.GetItemChecked(0)==true)
+            {
+                lugar.EsSucursal = true;
+            }
+            else
+            {
+                lugar.EsSucursal = false;
+            }
+            
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 
@@ -92,6 +103,12 @@ namespace WinForm
         private void F_AltasLugares_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e) //Evita que puedan seleccionarse dos items al mismo tiempo
+        {
+            for (int ix = 0; ix < checkedListBox1.Items.Count; ++ix)
+                if (ix != e.Index) checkedListBox1.SetItemChecked(ix, false);
         }
     }
 }

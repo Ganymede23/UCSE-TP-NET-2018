@@ -39,25 +39,26 @@
             this.GrillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaClientes.Location = new System.Drawing.Point(15, 52);
             this.GrillaClientes.Name = "GrillaClientes";
-            this.GrillaClientes.Size = new System.Drawing.Size(570, 265);
+            this.GrillaClientes.Size = new System.Drawing.Size(707, 297);
             this.GrillaClientes.TabIndex = 0;
             this.GrillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 33);
+            this.label1.Size = new System.Drawing.Size(264, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Listado de Clientes";
             // 
             // BT_NuevoCliente
             // 
-            this.BT_NuevoCliente.Location = new System.Drawing.Point(443, 10);
+            this.BT_NuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_NuevoCliente.Location = new System.Drawing.Point(532, 9);
             this.BT_NuevoCliente.Name = "BT_NuevoCliente";
-            this.BT_NuevoCliente.Size = new System.Drawing.Size(142, 36);
+            this.BT_NuevoCliente.Size = new System.Drawing.Size(190, 36);
             this.BT_NuevoCliente.TabIndex = 2;
             this.BT_NuevoCliente.Text = "Nuevo Cliente";
             this.BT_NuevoCliente.UseVisualStyleBackColor = true;
@@ -67,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 331);
+            this.ClientSize = new System.Drawing.Size(734, 361);
             this.Controls.Add(this.BT_NuevoCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GrillaClientes);

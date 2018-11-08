@@ -36,9 +36,10 @@
             // 
             // BT_NuevoComercio
             // 
-            this.BT_NuevoComercio.Location = new System.Drawing.Point(443, 10);
+            this.BT_NuevoComercio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_NuevoComercio.Location = new System.Drawing.Point(395, 10);
             this.BT_NuevoComercio.Name = "BT_NuevoComercio";
-            this.BT_NuevoComercio.Size = new System.Drawing.Size(142, 36);
+            this.BT_NuevoComercio.Size = new System.Drawing.Size(190, 36);
             this.BT_NuevoComercio.TabIndex = 5;
             this.BT_NuevoComercio.Text = "Nuevo Comercio";
             this.BT_NuevoComercio.UseVisualStyleBackColor = true;
@@ -47,10 +48,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 33);
+            this.label1.Size = new System.Drawing.Size(296, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Listado de Comercios";
             // 

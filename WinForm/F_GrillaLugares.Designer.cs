@@ -36,9 +36,10 @@
             // 
             // BT_NuevoLugar
             // 
-            this.BT_NuevoLugar.Location = new System.Drawing.Point(443, 10);
+            this.BT_NuevoLugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BT_NuevoLugar.Location = new System.Drawing.Point(532, 9);
             this.BT_NuevoLugar.Name = "BT_NuevoLugar";
-            this.BT_NuevoLugar.Size = new System.Drawing.Size(142, 36);
+            this.BT_NuevoLugar.Size = new System.Drawing.Size(190, 36);
             this.BT_NuevoLugar.TabIndex = 5;
             this.BT_NuevoLugar.Text = "Nuevo Lugar de Pago";
             this.BT_NuevoLugar.UseVisualStyleBackColor = true;
@@ -47,10 +48,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 33);
+            this.label1.Size = new System.Drawing.Size(377, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Listado de Lugares de Pago";
             // 
@@ -59,7 +60,7 @@
             this.GrillaLugares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaLugares.Location = new System.Drawing.Point(15, 52);
             this.GrillaLugares.Name = "GrillaLugares";
-            this.GrillaLugares.Size = new System.Drawing.Size(570, 265);
+            this.GrillaLugares.Size = new System.Drawing.Size(707, 297);
             this.GrillaLugares.TabIndex = 3;
             this.GrillaLugares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaLugares_CellContentClick);
             // 
@@ -67,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 331);
+            this.ClientSize = new System.Drawing.Size(734, 361);
             this.Controls.Add(this.BT_NuevoLugar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GrillaLugares);
