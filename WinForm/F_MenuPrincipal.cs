@@ -56,9 +56,9 @@ namespace WinForm
             form.ShowDialog();
         }
 
-        public List<Cliente> ObtenerClientes(int? documento)
+        public List<Cliente> ObtenerClientes()
         {
-            return FlatMinor.ObtenerClientes(documento);
+            return FlatMinor.ObtenerClientes();
         }
 
         public ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar)

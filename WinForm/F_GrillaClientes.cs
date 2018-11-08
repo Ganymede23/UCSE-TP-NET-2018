@@ -25,7 +25,7 @@ namespace WinForm
 
             if (formCliente != null)
             {
-                this.GrillaClientes_1.DataSource = formCliente.ObtenerClientes(null);
+                this.GrillaClientes_1.DataSource = formCliente.ObtenerClientes();
             }
         }
 
@@ -79,7 +79,7 @@ namespace WinForm
             //this.GrillaClientes_1.AutoGenerateColumns = true;
             if (owner != null)
             {
-                GrillaClientes_1.DataSource = owner.ObtenerClientes(null);
+                GrillaClientes_1.DataSource = owner.ObtenerClientes();
             }
 
             DataGridViewLinkColumn editar = new DataGridViewLinkColumn();
@@ -128,6 +128,7 @@ namespace WinForm
 
                     if (formPrincipal != null)
                     {
+                        cliente.Activo = false;
                         formPrincipal.ModificacionCliente(cliente, true);
                         ActualizarGrillaClientes();
                     }

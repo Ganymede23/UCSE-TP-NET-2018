@@ -54,7 +54,6 @@
             this.TB_NroDocumento = new System.Windows.Forms.MaskedTextBox();
             this.TB_Email = new System.Windows.Forms.MaskedTextBox();
             this.TB_Celular = new System.Windows.Forms.MaskedTextBox();
-            this.TB_FechaNac = new System.Windows.Forms.MaskedTextBox();
             this.TB_cp = new System.Windows.Forms.MaskedTextBox();
             this.TB_MontoMax = new System.Windows.Forms.MaskedTextBox();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
@@ -63,6 +62,7 @@
             this.LBL_Titulo = new System.Windows.Forms.Label();
             this.LBL_ID_Titulo = new System.Windows.Forms.Label();
             this.LBL_ID = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // CB_TipoCliente
@@ -313,14 +313,6 @@
             this.TB_Celular.Size = new System.Drawing.Size(148, 20);
             this.TB_Celular.TabIndex = 34;
             // 
-            // TB_FechaNac
-            // 
-            this.TB_FechaNac.Location = new System.Drawing.Point(167, 215);
-            this.TB_FechaNac.Mask = "00\\/00\\/0000";
-            this.TB_FechaNac.Name = "TB_FechaNac";
-            this.TB_FechaNac.Size = new System.Drawing.Size(148, 20);
-            this.TB_FechaNac.TabIndex = 35;
-            // 
             // TB_cp
             // 
             this.TB_cp.Location = new System.Drawing.Point(483, 135);
@@ -387,11 +379,19 @@
             this.LBL_ID.TabIndex = 60;
             this.LBL_ID.Text = "IDcliente";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(167, 215);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 35;
+            // 
             // F_AltasClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 413);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.LBL_ID);
             this.Controls.Add(this.LBL_ID_Titulo);
             this.Controls.Add(this.LBL_Titulo);
@@ -400,7 +400,6 @@
             this.Controls.Add(this.TB_Nombre);
             this.Controls.Add(this.TB_MontoMax);
             this.Controls.Add(this.TB_cp);
-            this.Controls.Add(this.TB_FechaNac);
             this.Controls.Add(this.TB_Celular);
             this.Controls.Add(this.TB_Email);
             this.Controls.Add(this.TB_NroDocumento);
@@ -463,7 +462,6 @@
         private System.Windows.Forms.MaskedTextBox TB_NroDocumento;
         private System.Windows.Forms.MaskedTextBox TB_Email;
         private System.Windows.Forms.MaskedTextBox TB_Celular;
-        private System.Windows.Forms.MaskedTextBox TB_FechaNac;
         private System.Windows.Forms.MaskedTextBox TB_cp;
         private System.Windows.Forms.MaskedTextBox TB_MontoMax;
         private System.Windows.Forms.TextBox TB_Nombre;
@@ -472,5 +470,6 @@
         private System.Windows.Forms.Label LBL_Titulo;
         private System.Windows.Forms.Label LBL_ID_Titulo;
         private System.Windows.Forms.Label LBL_ID;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

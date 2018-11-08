@@ -149,10 +149,10 @@ namespace Logica
             }
         }
 
-        public List<Cliente> ObtenerClientes(int? id)
+        public List<Cliente> ObtenerClientes()
         {
             LeerClientes();
-            return ListaClientes.Where(x => id.HasValue ? x.ID == id : true).ToList();
+            return ListaClientes.Where(x => x.Activo == true).ToList();
         }
         /////////
         //ALTAS//
@@ -184,6 +184,7 @@ namespace Logica
                 else
                 {
                     nuevocliente.ID = ListaClientes.Count + 1;
+                    //nuevocliente.Activo = true;
                     ListaClientes.Add(nuevocliente);
                     GuardarClientes(ListaClientes);
                     resultado.Resultado = true;
@@ -218,7 +219,7 @@ namespace Logica
             }
             else
             {
-                return new ResultadoOp(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
             }
         }
 
@@ -235,7 +236,7 @@ namespace Logica
             }
             else
             {
-                return new ResultadoOp(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
             }
         }
 
@@ -252,7 +253,7 @@ namespace Logica
             }
             else
             {
-                return new ResultadoOp(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
             }
         }
 
@@ -269,7 +270,7 @@ namespace Logica
             }
             else
             {
-                return new ResultadoOp(false, "Campos incompletos.");
+                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
             }
         }
 
@@ -277,35 +278,13 @@ namespace Logica
         //MODIFICACIONES//
         //////////////////
 
-        //public void ModificarCliente(Cliente clienteamodificar, TipoDocumento tipoDocumento, int nroDocumento, string nombre, string correo, string celular, DateTime fNac, Sexo sexo, string domicilio, int cP, TipoCliente tipoCliente, int montoMaximo)
-        //{
-        //    foreach (var item in ListaClientes)
-        //    {
-        //        if (item == clienteamodificar)
-        //        {
-        //            item.TipoDocumento = tipoDocumento;
-        //            item.NroDocumento = nroDocumento;
-        //            item.Nombre = nombre;
-        //            item.Correo = correo;
-        //            item.Celular = celular;
-        //            item.FNac = fNac;
-        //            item.Sexo = sexo;
-        //            item.Domicilio = domicilio;
-        //            item.CP = cP;
-        //            item.TipoCliente = tipoCliente;
-        //            item.MontoMaximo = montoMaximo;
-        //            break;
-        //        }
-        //    }
-        //}
-
         public ResultadoOp ModificacionCliente(Cliente nuevoCliente, bool eliminar)
         {
             ResultadoOp resultado = new ResultadoOp();
-
-            if (!eliminar) //Modificación de paciente
+            Cliente cliente = ListaClientes.FirstOrDefault(x => x.ID == nuevoCliente.ID);
+            if (!eliminar) //Modificación 
             {
-                Cliente cliente = ListaClientes.FirstOrDefault(x => x.ID == nuevoCliente.ID);
+                
                 cliente.TipoDocumento = nuevoCliente.TipoDocumento;
                 cliente.NroDocumento = nuevoCliente.NroDocumento;
                 cliente.Nombre = nuevoCliente.Nombre;
@@ -318,17 +297,12 @@ namespace Logica
                 cliente.TipoCliente = nuevoCliente.TipoCliente;
                 cliente.MontoMaximo = nuevoCliente.MontoMaximo;
             }
-            else //Eliminación de paciente
+            else //Eliminación
             {
-                foreach (Cliente item in ListaClientes)
-                {
-                    if (item.ID==nuevoCliente.ID)
-                    {
-                        item.Activo = false;
-                    }
-                }
-            }
+                cliente.Activo = nuevoCliente.Activo;
 
+            }
+            GuardarClientes(ListaClientes);
             return resultado;
         }
 

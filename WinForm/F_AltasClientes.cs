@@ -40,7 +40,7 @@ namespace WinForm
             this.TB_Nombre.Text = Convert.ToString(cliente.Nombre);
             this.TB_Email.Text = Convert.ToString(cliente.Correo);
             this.TB_Celular.Text = Convert.ToString(cliente.Celular);
-            this.TB_FechaNac.Text = Convert.ToString(cliente.FNac);
+            this.dateTimePicker1.Text = Convert.ToString(cliente.FNac);
             this.CB_Sexo.Text = Convert.ToString(cliente.Sexo);
             this.TB_Domicilio.Text = Convert.ToString(cliente.Domicilio);
             this.TB_cp.Text = Convert.ToString(cliente.CP);
@@ -65,11 +65,14 @@ namespace WinForm
                     cliente.TipoDocumento = TipoDocumento.DNI;
                     break;
             }
-            cliente.NroDocumento = int.Parse(this.TB_NroDocumento.Text);
+            if (this.TB_NroDocumento.Text=="")
+                cliente.NroDocumento = 0;
+            else
+                cliente.NroDocumento = Convert.ToInt32(this.TB_NroDocumento.Text);
             cliente.Nombre = this.TB_Nombre.Text;
             cliente.Correo = this.TB_Email.Text;
             cliente.Celular = this.TB_Celular.Text;
-            cliente.FNac = DateTime.Parse(this.TB_FechaNac.Text);
+            cliente.FNac = DateTime.Parse(this.dateTimePicker1.Text);
             switch (this.CB_Sexo.Text)
             {
                 case "Hombre":
@@ -80,7 +83,10 @@ namespace WinForm
                     break;
             }
             cliente.Domicilio = this.TB_Domicilio.Text;
-            cliente.CP = int.Parse(this.TB_cp.Text);
+            if (this.TB_cp.Text == "")
+                cliente.CP = 0;
+            else
+                cliente.CP = Convert.ToInt32(this.TB_NroDocumento.Text);
             switch (this.CB_TipoCliente.Text)
             {
                 case "Regular":
@@ -90,7 +96,10 @@ namespace WinForm
                     cliente.TipoCliente = TipoCliente.VIP;
                     break;
             }
-            cliente.MontoMaximo = int.Parse(this.TB_MontoMax.Text);
+            if (this.TB_MontoMax.Text == "")
+                cliente.MontoMaximo = 0;
+            else
+                cliente.MontoMaximo = Convert.ToInt32(this.TB_MontoMax.Text);
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 

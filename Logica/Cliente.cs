@@ -55,6 +55,7 @@ namespace Logica
 
         public Cliente()
         {
+            Activo = true;
         }
 
         public bool ValidarObligatorios()
