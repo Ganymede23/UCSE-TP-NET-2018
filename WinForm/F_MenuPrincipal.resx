@@ -120,4 +120,228 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="listadoDeClientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="listadoDeClientesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Listado de Clientes</value>
+  </data>
+  <data name="agregarClienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="agregarClienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar Cliente</value>
+  </data>
+  <data name="cLienteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
+  </data>
+  <data name="cLienteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="agregarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="agregarPrestamoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar prestamo</value>
+  </data>
+  <data name="reportesDeCreditosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="reportesDeCreditosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Reportes de creditos</value>
+  </data>
+  <data name="prestamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="prestamosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Prestamos</value>
+  </data>
+  <data name="agregarSucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="agregarSucursalesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar sucursales</value>
+  </data>
+  <data name="modificacionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Modificacion</value>
+  </data>
+  <data name="sucursalesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 20</value>
+  </data>
+  <data name="sucursalesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sucursales</value>
+  </data>
+  <data name="modificacionToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Listado de Comercios</value>
+  </data>
+  <data name="agregarComercioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="agregarComercioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar Comercio</value>
+  </data>
+  <data name="comerciosAhderidosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 20</value>
+  </data>
+  <data name="comerciosAhderidosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Comercios ahderidos</value>
+  </data>
+  <data name="agregarLugarDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="agregarLugarDePagoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Agregar lugar de pago</value>
+  </data>
+  <data name="modificacionToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 22</value>
+  </data>
+  <data name="modificacionToolStripMenuItem2.Text" xml:space="preserve">
+    <value>Modificacion</value>
+  </data>
+  <data name="lugaresDePagoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="lugaresDePagoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Lugares de pago</value>
+  </data>
+  <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="menuStrip1.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;cLienteToolStripMenuItem.Name" xml:space="preserve">
+    <value>cLienteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cLienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listadoDeClientesToolStripMenuItem.Name" xml:space="preserve">
+    <value>listadoDeClientesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;listadoDeClientesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarClienteToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarClienteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarClienteToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;prestamosToolStripMenuItem.Name" xml:space="preserve">
+    <value>prestamosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;prestamosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarPrestamoToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarPrestamoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarPrestamoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reportesDeCreditosToolStripMenuItem.Name" xml:space="preserve">
+    <value>reportesDeCreditosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;reportesDeCreditosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sucursalesToolStripMenuItem.Name" xml:space="preserve">
+    <value>sucursalesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;sucursalesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarSucursalesToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarSucursalesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarSucursalesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem.Name" xml:space="preserve">
+    <value>modificacionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comerciosAhderidosToolStripMenuItem.Name" xml:space="preserve">
+    <value>comerciosAhderidosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;comerciosAhderidosToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem1.Name" xml:space="preserve">
+    <value>modificacionToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarComercioToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarComercioToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarComercioToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lugaresDePagoToolStripMenuItem.Name" xml:space="preserve">
+    <value>lugaresDePagoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;lugaresDePagoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Name" xml:space="preserve">
+    <value>agregarLugarDePagoToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem2.Name" xml:space="preserve">
+    <value>modificacionToolStripMenuItem2</value>
+  </data>
+  <data name="&gt;&gt;modificacionToolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>F_MenuPrincipal</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

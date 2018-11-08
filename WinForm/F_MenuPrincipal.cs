@@ -65,5 +65,33 @@ namespace WinForm
         {
             return FlatMinor.ModificacionCliente(cliente, eliminar);
         }
+
+        private void agregarComercioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Crear_F_AltasComercios = new F_AltasComercios(new Comercio()) { Owner = this };
+            Crear_F_AltasComercios.ShowDialog();
+        }
+
+        private void modificacionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            F_GrillaComercios form = new F_GrillaComercios();
+            form.Owner = this;
+            form.ShowDialog();
+        }
+
+        public ResultadoOp AltaComercios(Comercio comercio)
+        {
+            return FlatMinor.AltaComercios(comercio);
+        }
+
+        public ResultadoOp ModificacionComercio(Comercio comercio, bool eliminar)
+        {
+            return FlatMinor.ModificacionComercio(comercio, eliminar);
+        }
+
+        public List<Comercio> ObtenerComercios()
+        {
+            return FlatMinor.ObtenerComercios();
+        }
     }
 }

@@ -21,11 +21,11 @@ namespace WinForm
         private void ActualizarGrillaClientes()
         {
             I_MenuPrincipal formCliente = this.Owner as I_MenuPrincipal;
-            this.GrillaClientes_1.DataSource = null;
+            this.GrillaClientes.DataSource = null;
 
             if (formCliente != null)
             {
-                this.GrillaClientes_1.DataSource = formCliente.ObtenerClientes();
+                this.GrillaClientes.DataSource = formCliente.ObtenerClientes();
             }
         }
 
@@ -42,7 +42,6 @@ namespace WinForm
                     ActualizarGrillaClientes();
                 }
             }
-
             return resultadoOp;
         }
 
@@ -59,40 +58,40 @@ namespace WinForm
 
         private void F_GrillaClientes_Load(object sender, EventArgs e)
         {
-            this.GrillaClientes_1.AutoGenerateColumns = false;
-            this.GrillaClientes_1.ColumnCount = 6;
+            this.GrillaClientes.AutoGenerateColumns = false;
+            this.GrillaClientes.ColumnCount = 6;
 
-            this.GrillaClientes_1.Columns[0].HeaderText = "Tipo Doc.";
-            this.GrillaClientes_1.Columns[0].DataPropertyName = "TipoDocumento";
-            this.GrillaClientes_1.Columns[1].HeaderText = "Numero de Documento";
-            this.GrillaClientes_1.Columns[1].DataPropertyName = "NroDocumento";
-            this.GrillaClientes_1.Columns[2].HeaderText = "Nombre y Apellido";
-            this.GrillaClientes_1.Columns[2].DataPropertyName = "Nombre";
-            this.GrillaClientes_1.Columns[3].HeaderText = "Correo";
-            this.GrillaClientes_1.Columns[3].DataPropertyName = "Correo";
-            this.GrillaClientes_1.Columns[4].HeaderText = "Tipo de Cliente";
-            this.GrillaClientes_1.Columns[4].DataPropertyName = "TipoCliente";
-            this.GrillaClientes_1.Columns[5].HeaderText = "Monto Maximo";
-            this.GrillaClientes_1.Columns[5].DataPropertyName = "MontoMaximo";
+            this.GrillaClientes.Columns[0].HeaderText = "Tipo Doc.";
+            this.GrillaClientes.Columns[0].DataPropertyName = "TipoDocumento";
+            this.GrillaClientes.Columns[1].HeaderText = "Numero de Documento";
+            this.GrillaClientes.Columns[1].DataPropertyName = "NroDocumento";
+            this.GrillaClientes.Columns[2].HeaderText = "Nombre y Apellido";
+            this.GrillaClientes.Columns[2].DataPropertyName = "Nombre";
+            this.GrillaClientes.Columns[3].HeaderText = "Correo";
+            this.GrillaClientes.Columns[3].DataPropertyName = "Correo";
+            this.GrillaClientes.Columns[4].HeaderText = "Tipo de Cliente";
+            this.GrillaClientes.Columns[4].DataPropertyName = "TipoCliente";
+            this.GrillaClientes.Columns[5].HeaderText = "Monto Maximo";
+            this.GrillaClientes.Columns[5].DataPropertyName = "MontoMaximo";
 
             I_MenuPrincipal owner = this.Owner as I_MenuPrincipal;
             //this.GrillaClientes_1.AutoGenerateColumns = true;
             if (owner != null)
             {
-                GrillaClientes_1.DataSource = owner.ObtenerClientes();
+                GrillaClientes.DataSource = owner.ObtenerClientes();
             }
 
             DataGridViewLinkColumn editar = new DataGridViewLinkColumn();
             editar.HeaderText = "Edicion";
             editar.Text = "Editar";
             editar.UseColumnTextForLinkValue = true;
-            GrillaClientes_1.Columns.Add(editar);
+            GrillaClientes.Columns.Add(editar);
 
             DataGridViewLinkColumn eliminar = new DataGridViewLinkColumn();
             eliminar.HeaderText = "Eliminar";
             eliminar.Text = "Eliminar";
             eliminar.UseColumnTextForLinkValue = true;
-            GrillaClientes_1.Columns.Add(eliminar);
+            GrillaClientes.Columns.Add(eliminar);
         }
 
         public ResultadoOp ModificacionCliente(Cliente cliente, bool Eliminar)
@@ -108,14 +107,13 @@ namespace WinForm
                     ActualizarGrillaClientes();
                 }
             }
-
             return resultadoOperacion;
         }
 
-        private void GrillaClientes_1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GrillaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var column = this.GrillaClientes_1.Columns[e.ColumnIndex];
-            var row = this.GrillaClientes_1.Rows[e.RowIndex];
+            var column = this.GrillaClientes.Columns[e.ColumnIndex];
+            var row = this.GrillaClientes.Rows[e.RowIndex];
 
             if (column.HeaderText == "Eliminar")
             {

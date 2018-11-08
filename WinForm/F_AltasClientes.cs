@@ -18,6 +18,7 @@ namespace WinForm
             InitializeComponent();
             if (cliente.ID != 0)
             {
+                this.Text = "Modificación de clientes";
                 LBL_Titulo.Text = "Editar cliente";
                 LBL_ID_Titulo.Visible = true;
                 LBL_ID.Visible = true;
@@ -37,19 +38,19 @@ namespace WinForm
             this.LBL_ID.Text = Convert.ToString(cliente.ID);
             this.CB_TipoDoc.Text = Convert.ToString(cliente.TipoDocumento);
             this.TB_NroDocumento.Text = Convert.ToString(cliente.NroDocumento);
-            this.TB_Nombre.Text = Convert.ToString(cliente.Nombre);
-            this.TB_Email.Text = Convert.ToString(cliente.Correo);
-            this.TB_Celular.Text = Convert.ToString(cliente.Celular);
+            this.TB_Nombre.Text = cliente.Nombre;
+            this.TB_Email.Text = cliente.Correo;
+            this.TB_Celular.Text = cliente.Celular;
             this.dateTimePicker1.Text = Convert.ToString(cliente.FNac);
             this.CB_Sexo.Text = Convert.ToString(cliente.Sexo);
-            this.TB_Domicilio.Text = Convert.ToString(cliente.Domicilio);
+            this.TB_Domicilio.Text = cliente.Domicilio;
             this.TB_cp.Text = Convert.ToString(cliente.CP);
-            this.TB_Localidad.Text = Convert.ToString(cliente.Localidad);
+            this.TB_Localidad.Text = cliente.Localidad;
             this.CB_TipoCliente.Text = Convert.ToString(cliente.TipoCliente);
             this.TB_MontoMax.Text = Convert.ToString(cliente.MontoMaximo);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BT_GuardarCliente_Click(object sender, EventArgs e)
         {
             var resultadoalta = new ResultadoOp();
             var cliente = new Cliente();
@@ -87,6 +88,7 @@ namespace WinForm
                 cliente.CP = 0;
             else
                 cliente.CP = Convert.ToInt32(this.TB_NroDocumento.Text);
+            cliente.Localidad = this.TB_Localidad.Text;
             switch (this.CB_TipoCliente.Text)
             {
                 case "Regular":

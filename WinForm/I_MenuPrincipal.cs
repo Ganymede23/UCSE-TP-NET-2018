@@ -13,5 +13,9 @@ namespace WinForm
         ResultadoOp AltaClientes(Cliente cliente);
         ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar);
         List<Cliente> ObtenerClientes();
+
+        ResultadoOp AltaComercios(Comercio cliente);
+        ResultadoOp ModificacionComercio(Comercio cliente, bool eliminar);
+        List<Comercio> ObtenerComercios();
     }
 }

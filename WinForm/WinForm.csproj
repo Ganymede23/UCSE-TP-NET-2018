@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F_AltasComercios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AltasComercios.Designer.cs">
+      <DependentUpon>F_AltasComercios.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_AltasClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="F_GrillaClientes.Designer.cs">
       <DependentUpon>F_GrillaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GrillaComercios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GrillaComercios.Designer.cs">
+      <DependentUpon>F_GrillaComercios.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,15 +77,26 @@
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="I_AltasClientes.cs" />
+    <Compile Include="I_AltasComercios.cs" />
     <Compile Include="I_GrillaClientes.cs" />
+    <Compile Include="I_GrillaComercios.cs" />
     <Compile Include="I_MenuPrincipal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_AltasComercios.resx">
+      <DependentUpon>F_AltasComercios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_AltasClientes.resx">
       <DependentUpon>F_AltasClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_GrillaClientes.resx">
       <DependentUpon>F_GrillaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GrillaComercios.resx">
+      <DependentUpon>F_GrillaComercios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_MenuPrincipal.aa-DJ.resx">
+      <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MenuPrincipal.resx">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>

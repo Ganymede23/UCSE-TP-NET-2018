@@ -154,6 +154,11 @@ namespace Logica
             LeerClientes();
             return ListaClientes.Where(x => x.Activo == true).ToList();
         }
+        public List<Comercio> ObtenerComercios()
+        {
+            LeerComercios();
+            return ListaComercios.Where(x => x.Activo == true).ToList();
+        }
         /////////
         //ALTAS//
         /////////
@@ -240,20 +245,25 @@ namespace Logica
             }
         }
 
-        public ResultadoOp AltaComercio(string ciudad, string direccion, int cP, string razonSocial)
+        public ResultadoOp AltaComercios(Comercio nuevoComercio)
         {
-            LeerComercios();
-            var nuevo_comercio = new Comercio(ListaComercios.Count + 1, ciudad, direccion, cP, razonSocial);
+            LeerClientes();
 
-            if (nuevo_comercio.ValidarObligatorios())
+            ResultadoOp resultado = new ResultadoOp();
+
+            if (nuevoComercio.ValidarObligatorios())
             {
-                ListaComercios.Add(nuevo_comercio);
+                nuevoComercio.ID = ListaComercios.Count + 1;
+                ListaComercios.Add(nuevoComercio);
                 GuardarComercios(ListaComercios);
-                return new ResultadoOp();
+                resultado.Resultado = true;
+                return resultado;
             }
             else
             {
-                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
+                resultado.Mensaje = "Campos obligatorios(*) incompletos.";
+                resultado.Resultado = false;
+                return resultado;
             }
         }
 
@@ -300,7 +310,6 @@ namespace Logica
             else //Eliminación
             {
                 cliente.Activo = nuevoCliente.Activo;
-
             }
             GuardarClientes(ListaClientes);
             return resultado;
@@ -323,20 +332,39 @@ namespace Logica
             //VALIDAR OBLIGATORIOS
         }
 
-        public void ModificacionComercio(Comercio comercio_a_modificar, string ciudad, string direccion, int cP, string razonSocial)
+        //public void ModificacionComercio(Comercio comercio_a_modificar, string ciudad, string direccion, int cP, string razonSocial)
+        //{
+        //    foreach (Comercio item in ListaComercios)
+        //    {
+        //        if (item==comercio_a_modificar)
+        //        {
+        //            //item.ID = item.ID;
+        //            item.Ciudad = ciudad;
+        //            item.Direccion = direccion;
+        //            item.CP = cP;
+        //            item.RazonSocial = razonSocial;
+        //        }
+        //    }
+        //    //VALIDAR OBLIGATORIOS 
+        //}
+
+        public ResultadoOp ModificacionComercio(Comercio nuevoComercio, bool eliminar)
         {
-            foreach (Comercio item in ListaComercios)
+            ResultadoOp resultado = new ResultadoOp();
+            Comercio comercio = ListaComercios.FirstOrDefault(x => x.ID == nuevoComercio.ID);
+            if (!eliminar) //Modificación 
             {
-                if (item==comercio_a_modificar)
-                {
-                    //item.ID = item.ID;
-                    item.Ciudad = ciudad;
-                    item.Direccion = direccion;
-                    item.CP = cP;
-                    item.RazonSocial = razonSocial;
-                }
+                comercio.Ciudad = nuevoComercio.Ciudad;
+                comercio.Direccion = nuevoComercio.Direccion;
+                comercio.CP = nuevoComercio.CP;
+                comercio.RazonSocial = nuevoComercio.RazonSocial;
             }
-            //VALIDAR OBLIGATORIOS 
+            else //Eliminación
+            {
+                comercio.Activo = nuevoComercio.Activo;
+            }
+            GuardarComercios(ListaComercios);
+            return resultado;
         }
 
         public void ModificacionLugaresDePago(LugarDePago lugar_a_modificar, string ciudad, string direccion, int cP, string razonSocial, bool esSucursal)

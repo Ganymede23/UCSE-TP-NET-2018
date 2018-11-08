@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GrillaClientes_1 = new System.Windows.Forms.DataGridView();
+            this.GrillaClientes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.BT_NuevoCliente = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // GrillaClientes_1
+            // GrillaClientes
             // 
-            this.GrillaClientes_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaClientes_1.Location = new System.Drawing.Point(15, 52);
-            this.GrillaClientes_1.Name = "GrillaClientes_1";
-            this.GrillaClientes_1.Size = new System.Drawing.Size(570, 265);
-            this.GrillaClientes_1.TabIndex = 0;
-            this.GrillaClientes_1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_1_CellContentClick);
+            this.GrillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaClientes.Location = new System.Drawing.Point(15, 52);
+            this.GrillaClientes.Name = "GrillaClientes";
+            this.GrillaClientes.Size = new System.Drawing.Size(570, 265);
+            this.GrillaClientes.TabIndex = 0;
+            this.GrillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_CellContentClick);
             // 
             // label1
             // 
@@ -70,11 +70,11 @@
             this.ClientSize = new System.Drawing.Size(599, 331);
             this.Controls.Add(this.BT_NuevoCliente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.GrillaClientes_1);
+            this.Controls.Add(this.GrillaClientes);
             this.Name = "F_GrillaClientes";
             this.Text = "Listado de Clientes";
             this.Load += new System.EventHandler(this.F_GrillaClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,7 +82,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GrillaClientes_1;
+        private System.Windows.Forms.DataGridView GrillaClientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BT_NuevoCliente;
     }
