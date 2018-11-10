@@ -220,20 +220,19 @@ namespace Logica
             }
         }
 
-        public ResultadoOp AltaPrestamos(Cliente cliente, Comercio comercioAdherido, Sucursal sucursal, int montoCredito, double montoCuota, int cantidadCuotas)
+        public ResultadoOp AltaPrestamos(Prestamo nuevoPrestamo)
         {
             LeerPrestamos();
-            var NuevoPrestamo = new Prestamo(cliente, ListaPrestamos.Count+1, comercioAdherido, sucursal, montoCredito, cantidadCuotas);
 
-            if (NuevoPrestamo.ValidarObligatorios())
+            if (nuevoPrestamo.ValidarObligatorios())
             {
-                if (NuevoPrestamo.MontoTotal > NuevoPrestamo.Cliente.MontoMaximo)
+                if (nuevoPrestamo.MontoTotal > nuevoPrestamo.Cliente.MontoMaximo)
                 {
                     return new ResultadoOp(false, "El monto total del crédito excede el monto máximo autorizado del cliente.");
                 }
                 else
                 {
-                    ListaPrestamos.Add(NuevoPrestamo);
+                    ListaPrestamos.Add(nuevoPrestamo);
                     GuardarPrestamos(ListaPrestamos);
                     return new ResultadoOp();
                 }
@@ -243,28 +242,31 @@ namespace Logica
                 return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
             }
         }
-
-        public ResultadoOp AltaSucursal(Sucursal nueva_sucursal)
+        
+        public ResultadoOp AltaSucursal(Sucursal nuevaSucursal)
         {
             LeerSucursales();
             var resultado = new ResultadoOp();
 
-            if (nueva_sucursal.ValidarObligatorios())
+            if (nuevaSucursal.ValidarObligatorios())
             {
-                ListaSucursales.Add(nueva_sucursal);
+                nuevaSucursal.ID = ListaSucursales.Count + 1;
+                ListaSucursales.Add(nuevaSucursal);
                 GuardarSucursales(ListaSucursales);
+                resultado.Resultado = true;
                 return new ResultadoOp();
             }
             else
             {
-                return new ResultadoOp(false, "Campos obligatorios (*) incompletos.");
+                resultado.Mensaje = "Campos obligatorios (*) incompletos.";
+                resultado.Resultado = false;
+                return resultado;
             }
         }
 
         public ResultadoOp AltaComercios(Comercio nuevoComercio)
         {
-            LeerClientes();
-
+            LeerComercios();
             ResultadoOp resultado = new ResultadoOp();
 
             if (nuevoComercio.ValidarObligatorios())

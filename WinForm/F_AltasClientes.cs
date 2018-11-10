@@ -18,15 +18,15 @@ namespace WinForm
             InitializeComponent();
             if (cliente.ID != 0)
             {
-                this.Text = "Modificación de clientes";
-                LBL_Titulo.Text = "Editar cliente";
+                this.Text = "Modificación de Clientes";
+                LBL_Titulo.Text = "Editar Cliente";
                 LBL_ID_Titulo.Visible = true;
                 LBL_ID.Visible = true;
                 CompletarDatosCliente(cliente);
             }
             else
             {
-                LBL_Titulo.Text = "Nuevo cliente";
+                LBL_Titulo.Text = "Nuevo Cliente";
                 LBL_ID.Text = "";
                 LBL_ID.Visible = false;
                 LBL_ID_Titulo.Visible = false;

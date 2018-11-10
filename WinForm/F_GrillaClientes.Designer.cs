@@ -37,9 +37,9 @@
             // GrillaClientes
             // 
             this.GrillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaClientes.Location = new System.Drawing.Point(15, 52);
+            this.GrillaClientes.Location = new System.Drawing.Point(12, 51);
             this.GrillaClientes.Name = "GrillaClientes";
-            this.GrillaClientes.Size = new System.Drawing.Size(707, 297);
+            this.GrillaClientes.Size = new System.Drawing.Size(710, 298);
             this.GrillaClientes.TabIndex = 0;
             this.GrillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_CellContentClick);
             // 

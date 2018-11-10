@@ -50,13 +50,13 @@ namespace WinForm
             throw new NotImplementedException();
         }
 
-        private void BT_NuevoSucursal_Click(object sender, EventArgs e)
+        private void BT_NuevaSucursal_Click(object sender, EventArgs e)
         {
             var Crear_F_AltasSucursals = new F_AltasSucursales(new Sucursal()) { Owner = this };
             Crear_F_AltasSucursals.ShowDialog();
         }
 
-        private void F_GrillaSucursaless_Load(object sender, EventArgs e)
+        private void F_GrillaSucursales_Load(object sender, EventArgs e)
         {
             this.GrillaSucursales.AutoGenerateColumns = false;
             this.GrillaSucursales.ColumnCount = 5;
@@ -69,11 +69,11 @@ namespace WinForm
             this.GrillaSucursales.Columns[2].DataPropertyName = "Direccion";
             this.GrillaSucursales.Columns[3].HeaderText = "Código Postal";
             this.GrillaSucursales.Columns[3].DataPropertyName = "CP";
-            this.GrillaSucursales.Columns[4].HeaderText = "Tasa Interes";
-            this.GrillaSucursales.Columns[4].DataPropertyName = "Tasa interes";
+            this.GrillaSucursales.Columns[4].HeaderText = "Tasa de Interes (%)";
+            this.GrillaSucursales.Columns[4].DataPropertyName = "TasaInteres";
 
             I_MenuPrincipal owner = this.Owner as I_MenuPrincipal;
-            //this.GrillaSucursaless_1.AutoGenerateColumns = true;
+  
             if (owner != null)
             {
                 GrillaSucursales.DataSource = owner.ObtenerSucursales();
@@ -92,13 +92,13 @@ namespace WinForm
             GrillaSucursales.Columns.Add(eliminar);
         }
 
-        public ResultadoOp ModificacionSucursal(Sucursal Sucursal, bool Eliminar)
+        public ResultadoOp ModificacionSucursal(Sucursal sucursal, bool Eliminar)
         {
             ResultadoOp resultadoOperacion = new ResultadoOp(false, "Error interno en el servidor");
             I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;
             if (formPrincipal != null)
             {
-                resultadoOperacion = formPrincipal.ModificacionSucursal(Sucursal, Eliminar);
+                resultadoOperacion = formPrincipal.ModificacionSucursal(sucursal, Eliminar);
 
                 if (resultadoOperacion.Resultado)
                 {

@@ -18,15 +18,15 @@ namespace WinForm
             InitializeComponent();
             if (comercio.ID != 0)
             {
-                this.Text = "Modificación de comercios";
-                LBL_Titulo.Text = "Editar comercio";
+                this.Text = "Modificación de Comercios";
+                LBL_Titulo.Text = "Editar Comercio";
                 LBL_ID_Titulo.Visible = true;
                 LBL_ID.Visible = true;
                 CompletarDatosComercio(comercio);
             }
             else
             {
-                LBL_Titulo.Text = "Nuevo comercio";
+                LBL_Titulo.Text = "Nuevo Comercio";
                 LBL_ID.Text = "";
                 LBL_ID.Visible = false;
                 LBL_ID_Titulo.Visible = false;

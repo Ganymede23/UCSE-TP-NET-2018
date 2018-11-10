@@ -50,8 +50,8 @@ namespace WinForm
 
         private void AgregarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
-            Crear_F_AltasClientes.ShowDialog();
+            var Crear_F_AltasPrestamos = new F_AltasPrestamos(new Prestamo()) { Owner = this };
+            Crear_F_AltasPrestamos.ShowDialog();
         }
 
         //SUCURSALES
@@ -64,7 +64,7 @@ namespace WinForm
 
         private void GrillaSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Crear_F_GrillaSucursales = new F_GrillaComercios { Owner = this };
+            var Crear_F_GrillaSucursales = new F_GrillaSucursales { Owner = this };
             Crear_F_GrillaSucursales.ShowDialog();
         }
 

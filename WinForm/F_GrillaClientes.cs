@@ -81,6 +81,12 @@ namespace WinForm
                 GrillaClientes.DataSource = owner.ObtenerClientes();
             }
 
+            //DataGridViewLinkColumn prestamo = new DataGridViewLinkColumn();
+            //prestamo.HeaderText = "Otorgar Prestamo";
+            //prestamo.Text = "Nuevo Prestamo";
+            //prestamo.UseColumnTextForLinkValue = true;
+            //GrillaClientes.Columns.Add(prestamo);
+
             DataGridViewLinkColumn editar = new DataGridViewLinkColumn();
             editar.HeaderText = "Edicion";
             editar.Text = "Editar";
@@ -132,15 +138,24 @@ namespace WinForm
                     }
                 }
             }
-            else
+            else if (column.HeaderText == "Edicion")
             {
-                if (column.HeaderText == "Edicion")
-                {
-                    Cliente cliente = row.DataBoundItem as Cliente;
-                    var Crear_F_AltasClientes = new F_AltasClientes(cliente) { Owner = this };
-                    Crear_F_AltasClientes.ShowDialog();
-                }
+                Cliente cliente = row.DataBoundItem as Cliente;
+                var Crear_F_AltasClientes = new F_AltasClientes(cliente) { Owner = this };
+                Crear_F_AltasClientes.ShowDialog();
             }
+            //else if (column.HeaderText == "Otorgar Prestamo")
+            //{
+            //    Cliente cliente = row.DataBoundItem as Cliente;
+            //    var Crear_F_AltasPrestamos = new F_AltasPrestamos(cliente) { Owner = this };
+            //    Crear_F_AltasPrestamos.ShowDialog();
+            //}
         }
+
+        //public List<Comercio> ObtenerComercios()
+        //{
+        //    I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+        //    return F_MenuPrincipal.ObtenerComercios();
+        //}
     }
 }

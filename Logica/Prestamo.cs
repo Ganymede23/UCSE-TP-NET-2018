@@ -40,9 +40,13 @@ namespace Logica
             ListaPagos = this.ArmadoListaPagos();
         }
 
+        public Prestamo()
+        {
+        }
+
         public bool ValidarObligatorios()
         {
-            if (ComercioAdherido!=null && Sucursal!=null && MontoCredito>0 && CantidadCuotas > 0)
+            if (Cliente!=null && ComercioAdherido!=null && Sucursal!=null && MontoCredito>0 && CantidadCuotas > 0)
             {
                 return true;
             }

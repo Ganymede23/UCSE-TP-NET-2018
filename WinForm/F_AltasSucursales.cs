@@ -23,18 +23,18 @@ namespace WinForm
             InitializeComponent();
             if (sucursal.ID != 0)
             {
-                this.Text = "Modificación de comercios";
-                LBL_Titulo.Text = "Editar comercio";
-                //LBL_ID_Titulo.Visible = true;
+                this.Text = "Modificación de Sucursales";
+                LBL_Titulo.Text = "Editar Sucursal";
+                LBL_ID_Titulo.Visible = true;
                 LBL_ID.Visible = true;
                 CompletarDatosSucursal(sucursal);
             }
             else
             {
-                LBL_Titulo.Text = "Nuevo comercio";
+                LBL_Titulo.Text = "Nueva Sucursal";
                 LBL_ID.Text = "";
                 LBL_ID.Visible = false;
-                //LBL_ID_Titulo.Visible = false;
+                LBL_ID_Titulo.Visible = false;
             }
 
            
@@ -60,6 +60,10 @@ namespace WinForm
             else
                 sucursal.CP = Convert.ToInt32(this.TB_Cp.Text);
             sucursal.Ciudad = this.TB_Ciudad.Text;
+            if (this.TB_TasaInteres.Text=="")
+                sucursal.TasaInteres = 0.0D;
+            else
+                sucursal.TasaInteres=Convert.ToDouble(this.TB_TasaInteres.Text);
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 
@@ -69,7 +73,7 @@ namespace WinForm
             }
             else
             {
-                I_GrillaSucursales F_GrillaSucursales = this.Owner as I_GrillaSucursales; //En caso de que se edite el Cliente (desde grilla)
+                I_GrillaSucursales F_GrillaSucursales = this.Owner as I_GrillaSucursales;
                 if (F_GrillaSucursales != null)
                 {
                     if (LBL_ID.Text != "")
@@ -85,6 +89,11 @@ namespace WinForm
             }
             MessageBox.Show(resultadoalta.Resultado == true ? "La operación se realizó con exito" : resultadoalta.Mensaje);
             this.Close();
+        }
+
+        private void F_AltasSucursales_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

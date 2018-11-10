@@ -37,7 +37,7 @@
             // BT_NuevoComercio
             // 
             this.BT_NuevoComercio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BT_NuevoComercio.Location = new System.Drawing.Point(395, 10);
+            this.BT_NuevoComercio.Location = new System.Drawing.Point(532, 9);
             this.BT_NuevoComercio.Name = "BT_NuevoComercio";
             this.BT_NuevoComercio.Size = new System.Drawing.Size(190, 36);
             this.BT_NuevoComercio.TabIndex = 5;
@@ -58,9 +58,9 @@
             // GrillaComercios
             // 
             this.GrillaComercios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaComercios.Location = new System.Drawing.Point(15, 52);
+            this.GrillaComercios.Location = new System.Drawing.Point(12, 51);
             this.GrillaComercios.Name = "GrillaComercios";
-            this.GrillaComercios.Size = new System.Drawing.Size(570, 265);
+            this.GrillaComercios.Size = new System.Drawing.Size(710, 298);
             this.GrillaComercios.TabIndex = 3;
             this.GrillaComercios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaComercios_CellContentClick);
             // 
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 331);
+            this.ClientSize = new System.Drawing.Size(734, 361);
             this.Controls.Add(this.BT_NuevoComercio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GrillaComercios);
