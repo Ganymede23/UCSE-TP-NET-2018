@@ -34,11 +34,11 @@
             this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AgregarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeCreditosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarSucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GrillaSucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AltasSucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comerciosAhderidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarComercioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,15 +85,16 @@
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarPrestamoToolStripMenuItem,
+            this.AgregarPrestamoToolStripMenuItem,
             this.reportesDeCreditosToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             resources.ApplyResources(this.prestamosToolStripMenuItem, "prestamosToolStripMenuItem");
             // 
-            // agregarPrestamoToolStripMenuItem
+            // AgregarPrestamoToolStripMenuItem
             // 
-            this.agregarPrestamoToolStripMenuItem.Name = "agregarPrestamoToolStripMenuItem";
-            resources.ApplyResources(this.agregarPrestamoToolStripMenuItem, "agregarPrestamoToolStripMenuItem");
+            this.AgregarPrestamoToolStripMenuItem.Name = "AgregarPrestamoToolStripMenuItem";
+            resources.ApplyResources(this.AgregarPrestamoToolStripMenuItem, "AgregarPrestamoToolStripMenuItem");
+            this.AgregarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.AgregarPrestamoToolStripMenuItem_Click);
             // 
             // reportesDeCreditosToolStripMenuItem
             // 
@@ -103,20 +104,22 @@
             // sucursalesToolStripMenuItem
             // 
             this.sucursalesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarSucursalesToolStripMenuItem,
-            this.modificacionToolStripMenuItem});
+            this.GrillaSucursalesToolStripMenuItem,
+            this.AltasSucursalesToolStripMenuItem});
             this.sucursalesToolStripMenuItem.Name = "sucursalesToolStripMenuItem";
             resources.ApplyResources(this.sucursalesToolStripMenuItem, "sucursalesToolStripMenuItem");
             // 
-            // agregarSucursalesToolStripMenuItem
+            // GrillaSucursalesToolStripMenuItem
             // 
-            this.agregarSucursalesToolStripMenuItem.Name = "agregarSucursalesToolStripMenuItem";
-            resources.ApplyResources(this.agregarSucursalesToolStripMenuItem, "agregarSucursalesToolStripMenuItem");
+            this.GrillaSucursalesToolStripMenuItem.Name = "GrillaSucursalesToolStripMenuItem";
+            resources.ApplyResources(this.GrillaSucursalesToolStripMenuItem, "GrillaSucursalesToolStripMenuItem");
+            this.GrillaSucursalesToolStripMenuItem.Click += new System.EventHandler(this.GrillaSucursalesToolStripMenuItem_Click);
             // 
-            // modificacionToolStripMenuItem
+            // AltasSucursalesToolStripMenuItem
             // 
-            this.modificacionToolStripMenuItem.Name = "modificacionToolStripMenuItem";
-            resources.ApplyResources(this.modificacionToolStripMenuItem, "modificacionToolStripMenuItem");
+            this.AltasSucursalesToolStripMenuItem.Name = "AltasSucursalesToolStripMenuItem";
+            resources.ApplyResources(this.AltasSucursalesToolStripMenuItem, "AltasSucursalesToolStripMenuItem");
+            this.AltasSucursalesToolStripMenuItem.Click += new System.EventHandler(this.AltasSucursalesToolStripMenuItem_Click);
             // 
             // comerciosAhderidosToolStripMenuItem
             // 
@@ -195,11 +198,11 @@
         private System.Windows.Forms.ToolStripMenuItem cLienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AgregarPrestamoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeCreditosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sucursalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarSucursalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GrillaSucursalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AltasSucursalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comerciosAhderidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarComercioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificacionToolStripMenuItem1;

@@ -64,6 +64,18 @@
     <Compile Include="F_AltasLugares.Designer.cs">
       <DependentUpon>F_AltasLugares.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_AltasPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AltasPrestamos.Designer.cs">
+      <DependentUpon>F_AltasPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_AltasSucursales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_AltasSucursales.Designer.cs">
+      <DependentUpon>F_AltasSucursales.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_GrillaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,18 +94,27 @@
     <Compile Include="F_GrillaLugares.Designer.cs">
       <DependentUpon>F_GrillaLugares.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_GrillaSucursales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_GrillaSucursales.Designer.cs">
+      <DependentUpon>F_GrillaSucursales.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_MenuPrincipal.Designer.cs">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="I_AltaPrestamos.cs" />
     <Compile Include="I_AltasClientes.cs" />
     <Compile Include="I_AltasComercios.cs" />
     <Compile Include="I_AltasLugares.cs" />
+    <Compile Include="I_AltasSucursales.cs" />
     <Compile Include="I_GrillaClientes.cs" />
     <Compile Include="I_GrillaComercios.cs" />
     <Compile Include="I_GrillaLugares.cs" />
+    <Compile Include="I_GrillaSucursales.cs" />
     <Compile Include="I_MenuPrincipal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +127,12 @@
     <EmbeddedResource Include="F_AltasLugares.resx">
       <DependentUpon>F_AltasLugares.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_AltasPrestamos.resx">
+      <DependentUpon>F_AltasPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_AltasSucursales.resx">
+      <DependentUpon>F_AltasSucursales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_GrillaClientes.resx">
       <DependentUpon>F_GrillaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_GrillaLugares.resx">
       <DependentUpon>F_GrillaLugares.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_GrillaSucursales.resx">
+      <DependentUpon>F_GrillaSucursales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MenuPrincipal.resx">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>

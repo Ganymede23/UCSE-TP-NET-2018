@@ -154,6 +154,16 @@ namespace Logica
             LeerClientes();
             return ListaClientes.Where(x => x.Activo == true).ToList();
         }
+        //public List<Prestamo> ObtenerPrestamo()
+        //{
+        //    LeerPrestamos();
+        //    return ListaPrestamos.Where(x => x.Activo == true).ToList();
+        //}
+        public List<Sucursal> ObtenerSucursales()
+        {
+            LeerSucursales();
+            return ListaSucursales.Where(x => x.Activo == true).ToList();
+        }
         public List<Comercio> ObtenerComercios()
         {
             LeerComercios();
@@ -164,6 +174,7 @@ namespace Logica
             LeerLugaresDePago();
             return ListaLugaresDePago.Where(x => x.Activo == true).ToList();
         }
+
         /////////
         //ALTAS//
         /////////
@@ -233,10 +244,10 @@ namespace Logica
             }
         }
 
-        public ResultadoOp AltaSucursal(string ciudad, string direccion, int cP, double tasaInteres)
+        public ResultadoOp AltaSucursal(Sucursal nueva_sucursal)
         {
             LeerSucursales();
-            var nueva_sucursal = new Sucursal(ListaSucursales.Count+1, ciudad, direccion, cP, tasaInteres);
+            var resultado = new ResultadoOp();
 
             if (nueva_sucursal.ValidarObligatorios())
             {
@@ -294,8 +305,6 @@ namespace Logica
             }
         }
 
-
-
         //////////////////
         //MODIFICACIONES//
         //////////////////
@@ -327,21 +336,23 @@ namespace Logica
             return resultado;
         }
 
-        public void ModificacionSucursal(Sucursal sucursal_a_modificar, string ciudad, string direccion, int cP, double tasaInteres)
+        public ResultadoOp ModificacionSucursal(Sucursal nuevasucursal,bool eliminar)
         {
-            foreach (Sucursal item in ListaSucursales)
+            ResultadoOp resultado = new ResultadoOp();
+            Sucursal sucursal = ListaSucursales.FirstOrDefault(x => x.ID == nuevasucursal.ID);
+            if (!eliminar) //Modificación 
             {
-                if (item==sucursal_a_modificar)
-                {
-                    //item.ID = item.ID;
-                    item.Ciudad = ciudad;
-                    item.Direccion = direccion;
-                    item.CP = cP;
-                    item.TasaInteres = tasaInteres;
-                    break;
-                }
+                sucursal.Ciudad = nuevasucursal.Ciudad;
+                sucursal.Direccion = nuevasucursal.Direccion;
+                sucursal.CP = nuevasucursal.CP;
+                sucursal.TasaInteres = nuevasucursal.TasaInteres;
             }
-            //VALIDAR OBLIGATORIOS
+            else //Eliminación
+            {
+                sucursal.Activo = nuevasucursal.Activo;
+            }
+            GuardarComercios(ListaComercios);
+            return resultado;
         }
 
         public ResultadoOp ModificacionComercio(Comercio nuevoComercio, bool eliminar)

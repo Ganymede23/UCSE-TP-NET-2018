@@ -14,6 +14,14 @@ namespace WinForm
         ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar);
         List<Cliente> ObtenerClientes();
 
+        ResultadoOp AltaPrestamos(Prestamo prestamo);
+        ResultadoOp ModificacionPrestamos(Prestamo Prestamo, bool eliminar);
+        List<Prestamo> ObtenerPrestamos();
+
+        ResultadoOp AltaSucursales(Sucursal sucursal);
+        ResultadoOp ModificacionSucursal(Sucursal sucursal, bool eliminar);
+        List<Sucursal> ObtenerSucursales();
+
         ResultadoOp AltaComercios(Comercio cliente);
         ResultadoOp ModificacionComercio(Comercio cliente, bool eliminar);
         List<Comercio> ObtenerComercios();

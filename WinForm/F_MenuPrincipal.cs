@@ -32,17 +32,43 @@ namespace WinForm
             FlatMinor.CrearArchivos();
         }
 
+        //CLIENTES
+
         private void AltaClienteStripMenu_Click(object sender, EventArgs e) //ALTA CLIENTES
         {
             var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
             Crear_F_AltasClientes.ShowDialog();
         }
-        
+
         private void GrillaClientesStripMenu_Click(object sender, EventArgs e) //GRILLA CLIENTES
         {
             var Crear_F_GrillaClientes = new F_GrillaClientes { Owner = this };
             Crear_F_GrillaClientes.ShowDialog();
         }
+
+        //PRESTAMOS
+
+        private void AgregarPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Crear_F_AltasClientes = new F_AltasClientes(new Cliente()) { Owner = this };
+            Crear_F_AltasClientes.ShowDialog();
+        }
+
+        //SUCURSALES
+
+        private void AltasSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Crear_F_AltasLugares = new F_AltasSucursales(new Sucursal()) { Owner = this };
+            Crear_F_AltasLugares.ShowDialog();
+        }
+
+        private void GrillaSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Crear_F_GrillaSucursales = new F_GrillaComercios { Owner = this };
+            Crear_F_GrillaSucursales.ShowDialog();
+        }
+
+        //COMERCIOS
 
         private void AltaComercioStripMenu_Click(object sender, EventArgs e) //ALTA COMERCIOS
         {
@@ -56,6 +82,8 @@ namespace WinForm
             Crear_F_GrillaComercios.ShowDialog();
         }
 
+        //LUGAR DE PAGO
+
         private void AltaLugarDePagoStripMenu_Click(object sender, EventArgs e) //ALTA LUGARES DE PAGO
         {
             var Crear_F_AltasLugares = new F_AltasLugares(new LugarDePago()) { Owner = this };
@@ -68,6 +96,7 @@ namespace WinForm
             form.Owner = this;
             form.ShowDialog();
         }
+
 
         /// <summary>
         /// CLIENTES
@@ -132,9 +161,53 @@ namespace WinForm
             return FlatMinor.ObtenerLugares();
         }
 
+        /// <summary>
+        /// SUCURSALES
+        /// </summary>
+        /// <param name="sucursal"></param>
+        /// <returns></returns>
+
+        public ResultadoOp AltaSucursales(Sucursal sucursal)
+        {
+            return FlatMinor.AltaSucursal(sucursal);
+        }
+
+        public ResultadoOp ModificacionSucursal(Sucursal sucursal, bool eliminar)
+        {
+           return FlatMinor.ModificacionSucursal(sucursal, eliminar);
+        }
+
+        public List<Sucursal> ObtenerSucursales()
+        {
+            return FlatMinor.ObtenerSucursales();
+        }
+
+        //SALIR
+
         private void LabelSalir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// PRESTAMOS
+        /// </summary>
+        /// <param name="prestamo"></param>
+        /// <returns></returns>
+
+        public ResultadoOp AltaPrestamos(Prestamo prestamo)
+        {
+            return FlatMinor.AltaPrestamos(prestamo);
+        }
+
+        public ResultadoOp ModificacionPrestamos(Prestamo Prestamo, bool eliminar)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Prestamo> ObtenerPrestamos()
+        {
+            throw new NotImplementedException();
         }
     }
 }
