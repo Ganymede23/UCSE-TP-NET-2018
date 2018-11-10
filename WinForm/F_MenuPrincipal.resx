@@ -142,14 +142,20 @@
   <data name="cLienteToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
+  <data name="listadoDePréstamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 24</value>
+  </data>
+  <data name="listadoDePréstamosToolStripMenuItem.Text" xml:space="preserve">
+    <value>Listado de Préstamos</value>
+  </data>
   <data name="AgregarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 24</value>
+    <value>219, 24</value>
   </data>
   <data name="AgregarPrestamoToolStripMenuItem.Text" xml:space="preserve">
     <value>Agregar prestamo</value>
   </data>
   <data name="reportesDeCreditosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 24</value>
+    <value>219, 24</value>
   </data>
   <data name="reportesDeCreditosToolStripMenuItem.Text" xml:space="preserve">
     <value>Reportes de creditos</value>
@@ -813,6 +819,12 @@
     <value>agregarLugarDePagoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;agregarLugarDePagoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listadoDePréstamosToolStripMenuItem.Name" xml:space="preserve">
+    <value>listadoDePréstamosToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;listadoDePréstamosToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -183,10 +183,10 @@ namespace WinForm
             }
             else
             {
-                I_GrillaClientes F_GrillaClientes = this.Owner as I_GrillaClientes; //En caso de que se edite el Cliente (desde grilla)
-                if (F_GrillaClientes != null)
+                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos; //En caso de que se edite el Cliente (desde grilla)
+                if (F_GrillaPrestamos != null)
                 {
-                    resultadoalta = F_MenuPrincipal.AltaPrestamos(prestamo);
+                    resultadoalta = F_GrillaPrestamos.AltaPrestamos(prestamo);
                 }
             }
             MessageBox.Show(resultadoalta.Resultado == true ? "La operación se realizó con exito" : resultadoalta.Mensaje);

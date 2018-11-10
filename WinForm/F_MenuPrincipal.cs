@@ -54,6 +54,12 @@ namespace WinForm
             Crear_F_AltasPrestamos.ShowDialog();
         }
 
+        private void listadoDePréstamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Crear_F_GrillaPrestamos = new F_GrillaPrestamos { Owner = this };
+            Crear_F_GrillaPrestamos.ShowDialog();
+        }
+
         //SUCURSALES
 
         private void AltasSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,7 +213,7 @@ namespace WinForm
 
         public List<Prestamo> ObtenerPrestamos()
         {
-            throw new NotImplementedException();
+            return FlatMinor.ObtenerPrestamos();
         }
     }
 }

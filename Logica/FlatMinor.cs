@@ -154,11 +154,11 @@ namespace Logica
             LeerClientes();
             return ListaClientes.Where(x => x.Activo == true).ToList();
         }
-        //public List<Prestamo> ObtenerPrestamo()
-        //{
-        //    LeerPrestamos();
-        //    return ListaPrestamos.Where(x => x.Activo == true).ToList();
-        //}
+        public List<Prestamo> ObtenerPrestamos()
+        {
+            LeerPrestamos();
+            return ListaPrestamos;
+        }
         public List<Sucursal> ObtenerSucursales()
         {
             LeerSucursales();
@@ -223,6 +223,13 @@ namespace Logica
         public ResultadoOp AltaPrestamos(Prestamo nuevoPrestamo)
         {
             LeerPrestamos();
+
+            nuevoPrestamo.Tasa = nuevoPrestamo.Sucursal.TasaInteres;
+            nuevoPrestamo.MontoTotal = nuevoPrestamo.MontoCredito + (nuevoPrestamo.Tasa * nuevoPrestamo.MontoCredito / 100);
+            nuevoPrestamo.MontoCuota = nuevoPrestamo.MontoTotal / nuevoPrestamo.CantidadCuotas;
+            nuevoPrestamo.CuotasFaltantes = nuevoPrestamo.CantidadCuotas;
+            nuevoPrestamo.ListaPagos = nuevoPrestamo.ArmadoListaPagos();
+            nuevoPrestamo.ID = ListaPrestamos.Count + 1;
 
             if (nuevoPrestamo.ValidarObligatorios())
             {

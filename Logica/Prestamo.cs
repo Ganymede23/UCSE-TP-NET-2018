@@ -42,6 +42,8 @@ namespace Logica
 
         public Prestamo()
         {
+            FCredito = DateTime.Today;
+            CuotasPagadas = 0;
         }
 
         public bool ValidarObligatorios()
@@ -58,6 +60,7 @@ namespace Logica
 
         public List<Pago> ArmadoListaPagos()
         {
+            this.ListaPagos = new List<Pago>();
             DateTime fecha_pago = FCredito.AddDays(60); //Suma 60 dias a la fecha del credito para la fecha del pago inicial
             for (int i = 0; i < CantidadCuotas; i++)
             {

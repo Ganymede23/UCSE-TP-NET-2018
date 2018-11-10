@@ -47,6 +47,7 @@
             this.agregarLugarDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LabelSalir = new System.Windows.Forms.LinkLabel();
+            this.listadoDePréstamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoDePréstamosToolStripMenuItem,
             this.AgregarPrestamoToolStripMenuItem,
             this.reportesDeCreditosToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
@@ -174,6 +176,12 @@
             this.LabelSalir.TabStop = true;
             this.LabelSalir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LabelSalir_LinkClicked);
             // 
+            // listadoDePréstamosToolStripMenuItem
+            // 
+            this.listadoDePréstamosToolStripMenuItem.Name = "listadoDePréstamosToolStripMenuItem";
+            resources.ApplyResources(this.listadoDePréstamosToolStripMenuItem, "listadoDePréstamosToolStripMenuItem");
+            this.listadoDePréstamosToolStripMenuItem.Click += new System.EventHandler(this.listadoDePréstamosToolStripMenuItem_Click);
+            // 
             // F_MenuPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -212,6 +220,7 @@
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel LabelSalir;
+        private System.Windows.Forms.ToolStripMenuItem listadoDePréstamosToolStripMenuItem;
     }
 }
 
