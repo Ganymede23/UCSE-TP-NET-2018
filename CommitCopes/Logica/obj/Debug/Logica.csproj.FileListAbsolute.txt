@@ -1,0 +1,27 @@
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Bitbucket\TP NET\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Bitbucket\TP NET\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Bitbucket\TP NET\Logica\bin\Debug\Logica.dll
+C:\Bitbucket\TP NET\Logica\bin\Debug\Logica.pdb
+C:\Bitbucket\TP NET\Logica\bin\Debug\Newtonsoft.Json.dll
+C:\Bitbucket\TP NET\Logica\bin\Debug\Newtonsoft.Json.xml
+C:\Bitbucket\TP NET\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Bitbucket\TP NET\Logica\obj\Debug\Logica.dll
+C:\Bitbucket\TP NET\Logica\obj\Debug\Logica.pdb
+C:\Users\lucas\Desktop\tp .net\Logica\bin\Debug\Logica.dll
+C:\Users\lucas\Desktop\tp .net\Logica\bin\Debug\Logica.pdb
+C:\Users\lucas\Desktop\tp .net\Logica\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lucas\Desktop\tp .net\Logica\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lucas\Desktop\tp .net\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\lucas\Desktop\tp .net\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Desktop\tp .net\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\lucas\Desktop\tp .net\Logica\obj\Debug\Logica.dll
+C:\Users\lucas\Desktop\tp .net\Logica\obj\Debug\Logica.pdb
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\bin\Debug\Logica.dll
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\bin\Debug\Logica.pdb
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\bin\Debug\Newtonsoft.Json.dll
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\bin\Debug\Newtonsoft.Json.xml
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.csproj.CopyComplete
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.dll
+F:\Ingenieria Informatica\Segundo año\Programacion\Tp 2\Logica\obj\Debug\Logica.pdb
