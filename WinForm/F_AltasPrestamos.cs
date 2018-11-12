@@ -153,7 +153,7 @@ namespace WinForm
             }
         }
 
-        private void VerificarComercio(Prestamo prestamo)
+        private void VerificarComercio(Prestamo prestamo, bool uso)
         {
             List<Comercio> ListaComercios = new List<Comercio>();
             int IDcomercio = 0;
@@ -184,14 +184,18 @@ namespace WinForm
                 if (IDcomercio == item.ID && item.Activo != false)
                 {
                     comercio_encontrado = true;
-                    prestamo.ComercioAdherido = item;
+                    if (uso)
+                        prestamo.ComercioAdherido = item;
                     break;
                 }
             }
             if (!comercio_encontrado)
             {
                 MessageBox.Show("Comercio no encontrado. Verifique el ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                if (uso)
+                    this.Close();
+                else
+                    BT_GuardarPrestamo.Enabled = false; 
             }
         }
         
@@ -202,7 +206,7 @@ namespace WinForm
 
             VerificarCliente(prestamo,true);     ///VERIFICACION DE EXISTENCIA DEL CLIENTE///
             VerificarSucursal(prestamo,true);    ///VERIFICACION DE EXISTENCIA DE LA SUCURSAL///
-            VerificarComercio(prestamo);    ///VERIFICACION DE EXISTENCIA DEL COMERCIO///
+            VerificarComercio(prestamo,true);    ///VERIFICACION DE EXISTENCIA DEL COMERCIO///
 
             if (this.TB_MontoCredito.Text == "")
                 prestamo.MontoCredito = 0;
@@ -239,29 +243,6 @@ namespace WinForm
             
         }
 
-        //private void ActualizarComboBoxSucursales()
-        //{
-        //    I_MenuPrincipal formPrestamos = this.Owner as I_MenuPrincipal;
-
-        //    if (formCliente != null)
-        //    {
-        //        this.GrillaClientes.DataSource = formPrestamos.ObtenerSucursales();
-        //    }
-        //}
-
-        //private void ActualizarComboBoxComercios()
-        //{
-        //    I_GrillaClientes F_GrillaClientes = this.Owner as I_GrillaClientes;
-        //    if (F_GrillaClientes != null)
-        //    {
-        //        List<Comercio> ListaComercios = F_GrillaClientes.ObtenerComercios();
-        //        foreach (var item in ListaComercios)
-        //        {
-        //            this.CB_Comercio.Items.Add(Convert.ToString(item.RazonSocial));
-        //        }
-        //    }
-        //}
-
         private void TB_IDcliente_TextChanged(object sender, EventArgs e)
         {
             if (TB_IDcliente.Text != "")
@@ -269,7 +250,6 @@ namespace WinForm
             else
                 LimpiarDatosCliente(null);
         }
-
         private void TB_IDsucursal_TextChanged(object sender, EventArgs e)
         {
             if (TB_IDsucursal.Text != "")
@@ -280,6 +260,13 @@ namespace WinForm
             else
                 LimpiarDatosAdicionalesPrestamo();
         }
+        private void TB_IDcomercio_TextChanged(object sender, EventArgs e)
+        {
+            if (TB_IDcomercio.Text != "")
+            {
+                VerificarComercio(null, false);
+            }
+        }
 
         private void TB_MontoCredito_TextChanged(object sender, EventArgs e)
         {
@@ -287,7 +274,7 @@ namespace WinForm
             {
                 int monto_credito = Convert.ToInt32(TB_MontoCredito.Text);
                 double tasa = Convert.ToDouble(LBL_Tasa.Text);
-                LBL_MontoTotal.Text = Convert.ToString(monto_credito + (tasa * monto_credito / 100));
+                LBL_MontoTotal.Text = Convert.ToString(Math.Round(monto_credito + (tasa * monto_credito / 100)));
             }
         }
 

@@ -83,6 +83,7 @@
             this.TB_IDcomercio.Name = "TB_IDcomercio";
             this.TB_IDcomercio.Size = new System.Drawing.Size(148, 22);
             this.TB_IDcomercio.TabIndex = 65;
+            this.TB_IDcomercio.TextChanged += new System.EventHandler(this.TB_IDcomercio_TextChanged);
             // 
             // label16
             // 
@@ -368,11 +369,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(81, 231);
+            this.label9.Location = new System.Drawing.Point(58, 231);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 16);
+            this.label9.Size = new System.Drawing.Size(125, 16);
             this.label9.TabIndex = 127;
-            this.label9.Text = "Tasa de Interés";
+            this.label9.Text = "Tasa de Interés (%)";
             // 
             // label14
             // 
