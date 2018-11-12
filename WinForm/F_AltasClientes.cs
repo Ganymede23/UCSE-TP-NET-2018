@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Logica;
+using System.Net.Mail;
+//using System.Text.RegularExpressions;
 
 namespace WinForm
 {
@@ -135,6 +137,25 @@ namespace WinForm
         private void F_AltasClientes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        void ValidarEmail()
+        {
+            try
+            {
+                var correo = new MailAddress(TB_Email.Text);
+                BT_GuardarCliente.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("El correo electrónico ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BT_GuardarCliente.Enabled = false;
+            }
+        }
+
+        private void TB_Email_Leave(object sender, EventArgs e)
+        {
+            ValidarEmail();
         }
     }
 }

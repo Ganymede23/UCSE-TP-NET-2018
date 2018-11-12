@@ -319,6 +319,7 @@
             this.TB_Email.Name = "TB_Email";
             this.TB_Email.Size = new System.Drawing.Size(148, 22);
             this.TB_Email.TabIndex = 33;
+            this.TB_Email.Leave += new System.EventHandler(this.TB_Email_Leave);
             // 
             // TB_Celular
             // 
