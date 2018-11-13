@@ -61,9 +61,9 @@ namespace WinForm
                 sucursal.CP = Convert.ToInt32(this.TB_Cp.Text);
             sucursal.Ciudad = this.TB_Ciudad.Text;
             if (this.TB_TasaInteres.Text=="")
-                sucursal.TasaInteres = 0.0D;
+                sucursal.TasaInteres = 0.0M;
             else
-                sucursal.TasaInteres=Convert.ToDouble(this.TB_TasaInteres.Text);
+                sucursal.TasaInteres=Convert.ToDecimal(this.TB_TasaInteres.Text);
 
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
 

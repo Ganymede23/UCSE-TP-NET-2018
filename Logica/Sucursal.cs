@@ -8,14 +8,14 @@ namespace Logica
 {
     public class Sucursal : Locales
     {
-        public double TasaInteres { get; set; }
+        public decimal TasaInteres { get; set; }
 
         public Sucursal()
         {
             Activo = true;
         }
 
-        public Sucursal(int iD, string ciudad, string direccion, int cP, double tasaInteres)
+        public Sucursal(int iD, string ciudad, string direccion, int cP, decimal tasaInteres)
         {
             ID = iD;
             Ciudad = ciudad;
@@ -27,7 +27,7 @@ namespace Logica
 
         public override bool ValidarObligatorios()
         {
-            if (Ciudad!="" && Direccion!="" && CP!=0 && TasaInteres!=0.0D)
+            if (Ciudad!="" && Direccion!="" && CP!=0 && TasaInteres!=0.0M)
             {
                 return true;
             }

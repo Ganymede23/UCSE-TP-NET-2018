@@ -141,15 +141,18 @@ namespace WinForm
 
         void ValidarEmail()
         {
-            try
+            if (TB_Email.Text != "")
             {
-                var correo = new MailAddress(TB_Email.Text);
-                BT_GuardarCliente.Enabled = true;
-            }
-            catch
-            {
-                MessageBox.Show("El correo electrónico ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                BT_GuardarCliente.Enabled = false;
+                try
+                {
+                    var correo = new MailAddress(TB_Email.Text);
+                    BT_GuardarCliente.Enabled = true;
+                }
+                catch
+                {
+                    MessageBox.Show("El correo electrónico ingresado no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BT_GuardarCliente.Enabled = false;
+                }
             }
         }
 

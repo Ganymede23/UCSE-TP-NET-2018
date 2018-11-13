@@ -1,1 +1,0 @@
-[{"EsSucursal":false,"RazonSocial":"PagoFacil Roca","ID":1,"Ciudad":"Rafaela","Direccion":"Bv. Roca 2038","CP":2300,"Activo":true},{"EsSucursal":false,"RazonSocial":"Rapipago Pzk","ID":2,"Ciudad":"Rafaela","Direccion":"Atlas 886","CP":2300,"Activo":true}]

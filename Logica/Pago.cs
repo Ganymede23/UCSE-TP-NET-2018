@@ -9,8 +9,8 @@ namespace Logica
     public class Pago
     {
         public int NumeroCuota { get; set; }
-        public double MontoCuota { get; set; }
-        public double MontoPago { get; set; }
+        public decimal MontoCuota { get; set; }
+        public decimal MontoPago { get; set; }
         public DateTime FechaPago { get; set; }
         public LugarDePago LugarPago { get; set; }
 

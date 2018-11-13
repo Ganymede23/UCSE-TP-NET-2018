@@ -22,10 +22,11 @@ namespace WinForm
                 if (item.LugarPago==null)
                 {
                     this.LBL_NroCuota.Text = Convert.ToString(item.NumeroCuota);
-                    this.LBL_Monto.Text = Convert.ToString(item.MontoCuota);
-                    this.LBL_Entrega.Text = Convert.ToString(item.MontoPago);
-                    this.LBL_Fecha.Text = Convert.ToString(item.FechaPago);
+                    this.LBL_Monto.Text = Convert.ToString(Math.Round(item.MontoCuota,2));
+                    this.LBL_Entrega.Text = Convert.ToString(Math.Round(item.MontoPago,2));
+                    this.LBL_Fecha.Text = Convert.ToString(item.FechaPago.ToString("dd/MM/yyyy"));
                     prop_prestamo = prestamo;
+                    break;
                 }
             }
         }

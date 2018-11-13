@@ -273,7 +273,7 @@ namespace WinForm
             if (TB_MontoCredito.Text != "" && LBL_Tasa.Text != "")
             {
                 int monto_credito = Convert.ToInt32(TB_MontoCredito.Text);
-                double tasa = Convert.ToDouble(LBL_Tasa.Text);
+                decimal tasa = Convert.ToDecimal(LBL_Tasa.Text);
                 LBL_MontoTotal.Text = Convert.ToString(Math.Round(monto_credito + (tasa * monto_credito / 100)));
             }
         }
@@ -282,7 +282,7 @@ namespace WinForm
         {
             if (TB_CantidadCuotas.Text != "" && LBL_MontoTotal.Text != "")
             {
-                this.LBL_MontoCuota.Text = Convert.ToString(Math.Round(Convert.ToDouble(LBL_MontoTotal.Text) / Convert.ToInt32(TB_CantidadCuotas.Text),2));
+                this.LBL_MontoCuota.Text = Convert.ToString(Math.Round(Convert.ToDecimal(LBL_MontoTotal.Text) / Convert.ToInt32(TB_CantidadCuotas.Text),2));
             }
         }
     }

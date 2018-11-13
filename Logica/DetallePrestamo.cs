@@ -8,7 +8,7 @@ namespace Logica
 {
     public class DetallePrestamo
     {
-        public DetallePrestamo(Cliente cliente, Sucursal sucursal, Comercio comercio, int iD, double montoCredito, double tasa, double montoTotal, int cantidadCuotas, List<Pago> listaPagos)
+        public DetallePrestamo(Cliente cliente, Sucursal sucursal, Comercio comercio, int iD, decimal montoCredito, decimal tasa, decimal montoTotal, int cantidadCuotas, List<Pago> listaPagos)
         {
             Cliente = cliente;
             Sucursal = sucursal;
@@ -25,9 +25,9 @@ namespace Logica
         public Sucursal Sucursal { get; set; }
         public Comercio Comercio { get; set; }
         public int ID { get; set; }
-        public double MontoCredito { get; set; }
-        public double Tasa { get; set; }
-        public double MontoTotal { get; set; }
+        public decimal MontoCredito { get; set; }
+        public decimal Tasa { get; set; }
+        public decimal MontoTotal { get; set; }
         public int CantidadCuotas { get; set; }
         public List<Pago> ListaPagos { get; set; }
 
@@ -58,13 +58,13 @@ namespace Logica
         //public Comercio ComercioAdherido { get; set; }
         //public Sucursal Sucursal { get; set; }
         //public int MontoCredito { get; set; }
-        //public double Tasa { get; set; }
+        //public decimal Tasa { get; set; }
 
         ////CUOTAS
         //public int NroCuota { get; set; }
-        //public double MontoCuota { get; set; }
+        //public decimal MontoCuota { get; set; }
         //public DateTime FechaPago { get; set; }
-        //public double MontoPago { get; set; }
+        //public decimal MontoPago { get; set; }
         //public LugarDePago LugarPago { get; set; }
     }
 }

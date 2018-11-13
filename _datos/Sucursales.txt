@@ -1,1 +1,0 @@
-[{"TasaInteres":14.0,"ID":1,"Ciudad":"Rafaela","Direccion":"Armstrong 1245","CP":2300,"Activo":true},{"TasaInteres":11.0,"ID":2,"Ciudad":"Rafaela","Direccion":"Falucho 47","CP":2300,"Activo":true}]

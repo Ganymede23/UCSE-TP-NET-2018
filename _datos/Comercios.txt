@@ -1,1 +1,0 @@
-[{"RazonSocial":"La Esquina","ID":1,"Ciudad":"Rafaela","Direccion":"Fernandez 102","CP":2300,"Activo":true},{"RazonSocial":"La Otra Esquina","ID":2,"Ciudad":"Rafaela","Direccion":"Ayacucho 207","CP":2300,"Activo":true},{"RazonSocial":"Enterprise NX Series","ID":3,"Ciudad":"Rafaela","Direccion":"Boston Shipyards 499","CP":2300,"Activo":false}]

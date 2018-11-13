@@ -454,10 +454,10 @@ namespace Logica
         public void ReporteDePagos()
         {
             int MontoTotalPrestado = ListaPrestamos.Sum(x => x.MontoCredito);
-            double PromedioTasas = ListaPrestamos.Average(x => x.Tasa);
+            decimal PromedioTasas = ListaPrestamos.Average(x => x.Tasa);
             foreach (Prestamo item in ListaPrestamos)
             {
-                double TotalCuotasPagadas = item.CuotasPagadas * item.MontoCuota;
+                decimal TotalCuotasPagadas = item.CuotasPagadas * item.MontoCuota;
             }
         }
     }

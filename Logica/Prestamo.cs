@@ -15,9 +15,9 @@ namespace Logica
         public Comercio ComercioAdherido { get; set; }
         public Sucursal Sucursal { get; set; }
         public int MontoCredito { get; set; }
-        public double Tasa { get; set; }
-        public double MontoTotal { get; set; }
-        public double MontoCuota { get; set; }
+        public decimal Tasa { get; set; }
+        public decimal MontoTotal { get; set; }
+        public decimal MontoCuota { get; set; }
         public int CantidadCuotas { get; set; }
         public int CuotasPagadas { get; set; }
         public int CuotasFaltantes { get; set; }

@@ -29,14 +29,14 @@ namespace WinForm
 
             if (ListaPrestamos.Count!=0)
             {
-                double monto_prestado = ListaPrestamos.Sum(x => x.MontoCredito);
-                double cuotas_pagadas = ListaPrestamos.Sum(x => x.CuotasPagadas * x.MontoCuota);
+                decimal monto_prestado = ListaPrestamos.Sum(x => x.MontoCredito);
+                decimal cuotas_pagadas = ListaPrestamos.Sum(x => x.CuotasPagadas * x.MontoCuota);
 
                 LBL_MontoPrestado.Text = "$ " + Convert.ToString(Math.Round(monto_prestado,2));
                 LBL_CuotasPagadas.Text = "$ " + Convert.ToString(Math.Round(cuotas_pagadas,2));
                 LBL_TasaInteres.Text = Convert.ToString(Math.Round(ListaPrestamos.Average(x => x.Tasa),2)) + " %";
 
-                double resultado = cuotas_pagadas - monto_prestado;
+                decimal resultado = cuotas_pagadas - monto_prestado;
                 LBL_Resultado.Text = "$ " + Convert.ToString(resultado);
                 if (resultado > 0)
                     LBL_Resultado.ForeColor = Color.Green;
