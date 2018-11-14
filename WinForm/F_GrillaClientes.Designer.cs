@@ -39,6 +39,7 @@
             this.GrillaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaClientes.Location = new System.Drawing.Point(12, 51);
             this.GrillaClientes.Name = "GrillaClientes";
+            this.GrillaClientes.ReadOnly = true;
             this.GrillaClientes.Size = new System.Drawing.Size(710, 298);
             this.GrillaClientes.TabIndex = 0;
             this.GrillaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaClientes_CellContentClick);

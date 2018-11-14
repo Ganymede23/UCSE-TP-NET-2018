@@ -126,7 +126,7 @@ namespace WinForm
             {
                 var mensaje = MessageBox.Show("¿Está seguro que desea eliminar el cliente?", "Eliminar cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (mensaje == DialogResult.OK)
+                if (mensaje == DialogResult.Yes)
                 {
                     Cliente cliente = row.DataBoundItem as Cliente;
                     I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;

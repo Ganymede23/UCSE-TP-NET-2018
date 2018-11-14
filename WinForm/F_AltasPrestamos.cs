@@ -19,6 +19,16 @@ namespace WinForm
             this.LBL_Fecha.Text = Convert.ToString(DateTime.Today.ToString("dd/MM/yyyy"));
             LimpiarDatosAdicionalesPrestamo();
             LimpiarDatosCliente(null);
+
+            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+            if (F_MenuPrincipal != null)
+            {
+                List<Comercio> ListaComercios = F_MenuPrincipal.ObtenerComercios();
+                foreach (var item in ListaComercios)
+                {
+                    this.CB_Comercio.Items.Add(Convert.ToString(item.RazonSocial));
+                }
+            }
         }
 
         private void CompletarDatosCliente(Cliente cliente)
@@ -232,16 +242,23 @@ namespace WinForm
                 }
             }
             if (resultadoalta.Resultado==true)
-                MessageBox.Show("La operación se realizó con éxito", "Operación compeltada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                MessageBox.Show("La operación se realizó con éxito", "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
             else
                 MessageBox.Show(resultadoalta.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Close();
         }
 
         private void F_AltasPrestamos_Load(object sender, EventArgs e)
         {
             
         }
+
+        //private void ActualizarComboBoxComercios()
+        //{
+
+        //}
 
         private void TB_IDcliente_TextChanged(object sender, EventArgs e)
         {

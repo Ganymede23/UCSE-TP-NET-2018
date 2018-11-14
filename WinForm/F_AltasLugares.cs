@@ -97,10 +97,12 @@ namespace WinForm
                 }
             }
             if (resultadoalta.Resultado == true)
-                MessageBox.Show("La operación se realizó con éxito", "Operación compeltada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                MessageBox.Show("La operación se realizó con éxito", "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
             else
                 MessageBox.Show(resultadoalta.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Close();
         }
 
         private void F_AltasLugares_Load(object sender, EventArgs e)

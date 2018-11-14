@@ -16,6 +16,7 @@ namespace WinForm
         public F_EfectuarPago(Prestamo prestamo)
         {
             InitializeComponent();
+            this.BT_RealizarPago.Enabled = false;
 
             foreach (Pago item in prestamo.ListaPagos)
             {
@@ -83,17 +84,22 @@ namespace WinForm
 
             VerificarLugarDePago(pago, true);
 
-            I_RegistrosPagos F_RegistrosPagos = this.Owner as I_RegistrosPagos;
-            if (F_RegistrosPagos != null)
+            if (pago.LugarPago != null)
             {
-                resultadoalta = F_RegistrosPagos.RegistroPagos(prop_prestamo, lugar);
-                F_RegistrosPagos.ActualizarGrillaPagos();
+                I_RegistrosPagos F_RegistrosPagos = this.Owner as I_RegistrosPagos;
+                if (F_RegistrosPagos != null)
+                {
+                    resultadoalta = F_RegistrosPagos.RegistroPagos(prop_prestamo, lugar);
+                    F_RegistrosPagos.ActualizarGrillaPagos();
+                }
+                if (resultadoalta.Resultado == true)
+                {
+                    MessageBox.Show("La operación se realizó con éxito", "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
-            if (resultadoalta.Resultado == true)
-                MessageBox.Show("La operación se realizó con éxito", "Operación completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show(resultadoalta.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            this.Close();
+                MessageBox.Show("Seleccione un lugar de pago válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void F_EfectuarPago_Load(object sender, EventArgs e)

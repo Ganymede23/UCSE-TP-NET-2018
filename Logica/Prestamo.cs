@@ -70,8 +70,8 @@ namespace Logica
                     nuevo_pago.FechaPago = fecha_pago;
                 else
                 {
-                    fecha_pago = fecha_pago.AddDays(30);
-                    nuevo_pago.FechaPago = fecha_pago; //los demas pagos ocurren 30 dias luego del primero
+                    fecha_pago = fecha_pago.AddMonths(1);
+                    nuevo_pago.FechaPago = fecha_pago; //los demas pagos ocurren 1 mes luego anterior
                 }
                     
                 nuevo_pago.MontoCuota = this.MontoCuota;

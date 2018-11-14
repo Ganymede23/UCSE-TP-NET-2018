@@ -40,10 +40,10 @@
             this.LBL_Titulo = new System.Windows.Forms.Label();
             this.TB_Ciudad = new System.Windows.Forms.TextBox();
             this.TB_Direccion = new System.Windows.Forms.TextBox();
-            this.TB_TasaInteres = new System.Windows.Forms.TextBox();
             this.TB_Cp = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.TB_TasaInteres = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // BT_GuardarSucursal
@@ -166,14 +166,6 @@
             this.TB_Direccion.Size = new System.Drawing.Size(148, 22);
             this.TB_Direccion.TabIndex = 123;
             // 
-            // TB_TasaInteres
-            // 
-            this.TB_TasaInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_TasaInteres.Location = new System.Drawing.Point(394, 70);
-            this.TB_TasaInteres.Name = "TB_TasaInteres";
-            this.TB_TasaInteres.Size = new System.Drawing.Size(148, 22);
-            this.TB_TasaInteres.TabIndex = 124;
-            // 
             // TB_Cp
             // 
             this.TB_Cp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,11 +197,22 @@
             this.label13.TabIndex = 124;
             this.label13.Text = "Tasa de Interes";
             // 
+            // TB_TasaInteres
+            // 
+            this.TB_TasaInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB_TasaInteres.Location = new System.Drawing.Point(394, 70);
+            this.TB_TasaInteres.Mask = "099";
+            this.TB_TasaInteres.Name = "TB_TasaInteres";
+            this.TB_TasaInteres.Size = new System.Drawing.Size(148, 22);
+            this.TB_TasaInteres.TabIndex = 135;
+            this.TB_TasaInteres.ValidatingType = typeof(int);
+            // 
             // F_AltasSucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 192);
+            this.Controls.Add(this.TB_TasaInteres);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -221,7 +224,6 @@
             this.Controls.Add(this.LBL_Titulo);
             this.Controls.Add(this.TB_Ciudad);
             this.Controls.Add(this.TB_Direccion);
-            this.Controls.Add(this.TB_TasaInteres);
             this.Controls.Add(this.TB_Cp);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label13);
@@ -248,9 +250,9 @@
         private System.Windows.Forms.Label LBL_Titulo;
         private System.Windows.Forms.TextBox TB_Ciudad;
         private System.Windows.Forms.TextBox TB_Direccion;
-        private System.Windows.Forms.TextBox TB_TasaInteres;
         private System.Windows.Forms.MaskedTextBox TB_Cp;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.MaskedTextBox TB_TasaInteres;
     }
 }

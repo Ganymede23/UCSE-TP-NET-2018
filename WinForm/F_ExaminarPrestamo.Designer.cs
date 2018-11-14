@@ -629,6 +629,7 @@
             this.GrillaCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaCuotas.Location = new System.Drawing.Point(342, 63);
             this.GrillaCuotas.Name = "GrillaCuotas";
+            this.GrillaCuotas.ReadOnly = true;
             this.GrillaCuotas.Size = new System.Drawing.Size(640, 248);
             this.GrillaCuotas.TabIndex = 168;
             // 
@@ -707,7 +708,7 @@
             this.Controls.Add(this.LBL_Titulo);
             this.Name = "F_ExaminarPrestamo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "label";
+            this.Text = "Examinar prestamo";
             this.Load += new System.EventHandler(this.F_ExaminarPrestamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaCuotas)).EndInit();
             this.ResumeLayout(false);

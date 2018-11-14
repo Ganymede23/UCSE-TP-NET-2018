@@ -124,7 +124,7 @@ namespace WinForm
             {
                 var mensaje = MessageBox.Show("¿Está seguro que desea Eliminar el comercio?", "Eliminar comercio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (mensaje == DialogResult.OK)
+                if (mensaje == DialogResult.Yes)
                 {
                     Comercio comercio = row.DataBoundItem as Comercio;
                     I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;

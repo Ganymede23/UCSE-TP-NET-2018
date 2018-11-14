@@ -40,6 +40,7 @@
             this.LBL_Monto = new System.Windows.Forms.Label();
             this.LBL_NroCuota = new System.Windows.Forms.Label();
             this.LBL_Titulo = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BT_RealizarPago
@@ -108,7 +109,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(40, 167);
+            this.label9.Location = new System.Drawing.Point(30, 167);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 16);
             this.label9.TabIndex = 57;
@@ -164,11 +165,23 @@
             this.LBL_Titulo.TabIndex = 64;
             this.LBL_Titulo.Text = "Detalles del pago";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(125, 167);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(13, 16);
+            this.label15.TabIndex = 65;
+            this.label15.Text = "*";
+            // 
             // F_EfectuarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 257);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.LBL_Titulo);
             this.Controls.Add(this.LBL_NroCuota);
             this.Controls.Add(this.LBL_Monto);
@@ -204,5 +217,6 @@
         private System.Windows.Forms.Label LBL_Monto;
         private System.Windows.Forms.Label LBL_NroCuota;
         private System.Windows.Forms.Label LBL_Titulo;
+        private System.Windows.Forms.Label label15;
     }
 }

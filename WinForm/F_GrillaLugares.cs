@@ -127,7 +127,7 @@ namespace WinForm
             {
                 var mensaje = MessageBox.Show("¿Está seguro que desea Eliminar el lugar de pago?", "Eliminar lugar de pago", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (mensaje == DialogResult.OK)
+                if (mensaje == DialogResult.Yes)
                 {
                     LugarDePago lugar = row.DataBoundItem as LugarDePago;
                     I_MenuPrincipal formPrincipal = this.Owner as I_MenuPrincipal;

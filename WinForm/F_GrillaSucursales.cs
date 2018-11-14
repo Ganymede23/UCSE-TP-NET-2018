@@ -124,7 +124,7 @@ namespace WinForm
             {
                 var mensaje = MessageBox.Show("¿Está seguro que desea Eliminar el Sucursal?", "Eliminar Sucursal", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (mensaje == DialogResult.OK)
+                if (mensaje == DialogResult.Yes)
                 {
                     Sucursal sucursal = row.DataBoundItem as Sucursal;
                     I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;

@@ -39,6 +39,7 @@
             this.GrillaRegistrosPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaRegistrosPagos.Location = new System.Drawing.Point(12, 51);
             this.GrillaRegistrosPagos.Name = "GrillaRegistrosPagos";
+            this.GrillaRegistrosPagos.ReadOnly = true;
             this.GrillaRegistrosPagos.Size = new System.Drawing.Size(710, 298);
             this.GrillaRegistrosPagos.TabIndex = 0;
             this.GrillaRegistrosPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaRegistrosPagos_CellContentClick);

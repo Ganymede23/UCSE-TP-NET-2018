@@ -63,6 +63,7 @@
             this.TB_IDcliente = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.CB_Comercio = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LBL_Titulo
@@ -417,11 +418,20 @@
             this.label8.TabIndex = 134;
             this.label8.Text = "ID Cliente";
             // 
+            // CB_Comercio
+            // 
+            this.CB_Comercio.FormattingEnabled = true;
+            this.CB_Comercio.Location = new System.Drawing.Point(356, 9);
+            this.CB_Comercio.Name = "CB_Comercio";
+            this.CB_Comercio.Size = new System.Drawing.Size(121, 21);
+            this.CB_Comercio.TabIndex = 136;
+            // 
             // F_AltasPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 328);
+            this.Controls.Add(this.CB_Comercio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TB_IDcliente);
@@ -502,5 +512,6 @@
         private System.Windows.Forms.MaskedTextBox TB_IDcliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CB_Comercio;
     }
 }

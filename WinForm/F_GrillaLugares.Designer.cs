@@ -60,6 +60,7 @@
             this.GrillaLugares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaLugares.Location = new System.Drawing.Point(12, 51);
             this.GrillaLugares.Name = "GrillaLugares";
+            this.GrillaLugares.ReadOnly = true;
             this.GrillaLugares.Size = new System.Drawing.Size(710, 298);
             this.GrillaLugares.TabIndex = 3;
             this.GrillaLugares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaLugares_CellContentClick);
