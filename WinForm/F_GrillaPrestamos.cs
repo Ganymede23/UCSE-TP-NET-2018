@@ -234,31 +234,10 @@ namespace WinForm
             I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
             return F_MenuPrincipal.ObtenerComercios();
         }
-        public List<Pago> ObtenerRegistrosPagos(Prestamo prestamo)
-        {
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            return F_MenuPrincipal.ObtenerRegistrosPagos(prestamo);
-        }
-
-        public ResultadoOp RegistroPagos(Prestamo prestamo, LugarDePago lugar)
-        {
-            var resultadoalta = new ResultadoOp();
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                resultadoalta = F_MenuPrincipal.RegistroPagos(prestamo, lugar);
-            }
-            return resultadoalta;
-        }
-        public List<LugarDePago> ObtenerLugares()
-        {
-            List<LugarDePago> ListaLugaresDePago = new List<LugarDePago>();
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                ListaLugaresDePago = F_MenuPrincipal.ObtenerLugares();
-            }
-            return ListaLugaresDePago;
-        }
+        //public List<Pago> ObtenerRegistrosPagos()
+        //{
+        //    I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+        //    return F_MenuPrincipal.ObtenerRegistrosPagos();
+        //}
     }
 }

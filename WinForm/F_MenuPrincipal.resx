@@ -143,16 +143,22 @@
     <value>Clientes</value>
   </data>
   <data name="listadoDePréstamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 24</value>
+    <value>209, 24</value>
   </data>
   <data name="listadoDePréstamosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reporte de créditos y registro de pagos</value>
+    <value>Reporte de créditos</value>
   </data>
   <data name="AgregarPrestamoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 24</value>
+    <value>209, 24</value>
   </data>
   <data name="AgregarPrestamoToolStripMenuItem.Text" xml:space="preserve">
     <value>Agregar prestamo</value>
+  </data>
+  <data name="registroDePagosToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 24</value>
+  </data>
+  <data name="registroDePagosToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Registro de pagos</value>
   </data>
   <data name="prestamosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 24</value>
@@ -769,6 +775,12 @@
     <value>AgregarPrestamoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;AgregarPrestamoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;registroDePagosToolStripMenuItem1.Name" xml:space="preserve">
+    <value>registroDePagosToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;registroDePagosToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;sucursalesToolStripMenuItem.Name" xml:space="preserve">

@@ -124,6 +124,12 @@
     <Compile Include="F_MenuPrincipal.Designer.cs">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_RegistrosPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_RegistrosPagos.Designer.cs">
+      <DependentUpon>F_RegistrosPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_ReporteDePagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,13 +141,13 @@
     <Compile Include="I_AltasComercios.cs" />
     <Compile Include="I_AltasLugares.cs" />
     <Compile Include="I_AltasSucursales.cs" />
-    <Compile Include="I_ExaminarPrestamo.cs" />
     <Compile Include="I_GrillaClientes.cs" />
     <Compile Include="I_GrillaComercios.cs" />
     <Compile Include="I_GrillaLugares.cs" />
     <Compile Include="I_GrillaPrestamos.cs" />
     <Compile Include="I_GrillaSucursales.cs" />
     <Compile Include="I_MenuPrincipal.cs" />
+    <Compile Include="I_RegistrosPagos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F_AltasComercios.resx">
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_MenuPrincipal.resx">
       <DependentUpon>F_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_RegistrosPagos.resx">
+      <DependentUpon>F_RegistrosPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_ReporteDePagos.resx">
       <DependentUpon>F_ReporteDePagos.cs</DependentUpon>

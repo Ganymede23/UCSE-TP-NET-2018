@@ -140,7 +140,7 @@
             this.Bt_GuardarComercio.TabIndex = 34;
             this.Bt_GuardarComercio.Text = "Guardar";
             this.Bt_GuardarComercio.UseVisualStyleBackColor = true;
-            this.Bt_GuardarComercio.Click += new System.EventHandler(this.Bt_GuardarCliente_Click);
+            this.Bt_GuardarComercio.Click += new System.EventHandler(this.Bt_GuardarComercio_Click);
             // 
             // label1
             // 

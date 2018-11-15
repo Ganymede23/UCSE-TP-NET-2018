@@ -19,7 +19,7 @@ namespace WinForm
         ResultadoOp ModificacionPrestamos(Prestamo Prestamo, bool eliminar);
         List<Prestamo> ObtenerPrestamos(DateTime? fechaDesde, DateTime? fechaHasta, TipoCliente? tipoCliente, string nombre);
 
-        List<Pago> ObtenerRegistrosPagos(Prestamo prestamo);
+        List<Prestamo> ObtenerRegistrosPagos();
         ResultadoOp RegistroPagos(Prestamo prestamo, LugarDePago lugar);
 
         ResultadoOp AltaSucursales(Sucursal sucursal);

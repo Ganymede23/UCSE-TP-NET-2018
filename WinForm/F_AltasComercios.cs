@@ -42,7 +42,7 @@ namespace WinForm
             this.TB_Ciudad.Text = Convert.ToString(comercio.Ciudad);
         }
 
-        private void Bt_GuardarCliente_Click(object sender, EventArgs e)
+        private void Bt_GuardarComercio_Click(object sender, EventArgs e)
         {
             var resultadoalta = new ResultadoOp();
             var comercio = new Comercio();
@@ -63,7 +63,7 @@ namespace WinForm
             }
             else
             {
-                I_GrillaComercios F_GrillaComercios = this.Owner as I_GrillaComercios; //En caso de que se edite el Cliente (desde grilla)
+                I_GrillaComercios F_GrillaComercios = this.Owner as I_GrillaComercios; //En caso de que se edite
                 if (F_GrillaComercios != null)
                 {
                     if (LBL_ID.Text != "")

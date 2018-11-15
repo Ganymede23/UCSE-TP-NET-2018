@@ -173,13 +173,12 @@ namespace Logica
                 }
                 return ListaPrestamosFilt.Where(x => (fechaDesde.HasValue ? x.FCredito >= fechaDesde : true) && (fechaHasta.HasValue ? x.FCredito <= fechaHasta : true) && (tipoCliente.HasValue ? x.Cliente.TipoCliente == tipoCliente : true)).ToList();
             }
-
             //return ListaPrestamos;
         }
-        public List<Pago> ObtenerRegistrosPagos(Prestamo prestamo)
+        public List<Prestamo> ObtenerRegistrosPagos()
         {
             LeerPrestamos();
-            return prestamo.ListaPagos;
+            return ListaPrestamos.Where(x => x.CuotasFaltantes != 0).ToList();
         }
         public List<Sucursal> ObtenerSucursales()
         {

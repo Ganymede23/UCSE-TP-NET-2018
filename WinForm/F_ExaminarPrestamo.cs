@@ -11,7 +11,7 @@ using Logica;
 
 namespace WinForm
 {
-    public partial class F_ExaminarPrestamo : Form, I_ExaminarPrestamo
+    public partial class F_ExaminarPrestamo : Form
     {
         public F_ExaminarPrestamo(Prestamo prestamo)
         {
@@ -21,22 +21,8 @@ namespace WinForm
 
         private Prestamo prop_prestamo { get; set; }
 
-        public void ActualizarGrillaPagos(Prestamo prestamo)
-        {
-            ResultadoOp resultado = new ResultadoOp();
-            I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-            this.GrillaCuotas.DataSource = null;
-
-            if (F_GrillaPrestamos != null)
-            {
-                this.GrillaCuotas.DataSource = F_GrillaPrestamos.ObtenerRegistrosPagos(prop_prestamo);
-            }
-        }
-
         private void F_ExaminarPrestamo_Load(object sender, EventArgs e)
         {
-            //ActualizarGrillaPagos();
-
             //PRESTAMO
             LBL_PrestamoID.Text = Convert.ToString(prop_prestamo.ID);
             LBL_PrestamoFecha.Text = Convert.ToString(prop_prestamo.FCredito.ToString("dd/MM/yyyy"));
@@ -76,72 +62,29 @@ namespace WinForm
             this.GrillaCuotas.Columns[0].Width = 30;
             this.GrillaCuotas.Columns[1].HeaderText = "Monto Cuota ($)";
             this.GrillaCuotas.Columns[1].DataPropertyName = "MontoCuota";
-            this.GrillaCuotas.Columns[1].Width = 105;
+            this.GrillaCuotas.Columns[1].Width = 125;
             this.GrillaCuotas.Columns[2].HeaderText = "Monto Pago ($)";
             this.GrillaCuotas.Columns[2].DataPropertyName = "MontoPago";
-            this.GrillaCuotas.Columns[2].Width = 105;
+            this.GrillaCuotas.Columns[2].Width = 125;
             this.GrillaCuotas.Columns[3].HeaderText = "Fecha de Pago";
             this.GrillaCuotas.Columns[3].DataPropertyName = "FechaPago";
-            this.GrillaCuotas.Columns[3].Width = 100;
+            this.GrillaCuotas.Columns[3].Width = 125;
             this.GrillaCuotas.Columns[4].HeaderText = "Lugar de Pago";
             this.GrillaCuotas.Columns[4].DataPropertyName = "LugarPago";
-            this.GrillaCuotas.Columns[4].Width = 160;
+            this.GrillaCuotas.Columns[4].Width = 175;
 
             GrillaCuotas.DataSource = prop_prestamo.ListaPagos;
 
-            DataGridViewLinkColumn EfectuarPago = new DataGridViewLinkColumn();
-            EfectuarPago.HeaderText = "Efecutar Pago";
-            EfectuarPago.Text = "Pagar";
-            EfectuarPago.Width = 70;
-            EfectuarPago.UseColumnTextForLinkValue = true;
-            GrillaCuotas.Columns.Add(EfectuarPago);
+            //I_GrillaPrestamos owner = this.Owner as I_GrillaPrestamos;
+            //if (owner != null)
+            //{
+            //    GrillaCuotas.DataSource = owner.ObtenerRegistrosPagos();
+            //}
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-        }
-
-        private void GrillaCuotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var column = this.GrillaCuotas.Columns[e.ColumnIndex];
-            var row = this.GrillaCuotas.Rows[e.RowIndex];
-
-            if (column.HeaderText == "Efecutar Pago")
-            {
-                Pago pago = row.DataBoundItem as Pago;
-                if (pago.MontoPago != 0)
-                {
-                    MessageBox.Show("La cuota seleccionada ya está paga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else
-                {
-                    var Crear_F_EfectuarPago = new F_EfectuarPago(prop_prestamo, pago) { Owner = this };
-                    Crear_F_EfectuarPago.ShowDialog();
-                }
-            }
-            ActualizarGrillaPagos(prop_prestamo);
-        }
-
-        public ResultadoOp RegistroPagos(Prestamo prestamo, LugarDePago lugar)
-        {
-            var resultadoalta = new ResultadoOp();
-            I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-            if (F_GrillaPrestamos != null)
-            {
-                resultadoalta = F_GrillaPrestamos.RegistroPagos(prestamo, lugar);
-            }
-            return resultadoalta;
-        }
-        public List<LugarDePago> ObtenerLugares()
-        {
-            List<LugarDePago> ListaLugaresDePago = new List<LugarDePago>();
-            I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-            if (F_GrillaPrestamos != null)
-            {
-                ListaLugaresDePago = F_GrillaPrestamos.ObtenerLugares();
-            }
-            return ListaLugaresDePago;
         }
     }
 }
