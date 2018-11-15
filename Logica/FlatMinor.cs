@@ -176,10 +176,10 @@ namespace Logica
 
             //return ListaPrestamos;
         }
-        public List<Prestamo> ObtenerRegistrosPagos()
+        public List<Pago> ObtenerRegistrosPagos(Prestamo prestamo)
         {
             LeerPrestamos();
-            return ListaPrestamos.Where(x => x.CuotasFaltantes != 0).ToList();
+            return prestamo.ListaPagos;
         }
         public List<Sucursal> ObtenerSucursales()
         {

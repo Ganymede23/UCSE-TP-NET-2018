@@ -60,12 +60,6 @@ namespace WinForm
             Crear_F_GrillaPrestamos.Show();
         }
 
-        private void registroDePagosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var Crear_F_RegistrosPagos = new F_RegistrosPagos() { Owner = this };
-            Crear_F_RegistrosPagos.Show();
-        }
-
         //SUCURSALES
 
         private void AltasSucursalesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,9 +215,9 @@ namespace WinForm
             return FlatMinor.ObtenerPrestamos(fechaDesde, fechaHasta, tipoCliente, nombre);
         }
 
-        public List<Prestamo> ObtenerRegistrosPagos()
+        public List<Pago> ObtenerRegistrosPagos(Prestamo prestamo)
         {
-            return FlatMinor.ObtenerRegistrosPagos();
+            return FlatMinor.ObtenerRegistrosPagos(prestamo);
         }
 
         public ResultadoOp RegistroPagos(Prestamo prestamo, LugarDePago lugar)

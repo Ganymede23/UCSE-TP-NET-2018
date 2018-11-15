@@ -11,9 +11,11 @@ namespace WinForm
     {
         ResultadoOp CrearArchivos();
         ResultadoOp AltaPrestamos(Prestamo prestamo);
+        ResultadoOp RegistroPagos(Prestamo prestamo, LugarDePago lugar);
         List<Sucursal> ObtenerSucursales();
         List<Cliente> ObtenerClientes();
         List<Comercio> ObtenerComercios();
-        //List<Pago> ObtenerRegistrosPagos();
+        List<LugarDePago> ObtenerLugares();
+        List<Pago> ObtenerRegistrosPagos(Prestamo prestamo);
     }
 }

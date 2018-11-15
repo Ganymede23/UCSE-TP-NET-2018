@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.LBL_Titulo = new System.Windows.Forms.Label();
-            this.TB_IDcomercio = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@
             this.LB_Cliente_MontoMax = new System.Windows.Forms.Label();
             this.LB_Cliente_Tipo = new System.Windows.Forms.Label();
             this.LB_Cliente_ID = new System.Windows.Forms.Label();
-            this.TB_IDsucursal = new System.Windows.Forms.MaskedTextBox();
             this.LBL_Fecha = new System.Windows.Forms.Label();
             this.TB_MontoCredito = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,10 +58,11 @@
             this.LBL_Tasa = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.TB_IDcliente = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.CB_Comercio = new System.Windows.Forms.ComboBox();
+            this.CB_Cliente = new System.Windows.Forms.ComboBox();
+            this.CB_Sucursal = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // LBL_Titulo
@@ -75,16 +74,6 @@
             this.LBL_Titulo.Size = new System.Drawing.Size(252, 31);
             this.LBL_Titulo.TabIndex = 93;
             this.LBL_Titulo.Text = "Alta de Préstamos";
-            // 
-            // TB_IDcomercio
-            // 
-            this.TB_IDcomercio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_IDcomercio.Location = new System.Drawing.Point(189, 107);
-            this.TB_IDcomercio.Mask = "099";
-            this.TB_IDcomercio.Name = "TB_IDcomercio";
-            this.TB_IDcomercio.Size = new System.Drawing.Size(148, 22);
-            this.TB_IDcomercio.TabIndex = 65;
-            this.TB_IDcomercio.TextChanged += new System.EventHandler(this.TB_IDcomercio_TextChanged);
             // 
             // label16
             // 
@@ -236,16 +225,6 @@
             this.LB_Cliente_ID.TabIndex = 104;
             this.LB_Cliente_ID.Text = "id";
             // 
-            // TB_IDsucursal
-            // 
-            this.TB_IDsucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_IDsucursal.Location = new System.Drawing.Point(189, 134);
-            this.TB_IDsucursal.Mask = "099";
-            this.TB_IDsucursal.Name = "TB_IDsucursal";
-            this.TB_IDsucursal.Size = new System.Drawing.Size(148, 22);
-            this.TB_IDsucursal.TabIndex = 105;
-            this.TB_IDsucursal.TextChanged += new System.EventHandler(this.TB_IDsucursal_TextChanged);
-            // 
             // LBL_Fecha
             // 
             this.LBL_Fecha.AutoSize = true;
@@ -386,17 +365,6 @@
             this.label14.TabIndex = 126;
             this.label14.Text = "Monto Total ($)";
             // 
-            // TB_IDcliente
-            // 
-            this.TB_IDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TB_IDcliente.Location = new System.Drawing.Point(189, 79);
-            this.TB_IDcliente.Mask = "099";
-            this.TB_IDcliente.Name = "TB_IDcliente";
-            this.TB_IDcliente.Size = new System.Drawing.Size(148, 22);
-            this.TB_IDcliente.TabIndex = 64;
-            this.TB_IDcliente.ValidatingType = typeof(int);
-            this.TB_IDcliente.TextChanged += new System.EventHandler(this.TB_IDcliente_TextChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -420,21 +388,47 @@
             // 
             // CB_Comercio
             // 
+            this.CB_Comercio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Comercio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_Comercio.FormattingEnabled = true;
-            this.CB_Comercio.Location = new System.Drawing.Point(356, 9);
+            this.CB_Comercio.Location = new System.Drawing.Point(189, 106);
             this.CB_Comercio.Name = "CB_Comercio";
-            this.CB_Comercio.Size = new System.Drawing.Size(121, 21);
-            this.CB_Comercio.TabIndex = 136;
+            this.CB_Comercio.Size = new System.Drawing.Size(148, 24);
+            this.CB_Comercio.TabIndex = 105;
+            this.CB_Comercio.SelectedIndexChanged += new System.EventHandler(this.CB_Comercio_SelectedIndexChanged);
+            // 
+            // CB_Cliente
+            // 
+            this.CB_Cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_Cliente.FormattingEnabled = true;
+            this.CB_Cliente.Location = new System.Drawing.Point(189, 78);
+            this.CB_Cliente.Name = "CB_Cliente";
+            this.CB_Cliente.Size = new System.Drawing.Size(148, 24);
+            this.CB_Cliente.TabIndex = 104;
+            this.CB_Cliente.SelectedIndexChanged += new System.EventHandler(this.CB_Cliente_SelectedIndexChanged);
+            // 
+            // CB_Sucursal
+            // 
+            this.CB_Sucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_Sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CB_Sucursal.FormattingEnabled = true;
+            this.CB_Sucursal.Location = new System.Drawing.Point(189, 133);
+            this.CB_Sucursal.Name = "CB_Sucursal";
+            this.CB_Sucursal.Size = new System.Drawing.Size(148, 24);
+            this.CB_Sucursal.TabIndex = 106;
+            this.CB_Sucursal.SelectedIndexChanged += new System.EventHandler(this.CB_Sucursal_SelectedIndexChanged);
             // 
             // F_AltasPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 328);
+            this.Controls.Add(this.CB_Sucursal);
+            this.Controls.Add(this.CB_Cliente);
             this.Controls.Add(this.CB_Comercio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.TB_IDcliente);
             this.Controls.Add(this.LBL_MontoTotal);
             this.Controls.Add(this.LBL_MontoCuota);
             this.Controls.Add(this.label21);
@@ -449,7 +443,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LBL_Fecha);
-            this.Controls.Add(this.TB_IDsucursal);
             this.Controls.Add(this.LB_Cliente_ID);
             this.Controls.Add(this.LB_Cliente_MontoMax);
             this.Controls.Add(this.LB_Cliente_Tipo);
@@ -459,7 +452,6 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.borde1);
             this.Controls.Add(this.LBL_Titulo);
-            this.Controls.Add(this.TB_IDcomercio);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
@@ -478,7 +470,6 @@
 
         #endregion
         private System.Windows.Forms.Label LBL_Titulo;
-        private System.Windows.Forms.MaskedTextBox TB_IDcomercio;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
@@ -494,7 +485,6 @@
         private System.Windows.Forms.Label LB_Cliente_MontoMax;
         private System.Windows.Forms.Label LB_Cliente_Tipo;
         private System.Windows.Forms.Label LB_Cliente_ID;
-        private System.Windows.Forms.MaskedTextBox TB_IDsucursal;
         private System.Windows.Forms.Label LBL_Fecha;
         private System.Windows.Forms.MaskedTextBox TB_MontoCredito;
         private System.Windows.Forms.Label label6;
@@ -509,9 +499,10 @@
         private System.Windows.Forms.Label LBL_Tasa;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox TB_IDcliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox CB_Comercio;
+        private System.Windows.Forms.ComboBox CB_Cliente;
+        private System.Windows.Forms.ComboBox CB_Sucursal;
     }
 }

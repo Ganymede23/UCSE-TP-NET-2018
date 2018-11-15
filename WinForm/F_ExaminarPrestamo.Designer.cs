@@ -632,6 +632,7 @@
             this.GrillaCuotas.ReadOnly = true;
             this.GrillaCuotas.Size = new System.Drawing.Size(640, 248);
             this.GrillaCuotas.TabIndex = 168;
+            this.GrillaCuotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaCuotas_CellContentClick);
             // 
             // linkLabel1
             // 

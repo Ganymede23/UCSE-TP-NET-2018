@@ -19,16 +19,6 @@ namespace WinForm
             this.LBL_Fecha.Text = Convert.ToString(DateTime.Today.ToString("dd/MM/yyyy"));
             LimpiarDatosAdicionalesPrestamo();
             LimpiarDatosCliente(null);
-
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                List<Comercio> ListaComercios = F_MenuPrincipal.ObtenerComercios();
-                foreach (var item in ListaComercios)
-                {
-                    this.CB_Comercio.Items.Add(Convert.ToString(item.RazonSocial));
-                }
-            }
         }
 
         private void CompletarDatosCliente(Cliente cliente)
@@ -56,167 +46,18 @@ namespace WinForm
             this.LBL_MontoTotal.Text = "";
         }
 
-        private void VerificarCliente(Prestamo prestamo, bool uso)
-        {
-            List<Cliente> ListaClientes = new List<Cliente>();
-            int IDcliente = 0;
-            if (this.TB_IDcliente.Text == "")
-            {
-                IDcliente = 0;
-            }
-            else
-            {
-                IDcliente = Convert.ToInt32(this.TB_IDcliente.Text);
-            }
-
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                ListaClientes = F_MenuPrincipal.ObtenerClientes();
-            }
-            else
-            {
-                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-                if (F_GrillaPrestamos != null)
-                {
-                    ListaClientes = F_GrillaPrestamos.ObtenerClientes();
-                }
-            }
-
-
-            bool cliente_encontrado = false;
-            foreach (var item in ListaClientes)
-            {
-                if (IDcliente == item.ID && item.Activo != false)
-                {
-                    cliente_encontrado = true;
-                    if (uso)
-                    {
-                        prestamo.Cliente = item;
-                    }
-                    else
-                        CompletarDatosCliente(item);
-                    BT_GuardarPrestamo.Enabled = true;
-                    break;
-                }
-            }
-            if (!cliente_encontrado)
-            {
-                MessageBox.Show("Cliente no encontrado. Verifique el ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (uso)
-                    this.Close();
-                else
-                    BT_GuardarPrestamo.Enabled = false;
-            }
-        }
-
         Sucursal sucursal = new Sucursal();
-
-        private void VerificarSucursal(Prestamo prestamo, bool uso)
-        {
-            List<Sucursal> ListaSucursales = new List<Sucursal>();
-            int IDsucursal = 0;
-            if (this.TB_IDsucursal.Text == "")
-            {
-                IDsucursal = 0;
-            }
-            else
-            {
-                IDsucursal = Convert.ToInt32(this.TB_IDsucursal.Text);
-            }
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                ListaSucursales = F_MenuPrincipal.ObtenerSucursales();
-            }
-            else
-            {
-                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-                if (F_GrillaPrestamos != null)
-                {
-                    ListaSucursales = F_GrillaPrestamos.ObtenerSucursales();
-                }
-            }
-
-            bool sucursal_encontrada = false;
-
-            foreach (var item in ListaSucursales)
-            {
-                if (IDsucursal == item.ID && item.Activo == true)
-                {
-                    sucursal_encontrada = true;
-                    if (uso)
-                        prestamo.Sucursal = item;
-                    else
-                        sucursal = item;
-                    BT_GuardarPrestamo.Enabled = true;
-                    break;
-                }
-            }
-            if (!sucursal_encontrada)
-            {
-                MessageBox.Show("Sucursal no encontrada. Verifique el ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (uso)
-                    this.Close();
-                else
-                    BT_GuardarPrestamo.Enabled = false;
-            }
-        }
-
-        private void VerificarComercio(Prestamo prestamo, bool uso)
-        {
-            List<Comercio> ListaComercios = new List<Comercio>();
-            int IDcomercio = 0;
-            if (this.TB_IDcomercio.Text == "")
-            {
-                IDcomercio = 0;
-            }
-            else
-            {
-                IDcomercio = Convert.ToInt32(this.TB_IDcomercio.Text);
-            }
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
-            {
-                ListaComercios = F_MenuPrincipal.ObtenerComercios();
-            }
-            else
-            {
-                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
-                if (F_GrillaPrestamos != null)
-                {
-                    ListaComercios = F_GrillaPrestamos.ObtenerComercios();
-                }
-            }
-            bool comercio_encontrado = false;
-            foreach (var item in ListaComercios)
-            {
-                if (IDcomercio == item.ID && item.Activo != false)
-                {
-                    comercio_encontrado = true;
-                    if (uso)
-                        prestamo.ComercioAdherido = item;
-                    break;
-                }
-            }
-            if (!comercio_encontrado)
-            {
-                MessageBox.Show("Comercio no encontrado. Verifique el ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (uso)
-                    this.Close();
-                else
-                    BT_GuardarPrestamo.Enabled = false; 
-            }
-        }
+        Cliente cliente = new Cliente();
+        Comercio comercio = new Comercio();
         
         private void BT_GuardarPrestamo_Click(object sender, EventArgs e)
         {
             var resultadoalta = new ResultadoOp();
             var prestamo = new Prestamo();
 
-            VerificarCliente(prestamo,true);     ///VERIFICACION DE EXISTENCIA DEL CLIENTE///
-            VerificarSucursal(prestamo,true);    ///VERIFICACION DE EXISTENCIA DE LA SUCURSAL///
-            VerificarComercio(prestamo,true);    ///VERIFICACION DE EXISTENCIA DEL COMERCIO///
+            prestamo.Sucursal = sucursal;
+            prestamo.Cliente = cliente;
+            prestamo.ComercioAdherido = comercio;
 
             if (this.TB_MontoCredito.Text == "")
                 prestamo.MontoCredito = 0;
@@ -252,37 +93,97 @@ namespace WinForm
 
         private void F_AltasPrestamos_Load(object sender, EventArgs e)
         {
-            
-        }
+            List<Comercio> ListaComercios = new List<Comercio>();
+            List<Cliente> ListaClientes = new List<Cliente>();
+            List<Sucursal> ListaSucursales = new List<Sucursal>();
 
-        //private void ActualizarComboBoxComercios()
-        //{
-
-        //}
-
-        private void TB_IDcliente_TextChanged(object sender, EventArgs e)
-        {
-            if (TB_IDcliente.Text != "")
-                VerificarCliente(null, false);
-            else
-                LimpiarDatosCliente(null);
-        }
-        private void TB_IDsucursal_TextChanged(object sender, EventArgs e)
-        {
-            if (TB_IDsucursal.Text != "")
+            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+            if (F_MenuPrincipal != null)
             {
-                VerificarSucursal(null, false);
-                LBL_Tasa.Text = Convert.ToString(sucursal.TasaInteres);
+                ListaComercios = F_MenuPrincipal.ObtenerComercios();
+                ListaClientes = F_MenuPrincipal.ObtenerClientes();
+                ListaSucursales = F_MenuPrincipal.ObtenerSucursales();
             }
             else
-                LimpiarDatosAdicionalesPrestamo();
-        }
-        private void TB_IDcomercio_TextChanged(object sender, EventArgs e)
-        {
-            if (TB_IDcomercio.Text != "")
             {
-                VerificarComercio(null, false);
+                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
+                if (F_GrillaPrestamos != null)
+                {
+                    ListaComercios = F_GrillaPrestamos.ObtenerComercios();
+                    ListaClientes = F_GrillaPrestamos.ObtenerClientes();
+                    ListaSucursales = F_GrillaPrestamos.ObtenerSucursales();
+                }
             }
+            foreach (var item in ListaComercios)
+            {
+                this.CB_Comercio.Items.Add(Convert.ToString(item.RazonSocial));
+            }
+            foreach (var item in ListaClientes)
+            {
+                this.CB_Cliente.Items.Add(Convert.ToString(item.Nombre));
+            }
+            foreach (var item in ListaSucursales)
+            {
+                this.CB_Sucursal.Items.Add(Convert.ToString(item.ID + " - " + item.Direccion));
+            }
+        }
+
+        private void CB_Cliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Cliente> ListaClientes = new List<Cliente>();
+
+            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+            if (F_MenuPrincipal != null)
+                ListaClientes = F_MenuPrincipal.ObtenerClientes();
+            else
+            {
+                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
+                if (F_GrillaPrestamos != null)
+                    ListaClientes = F_GrillaPrestamos.ObtenerClientes();
+            }
+
+            this.LB_Cliente_ID.Text = "ID: " + Convert.ToString(ListaClientes[CB_Cliente.SelectedIndex].ID);
+            this.LB_Cliente_Doc.Text = Convert.ToString(ListaClientes[CB_Cliente.SelectedIndex].TipoDocumento) + " " + Convert.ToString(ListaClientes[CB_Cliente.SelectedIndex].NroDocumento);
+            this.LB_Cliente_Nombre.Text = ListaClientes[CB_Cliente.SelectedIndex].Nombre;
+            this.LB_Cliente_Email.Text = ListaClientes[CB_Cliente.SelectedIndex].Correo;
+            this.LB_Cliente_Tipo.Text = "Cliente " + Convert.ToString(ListaClientes[CB_Cliente.SelectedIndex].TipoCliente);
+            this.LB_Cliente_MontoMax.Text = "Monto máximo: $" + Convert.ToString(ListaClientes[CB_Cliente.SelectedIndex].MontoMaximo);
+
+            cliente = ListaClientes[CB_Cliente.SelectedIndex];
+        }
+        private void CB_Comercio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Comercio> ListaComercios = new List<Comercio>();
+
+            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+            if (F_MenuPrincipal != null)
+                ListaComercios = F_MenuPrincipal.ObtenerComercios();
+            else
+            {
+                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
+                if (F_GrillaPrestamos != null)
+                    ListaComercios = F_GrillaPrestamos.ObtenerComercios();
+            }
+
+            comercio = ListaComercios[CB_Comercio.SelectedIndex];
+        }
+        private void CB_Sucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Sucursal> ListaSucursales = new List<Sucursal>();
+
+            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
+            if (F_MenuPrincipal != null)
+                ListaSucursales = F_MenuPrincipal.ObtenerSucursales();
+            else
+            {
+                I_GrillaPrestamos F_GrillaPrestamos = this.Owner as I_GrillaPrestamos;
+                if (F_GrillaPrestamos != null)
+                    ListaSucursales = F_GrillaPrestamos.ObtenerSucursales();
+            }
+
+            LBL_Tasa.Text = Convert.ToString(ListaSucursales[CB_Sucursal.SelectedIndex].TasaInteres);
+
+            sucursal = ListaSucursales[CB_Sucursal.SelectedIndex];
         }
 
         private void TB_MontoCredito_TextChanged(object sender, EventArgs e)
@@ -294,12 +195,11 @@ namespace WinForm
                 LBL_MontoTotal.Text = Convert.ToString(Math.Round(monto_credito + (tasa * monto_credito / 100)));
             }
         }
-
         private void TB_CantidadCuotas_TextChanged(object sender, EventArgs e)
         {
             if (TB_CantidadCuotas.Text != "" && LBL_MontoTotal.Text != "")
             {
-                this.LBL_MontoCuota.Text = Convert.ToString(Math.Round(Convert.ToDecimal(LBL_MontoTotal.Text) / Convert.ToInt32(TB_CantidadCuotas.Text),2));
+                this.LBL_MontoCuota.Text = Convert.ToString(Math.Round(Convert.ToDecimal(LBL_MontoTotal.Text) / Convert.ToInt32(TB_CantidadCuotas.Text), 2));
             }
         }
     }

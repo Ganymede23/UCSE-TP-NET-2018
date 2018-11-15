@@ -36,7 +36,6 @@
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDePréstamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AgregarPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDePagosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GrillaSucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AltasSucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +88,7 @@
             // 
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listadoDePréstamosToolStripMenuItem,
-            this.AgregarPrestamoToolStripMenuItem,
-            this.registroDePagosToolStripMenuItem1});
+            this.AgregarPrestamoToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             resources.ApplyResources(this.prestamosToolStripMenuItem, "prestamosToolStripMenuItem");
             // 
@@ -105,12 +103,6 @@
             this.AgregarPrestamoToolStripMenuItem.Name = "AgregarPrestamoToolStripMenuItem";
             resources.ApplyResources(this.AgregarPrestamoToolStripMenuItem, "AgregarPrestamoToolStripMenuItem");
             this.AgregarPrestamoToolStripMenuItem.Click += new System.EventHandler(this.AgregarPrestamoToolStripMenuItem_Click);
-            // 
-            // registroDePagosToolStripMenuItem1
-            // 
-            this.registroDePagosToolStripMenuItem1.Name = "registroDePagosToolStripMenuItem1";
-            resources.ApplyResources(this.registroDePagosToolStripMenuItem1, "registroDePagosToolStripMenuItem1");
-            this.registroDePagosToolStripMenuItem1.Click += new System.EventHandler(this.registroDePagosToolStripMenuItem1_Click);
             // 
             // sucursalesToolStripMenuItem
             // 
@@ -230,7 +222,6 @@
         private System.Windows.Forms.LinkLabel LabelSalir;
         private System.Windows.Forms.ToolStripMenuItem listadoDePréstamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReporteDePagosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroDePagosToolStripMenuItem1;
     }
 }
 

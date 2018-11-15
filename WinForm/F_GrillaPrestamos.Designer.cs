@@ -40,6 +40,7 @@
             this.CHKB_FechaHasta = new System.Windows.Forms.CheckBox();
             this.CHKB_TipoCliente = new System.Windows.Forms.CheckBox();
             this.CHKB_Busqueda = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,11 +180,24 @@
             this.CHKB_Busqueda.UseVisualStyleBackColor = true;
             this.CHKB_Busqueda.CheckedChanged += new System.EventHandler(this.CHKB_Busqueda_CheckedChanged);
             // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 448);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(634, 26);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Dentro de \"Examinar\" podrá ver mas datos del crédito y realizar los pagos de las " +
+    "cuotas correspondientes.";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // F_GrillaPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 450);
+            this.ClientSize = new System.Drawing.Size(658, 486);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.CHKB_Busqueda);
             this.Controls.Add(this.CHKB_TipoCliente);
             this.Controls.Add(this.CHKB_FechaHasta);
@@ -220,5 +234,6 @@
         private System.Windows.Forms.CheckBox CHKB_FechaHasta;
         private System.Windows.Forms.CheckBox CHKB_TipoCliente;
         private System.Windows.Forms.CheckBox CHKB_Busqueda;
+        private System.Windows.Forms.Label label3;
     }
 }
