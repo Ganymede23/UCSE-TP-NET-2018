@@ -40,6 +40,7 @@ namespace WinForm
             var resultadoalta = new ResultadoOp();
             var update_grilla = new ResultadoOp();
             var pago = new Pago();
+            pago.LugarPago = lugar;
 
             if (pago.LugarPago != null)
             {
@@ -74,10 +75,10 @@ namespace WinForm
 
         private void CB_Lugar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            I_MenuPrincipal F_MenuPrincipal = this.Owner as I_MenuPrincipal;
-            if (F_MenuPrincipal != null)
+            I_RegistrosPagos F_RegistrosPagos = this.Owner as I_RegistrosPagos;
+            if (F_RegistrosPagos != null)
             {
-                List<LugarDePago> ListaLugaresDePago = F_MenuPrincipal.ObtenerLugares();
+                List<LugarDePago> ListaLugaresDePago = F_RegistrosPagos.ObtenerLugares();
                 lugar = ListaLugaresDePago[CB_Lugar.SelectedIndex];
                 BT_RealizarPago.Enabled = true;
             }

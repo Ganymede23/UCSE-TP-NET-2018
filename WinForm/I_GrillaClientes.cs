@@ -9,7 +9,7 @@ namespace WinForm
 {
     interface I_GrillaClientes
     {
-        ResultadoOp CrearArchivos();
+        void CrearArchivos();
         ResultadoOp AltaClientes(Cliente cliente);
         ResultadoOp ModificacionCliente(Cliente cliente, bool eliminar);
         //List<Comercio> ObtenerComercios();

@@ -9,7 +9,7 @@ namespace WinForm
 {
     interface I_GrillaLugares
     {
-        ResultadoOp CrearArchivos();
+        void CrearArchivos();
         ResultadoOp AltaLugares(LugarDePago lugar);
         ResultadoOp ModificacionLugar(LugarDePago lugar, bool eliminar);
     }

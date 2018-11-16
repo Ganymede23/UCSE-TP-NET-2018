@@ -22,9 +22,9 @@ namespace WinForm
             InitializeComponent(); 
         }
 
-        public ResultadoOp CrearArchivos()
+        public void CrearArchivos()
         {
-            return FlatMinor.CrearArchivos();
+            FlatMinor.CrearArchivos();
         }
 
         private void F_MenuPrincipal_Load(object sender, EventArgs e)

@@ -9,7 +9,7 @@ namespace WinForm
 {
     interface I_GrillaComercios
     {
-        ResultadoOp CrearArchivos();
+        void CrearArchivos();
         ResultadoOp AltaComercios(Comercio comercio);
         ResultadoOp ModificacionComercio(Comercio comercio, bool eliminar);
     }

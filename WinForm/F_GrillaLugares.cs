@@ -45,7 +45,7 @@ namespace WinForm
             return resultadoOp;
         }
 
-        public ResultadoOp CrearArchivos()
+        public void CrearArchivos()
         {
             throw new NotImplementedException();
         }

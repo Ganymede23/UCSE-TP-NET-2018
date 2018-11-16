@@ -16,27 +16,36 @@ namespace Logica
         public List<LugarDePago> ListaLugaresDePago { get; set; }
         public List<Cliente> ListaClientes { get; set; }
 
-        public ResultadoOp CrearArchivos()
+        public void CrearArchivos()
         {
             if (!File.Exists(@"C:\Datos\Prestamos.txt"))
+            {
                 File.Create(@"C:\Datos\Prestamos.txt").Close();
+                ListaPrestamos = new List<Prestamo>();
+            }
             if (!File.Exists(@"C:\Datos\Sucursales.txt"))
+            {
                 File.Create(@"C:\Datos\Sucursales.txt").Close();
+                ListaSucursales = new List<Sucursal>();
+            }
             if (!File.Exists(@"C:\Datos\Comercios.txt"))
+            {
                 File.Create(@"C:\Datos\Comercios.txt").Close();
+                ListaComercios = new List<Comercio>();
+            }
             if (!File.Exists(@"C:\Datos\LugaresDePago.txt"))
+            {
                 File.Create(@"C:\Datos\LugaresDePago.txt").Close();
+                ListaLugaresDePago = new List<LugarDePago>();
+            }
             if (!File.Exists(@"C:\Datos\Clientes.txt"))
+            {
                 File.Create(@"C:\Datos\Clientes.txt").Close();
+                ListaClientes = new List<Cliente>();
+            }
 
-            ListaPrestamos = new List<Prestamo>();
-            ListaSucursales = new List<Sucursal>();
-            ListaComercios = new List<Comercio>();
-            ListaLugaresDePago = new List<LugarDePago>();
-            ListaClientes = new List<Cliente>();
-
-            var resultado = new ResultadoOp(true,"");
-            return resultado;
+            //var resultado = new ResultadoOp(true,"");
+            //return resultado;
         }
 
         public void LeerClientes()

@@ -9,7 +9,7 @@ namespace WinForm
 {
     interface I_GrillaPrestamos
     {
-        ResultadoOp CrearArchivos();
+        void CrearArchivos();
         ResultadoOp AltaPrestamos(Prestamo prestamo);
         List<Sucursal> ObtenerSucursales();
         List<Cliente> ObtenerClientes();

@@ -9,7 +9,7 @@ namespace WinForm
 {
     interface I_GrillaSucursales
     {
-        ResultadoOp CrearArchivos();
+        void CrearArchivos();
         ResultadoOp AltaSucursales(Sucursal sucursal);
         ResultadoOp ModificacionSucursal(Sucursal sucursal, bool eliminar);
     }

@@ -45,7 +45,7 @@ namespace WinForm
             return resultadoOp;
         }
 
-        public ResultadoOp CrearArchivos()
+        public void CrearArchivos()
         {
             throw new NotImplementedException();
         }
@@ -78,7 +78,7 @@ namespace WinForm
             this.GrillaSucursales.Columns[4].Width = 140;
 
             I_MenuPrincipal owner = this.Owner as I_MenuPrincipal;
-  
+
             if (owner != null)
             {
                 GrillaSucursales.DataSource = owner.ObtenerSucursales();
